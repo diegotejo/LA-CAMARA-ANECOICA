@@ -32,11 +32,9 @@ export default async function CuestionariosPage() {
         <p className={`${styles.label} fade-in`}>Autoevaluación</p>
         <h1 className={`${styles.title} fade-in`}>Cuestionarios Temáticos</h1>
         <p className={`${styles.intro} slide-up`}>
-          Estos cuestionarios no son lúdicos ni triviales. Son herramientas
-          pedagógicas diseñadas para revisitar los marcos teóricos expuestos en
-          los ensayos audiovisuales del canal. Los cuestionarios conceptuales se
-          han ampliado a 10 preguntas, y el test ideológico desarrolla un mapa
-          de 20 preguntas repartidas en dos ejes.
+          Una forma rápida de revisar ideas clave del canal. Incluye
+          cuestionarios conceptuales de 10 preguntas y un test ideológico de 20
+          respuestas para ubicar tendencias en dos ejes.
         </p>
       </header>
 

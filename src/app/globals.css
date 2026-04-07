@@ -180,11 +180,16 @@ a:hover {
 
 /* Botones Vercel Style */
 .btn-primary {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background: #ffffff;
-  color: #000000;
+  color: #111111 !important;
+  -webkit-text-fill-color: currentColor !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
   padding: 0.8rem 1.6rem;
   font-family: var(--font-sans);
   font-size: 0.9rem;
@@ -196,10 +201,33 @@ a:hover {
   box-shadow: 0 0 0 0 rgba(255,255,255,0);
 }
 
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--logo-text-gradient);
+  opacity: 0.14;
+  transition: opacity 0.25s ease;
+  z-index: 0;
+}
+
+.btn-primary > * {
+  position: relative;
+  z-index: 1;
+}
+
 .btn-primary:hover {
   transform: translateY(-2px);
-  background: #f0f0f0;
+  background: #ffffff;
+  color: #121212 !important;
+  -webkit-text-fill-color: currentColor !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
   box-shadow: 0 4px 14px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover::before {
+  opacity: 0.68;
 }
 
 .btn-outline {

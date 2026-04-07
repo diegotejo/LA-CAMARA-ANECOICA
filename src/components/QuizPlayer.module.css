@@ -181,10 +181,16 @@
 
 .axesGrid {
   display: grid;
-  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   gap: var(--space-lg);
   align-items: start;
   margin: 0 auto var(--space-xl);
+}
+
+.axesPlotBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
 }
 
 .axesPanel {
@@ -215,45 +221,80 @@
   margin-top: 0.8rem;
 }
 
-.axesPlotWrap {
-  position: relative;
-  aspect-ratio: 1.1;
-  border-radius: 36px;
-  padding: 2rem;
-  border: 1px solid var(--color-border-subtle);
-  background:
-    linear-gradient(rgba(120, 120, 120, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(120, 120, 120, 0.12) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(245, 244, 238, 0.96), rgba(225, 227, 220, 0.94));
-  background-size: 10% 10%, 10% 10%, auto;
-  overflow: hidden;
-  color: #101010;
+.ideologyList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.8rem;
 }
 
-.axesRing {
-  position: absolute;
-  inset: 6% 8%;
-  border: 24px solid rgba(255, 255, 255, 0.82);
-  border-radius: 50%;
-  pointer-events: none;
+.ideologyItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: flex-start;
+  border: 1px solid var(--color-border-subtle);
+  background: rgba(255, 255, 255, 0.015);
+  padding: 0.7rem 0.75rem;
+}
+
+.ideologyItem div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ideologyItem strong {
+  color: var(--color-text);
+  font-size: 0.94rem;
+}
+
+.ideologyItem span {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.ideologyItem em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.axesPlotWrap {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 28px;
+  padding: 1.7rem;
+  border: 1px solid var(--color-border-subtle);
+  background:
+    linear-gradient(rgba(200, 200, 200, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 200, 200, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015));
+  background-size: 12.5% 12.5%, 12.5% 12.5%, auto;
+  overflow: hidden;
+  color: var(--color-text);
 }
 
 .axesVertical,
 .axesHorizontal {
   position: absolute;
-  background: rgba(30, 30, 30, 0.68);
+  background: rgba(255, 255, 255, 0.68);
 }
 
 .axesVertical {
-  top: 8%;
-  bottom: 8%;
+  top: 10%;
+  bottom: 10%;
   left: 50%;
   width: 2px;
 }
 
 .axesHorizontal {
-  left: 8%;
-  right: 8%;
+  left: 10%;
+  right: 10%;
   top: 50%;
   height: 2px;
 }
@@ -274,27 +315,24 @@
 .axesAxisLabelTop,
 .axesAxisLabelRight,
 .axesAxisLabelBottom,
-.axesAxisLabelLeft,
-.axesQuadrantTopRight,
-.axesQuadrantTopLeft,
-.axesQuadrantBottomLeft {
+.axesAxisLabelLeft {
   position: absolute;
-  color: #111;
+  color: var(--color-text);
 }
 
 .axesTitleY {
-  top: 1rem;
+  top: 0.55rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1rem;
+  font-size: 0.88rem;
   font-weight: 700;
 }
 
 .axesTitleX {
-  right: 1rem;
-  bottom: 0.75rem;
-  width: 11rem;
-  font-size: 0.92rem;
+  right: 0.7rem;
+  bottom: 0.6rem;
+  width: 9.2rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-align: right;
 }
@@ -303,58 +341,33 @@
 .axesAxisLabelRight,
 .axesAxisLabelBottom,
 .axesAxisLabelLeft {
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .axesAxisLabelTop {
-  top: 3rem;
+  top: 2rem;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .axesAxisLabelRight {
-  right: 1rem;
+  right: 0.7rem;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .axesAxisLabelBottom {
-  bottom: 2.25rem;
+  bottom: 1.7rem;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .axesAxisLabelLeft {
-  left: 1rem;
+  left: 0.7rem;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.axesQuadrantTopRight {
-  top: 16%;
-  right: 15%;
-  width: 11rem;
-  font-size: 0.88rem;
-  line-height: 1.25;
-}
-
-.axesQuadrantTopLeft {
-  top: 48%;
-  left: 10%;
-  width: 10rem;
-  font-size: 0.88rem;
-  line-height: 1.25;
-  transform: translateY(-50%);
-}
-
-.axesQuadrantBottomLeft {
-  bottom: 12%;
- left: 14%;
-  width: 10rem;
-  font-size: 0.88rem;
-  line-height: 1.25;
 }
 
 .axesText {
@@ -400,19 +413,12 @@
 
   .axesPlotWrap {
     aspect-ratio: 1;
-    padding: 1.1rem;
-    border-radius: 22px;
-  }
-
-  .axesQuadrantTopRight,
-  .axesQuadrantTopLeft,
-  .axesQuadrantBottomLeft {
-    font-size: 0.64rem;
-    width: 6rem;
+    padding: 0.95rem;
+    border-radius: 20px;
   }
 
   .axesTitleX {
-    width: 6.5rem;
+    width: 6rem;
     font-size: 0.68rem;
     right: 0.6rem;
     bottom: 0.5rem;
@@ -445,20 +451,6 @@
 
   .axesAxisLabelLeft {
     left: 0.45rem;
-  }
-
-  .axesQuadrantTopRight {
-    top: 18%;
-    right: 7%;
-  }
-
-  .axesQuadrantTopLeft {
-    left: 7%;
-  }
-
-  .axesQuadrantBottomLeft {
-    left: 8%;
-    bottom: 14%;
   }
 
   .axesText {

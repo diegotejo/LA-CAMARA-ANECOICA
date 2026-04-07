@@ -65,6 +65,40 @@ function getIdeologySummary(x: number, y: number) {
     : "Sesgo sociocultural progresista";
 }
 
+interface IdeologyAnchor {
+  name: string;
+  x: number;
+  y: number;
+  note: string;
+}
+
+const IDEOLOGY_ANCHORS: IdeologyAnchor[] = [
+  { name: "Liberalismo clasico", x: 6, y: -2, note: "mercado y libertades civiles" },
+  { name: "Conservadurismo liberal", x: 5, y: 4, note: "mercado con orden tradicional" },
+  { name: "Socialdemocracia", x: -2, y: -2, note: "estado social y pluralismo" },
+  { name: "Republicanismo civico", x: -1, y: 1, note: "institucion y cohesion publica" },
+  { name: "Socialismo democratico", x: -6, y: -3, note: "redistribucion y expansion de derechos" },
+  { name: "Comunitarismo tradicional", x: -3, y: 5, note: "proteccion social y valores conservadores" },
+  { name: "Libertarismo", x: 8, y: -4, note: "maxima libertad economica e individual" },
+  { name: "Nacional-conservadurismo", x: 2, y: 7, note: "identidad nacional y autoridad" },
+];
+
+function getIdeologyMatches(x: number, y: number) {
+  const maxDistance = Math.hypot(20, 20);
+
+  return IDEOLOGY_ANCHORS.map((anchor) => {
+    const distance = Math.hypot(anchor.x - x, anchor.y - y);
+    const affinity = Math.max(35, Math.round(100 - (distance / maxDistance) * 100));
+
+    return {
+      ...anchor,
+      affinity,
+    };
+  })
+    .sort((a, b) => b.affinity - a.affinity)
+    .slice(0, 5);
+}
+
 export default function QuizPlayer({ quiz }: { quiz: QuizData }) {
   const [currentQ, setCurrentQ] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
@@ -130,6 +164,7 @@ export default function QuizPlayer({ quiz }: { quiz: QuizData }) {
       xLabel: getAxisLabel("economic", x),
       yLabel: getAxisLabel("sociocultural", y),
       summary: getIdeologySummary(x, y),
+      matches: getIdeologyMatches(x, y),
     };
   }, [axisScore]);
 
@@ -142,43 +177,47 @@ export default function QuizPlayer({ quiz }: { quiz: QuizData }) {
             <h4 className={styles.axesTitle}>{ideologyResult.summary}</h4>
 
             <div className={styles.axesGrid}>
-              <div className={styles.axesPanel}>
-                <p className={styles.axesPanelLabel}>Interpretación</p>
-                <h5 className={styles.axesPanelTitle}>Cómo leer tu resultado</h5>
-                <p className={styles.axesPanelText}>
-                  A los puntos económicos de mercado se les resta la puntuación estatista. En el eje
-                  sociocultural, los puntos tradicionalistas se contrastan con los progresistas.
-                </p>
-                <p className={styles.axesPanelText}>
-                  El resultado final deja dos coordenadas: <strong>X</strong> para el posicionamiento
-                  económico y <strong>Y</strong> para los valores socioculturales.
-                </p>
-              </div>
-
-              <div className={styles.axesPlotWrap}>
-                <div className={styles.axesRing} />
-                <div className={styles.axesVertical} />
-                <div className={styles.axesHorizontal} />
-                <div
-                  className={styles.axesPoint}
-                  style={{ left: ideologyResult.dotLeft, bottom: ideologyResult.dotBottom }}
-                />
-                <span className={styles.axesTitleY}>Valores socioculturales</span>
-                <span className={styles.axesTitleX}>Posicionamiento económico</span>
-                <span className={styles.axesAxisLabelTop}>Tradición</span>
-                <span className={styles.axesAxisLabelRight}>Mercado</span>
-                <span className={styles.axesAxisLabelBottom}>Progreso</span>
-                <span className={styles.axesAxisLabelLeft}>Estado</span>
-                <span className={styles.axesQuadrantTopRight}>Determinismo cultural, nacionalismo, tradicionalismo</span>
-                <span className={styles.axesQuadrantTopLeft}>Proteccionismo, redistribución, estatismo</span>
-                <span className={styles.axesQuadrantBottomLeft}>Relativismo cultural, progresismo, libertades individuales</span>
-              </div>
-
-              <div className={styles.axesText}>
+              <div className={styles.axesPlotBlock}>
+                <div className={styles.axesPlotWrap}>
+                  <div className={styles.axesVertical} />
+                  <div className={styles.axesHorizontal} />
+                  <div
+                    className={styles.axesPoint}
+                    style={{ left: ideologyResult.dotLeft, bottom: ideologyResult.dotBottom }}
+                  />
+                  <span className={styles.axesTitleY}>Valores socioculturales</span>
+                  <span className={styles.axesTitleX}>Posicionamiento económico</span>
+                  <span className={styles.axesAxisLabelTop}>Tradición</span>
+                  <span className={styles.axesAxisLabelRight}>Mercado</span>
+                  <span className={styles.axesAxisLabelBottom}>Progreso</span>
+                  <span className={styles.axesAxisLabelLeft}>Estado</span>
+                </div>
                 <p className={styles.axesCoordinate}>
                   X {ideologyResult.x >= 0 ? "+" : ""}
                   {ideologyResult.x} / Y {ideologyResult.y >= 0 ? "+" : ""}
                   {ideologyResult.y}
+                </p>
+              </div>
+
+              <div className={styles.axesPanel}>
+                <p className={styles.axesPanelLabel}>Afinidades ideológicas</p>
+                <h5 className={styles.axesPanelTitle}>Referencias cercanas</h5>
+                <ul className={styles.ideologyList}>
+                  {ideologyResult.matches.map((item) => (
+                    <li key={item.name} className={styles.ideologyItem}>
+                      <div>
+                        <strong>{item.name}</strong>
+                        <span>{item.note}</span>
+                      </div>
+                      <em>{item.affinity}%</em>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className={styles.axesText}>
+                <p className={styles.axesCoordinate}>
+                  Lectura base: {ideologyResult.summary}
                 </p>
                 <p>
                   En el eje económico te acercas a <strong>{ideologyResult.xLabel}</strong>.
