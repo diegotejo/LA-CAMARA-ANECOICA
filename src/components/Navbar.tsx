@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import BrandLogo from "./BrandLogo";
 
@@ -20,6 +20,18 @@ export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (!menuOpen) {
+      document.body.style.overflow = "";
+      return;
+    }
+
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
@@ -34,13 +46,16 @@ export default function Navbar() {
           className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menú de navegación"
+          aria-expanded={menuOpen}
+          aria-controls="site-navigation"
+          type="button"
         >
           <span />
           <span />
           <span />
         </button>
 
-        <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
+        <nav id="site-navigation" className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (

@@ -2,6 +2,8 @@
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border-subtle);
   padding: var(--space-lg);
+  width: 100%;
+  min-width: 0;
 }
 
 .header {
@@ -43,6 +45,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  min-width: 0;
 }
 
 .option {
@@ -67,6 +70,7 @@
   flex: 1;
   min-width: 0;
   overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .option:hover:not(:disabled) {
@@ -421,6 +425,15 @@
     line-height: 1.45;
   }
 
+  .feedback {
+    gap: 0.85rem;
+  }
+
+  .feedback :global(.btn-primary) {
+    width: 100%;
+    justify-content: center;
+  }
+
   .optionLetter {
     font-size: 0.92rem;
   }
@@ -494,6 +507,18 @@
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 0.95rem;
+  }
+
+  .questionText {
+    font-size: 1.12rem;
+  }
+
+  .option {
+    font-size: 0.95rem;
+  }
+
   .axesPlotWrap {
     padding: 0.85rem;
   }

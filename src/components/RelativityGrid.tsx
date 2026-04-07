@@ -5,8 +5,19 @@ import { useEffect, useState } from "react";
 
 export default function RelativityGrid() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isTouch, setIsTouch] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(hover: none), (pointer: coarse)").matches,
+  );
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
+
+    const handleMediaChange = (event: MediaQueryListEvent) => {
+      setIsTouch(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaChange);
+
     const handleMouseMove = (e: MouseEvent) => {
       // Normalizar coordenadas entre -1 y 1
       const x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -14,8 +25,14 @@ export default function RelativityGrid() {
       setMousePosition({ x, y });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    if (!mediaQuery.matches) {
+      window.addEventListener("mousemove", handleMouseMove);
+    }
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaChange);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   return (
@@ -38,9 +55,9 @@ export default function RelativityGrid() {
     >
       <motion.div
         animate={{
-          rotateX: 60 + mousePosition.y * 10,
-          rotateY: mousePosition.x * 10,
-          rotateZ: mousePosition.x * 2,
+          rotateX: 60 + mousePosition.y * (isTouch ? 2 : 10),
+          rotateY: mousePosition.x * (isTouch ? 2 : 10),
+          rotateZ: mousePosition.x * (isTouch ? 0.6 : 2),
         }}
         transition={{ type: "spring", damping: 50, stiffness: 100 }}
         style={{
@@ -72,7 +89,7 @@ export default function RelativityGrid() {
           width: "40vw",
           height: "40vw",
           background: "radial-gradient(circle, rgba(198, 155, 116, 0.2) 0%, rgba(255,255,255,0.06) 34%, transparent 68%)",
-          filter: "blur(60px)",
+          filter: isTouch ? "blur(36px)" : "blur(60px)",
           borderRadius: "50%",
         }}
       />

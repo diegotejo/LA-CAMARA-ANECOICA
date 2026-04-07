@@ -199,8 +199,14 @@
     margin-bottom: var(--space-lg);
   }
 
+  .title {
+    font-size: clamp(2.25rem, 10vw, 2.8rem);
+    line-height: 1.08;
+  }
+
   .intro {
-    font-size: 1rem;
+    font-size: 1.08rem;
+    line-height: 1.7;
   }
 
   .nav {
@@ -220,7 +226,8 @@
   }
 
   .navMeta {
-    font-size: 0.74rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
   }
 
   .quizContent {
@@ -234,5 +241,23 @@
   .quizDesc {
     font-size: 1.03rem;
     line-height: 1.65;
+  }
+}
+
+@media (max-width: 420px) {
+  .label {
+    font-size: 0.76rem;
+  }
+
+  .title {
+    font-size: clamp(2.05rem, 10vw, 2.45rem);
+  }
+
+  .navItem {
+    padding: 0.8rem 0.82rem;
+  }
+
+  .quizContent {
+    padding: 0.95rem;
   }
 }
