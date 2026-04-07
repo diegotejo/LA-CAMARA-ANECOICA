@@ -119,37 +119,37 @@ a:hover {
 /* ============================================================
    Efecto global de texto (marron + gradiente del logo)
    ============================================================ */
-:where(h1, h2, h3, h4, h5, h6, p, span, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time, button) {
-  color: var(--color-text) !important;
+:where(h1, h2, h3, h4, h5, h6, p, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time) {
+  color: var(--color-text);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  :where(h1, h2, h3, h4, h5, h6, p, span, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time, button):hover {
+  :where(h1, h2, h3, h4, h5, h6, p, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time):hover {
     background-image: var(--logo-text-gradient);
     background-size: 180% 180%;
     background-position: 0% 50%;
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent !important;
+    color: transparent;
     -webkit-text-fill-color: transparent;
     transition: background-position 700ms ease;
   }
 }
 
 @media (hover: none), (pointer: coarse) {
-  :where(h1, h2, h3, h4, h5, h6, p, span, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time, button) {
+  :where(h1, h2, h3, h4, h5, h6, p, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time) {
     background-image: var(--logo-text-gradient);
     background-size: 220% 220%;
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent !important;
+    color: transparent;
     -webkit-text-fill-color: transparent;
     animation: logoTextGradientLoop 14s ease-in-out infinite;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :where(h1, h2, h3, h4, h5, h6, p, span, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time, button) {
+  :where(h1, h2, h3, h4, h5, h6, p, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time) {
     animation: none !important;
     background-position: 50% 50%;
   }

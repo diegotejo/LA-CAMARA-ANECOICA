@@ -15,7 +15,11 @@ export const metadata: Metadata = {
 async function getVideos(): Promise<VideoData[]> {
   const filePath = path.join(process.cwd(), "data", "videos.json");
   const fileContents = fs.readFileSync(filePath, "utf8");
-  return JSON.parse(fileContents);
+  const videos: VideoData[] = JSON.parse(fileContents);
+
+  return videos.sort(
+    (a, b) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime(),
+  );
 }
 
 export default async function VideosPage() {

@@ -14,7 +14,13 @@ export const metadata: Metadata = {
 async function getQuizzes(): Promise<QuizData[]> {
   const filePath = path.join(process.cwd(), "data", "quizzes.json");
   const fileContents = fs.readFileSync(filePath, "utf8");
-  return JSON.parse(fileContents);
+  const quizzes: QuizData[] = JSON.parse(fileContents);
+
+  return quizzes.sort((a, b) => {
+    if (a.id === "quiz-05") return -1;
+    if (b.id === "quiz-05") return 1;
+    return a.title.localeCompare(b.title, "es");
+  });
 }
 
 export default async function CuestionariosPage() {
