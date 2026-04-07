@@ -54,7 +54,7 @@ export default function CuestionariosGallery({ quizzes }: { quizzes: QuizData[] 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              style={{ padding: "var(--space-2xl)" }}
+              className={styles.quizContent}
             >
               <div className={styles.quizIntro}>
                 <h3 className={styles.quizTitle}>{selectedQuiz.title}</h3>

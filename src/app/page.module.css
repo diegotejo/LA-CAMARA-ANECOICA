@@ -49,6 +49,11 @@
 
 .heroCtaArea {
   margin-top: var(--space-md);
+  width: min(100%, 34rem);
+}
+
+.heroCtaArea :global(.btn-primary) {
+  max-width: 100%;
 }
 
 .section {
@@ -164,4 +169,24 @@
   color: var(--color-text-secondary);
   max-width: 250px;
   margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: auto;
+    padding-top: var(--space-lg);
+  }
+
+  .heroLogoWrap {
+    width: min(30rem, 90vw);
+  }
+
+  .heroCtaArea :global(.btn-primary) {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.35;
+    padding: 0.85rem 1rem;
+  }
 }
