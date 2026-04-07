@@ -193,6 +193,10 @@
   gap: 0.9rem;
 }
 
+.axesLegendCompact {
+  display: none;
+}
+
 .axesPanel {
   padding: 1.25rem;
   border: 1px solid var(--color-border-subtle);
@@ -392,19 +396,28 @@
 
 @media (max-width: 760px) {
   .container {
-    padding: 0.9rem;
+    padding: 1.1rem;
   }
 
   .questionText {
-    font-size: 1.08rem;
+    font-size: 1.22rem;
     margin-bottom: var(--space-md);
+    line-height: 1.5;
   }
 
   .option {
-    padding: 0.78rem 0.85rem;
-    gap: 0.55rem;
-    font-size: 0.9rem;
-    line-height: 1.4;
+    padding: 0.95rem 1rem;
+    gap: 0.65rem;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .optionLetter {
+    font-size: 0.92rem;
+  }
+
+  .progress {
+    font-size: 0.8rem;
   }
 
   .resultScore {
@@ -472,23 +485,60 @@
 }
 
 @media (max-width: 480px) {
-  .axesTitleX {
-    width: 5.2rem;
-    font-size: 0.62rem;
+  .axesPlotWrap {
+    padding: 0.85rem;
   }
 
-  .axesAxisLabelRight,
-  .axesAxisLabelLeft {
+  .axesTitleX {
     display: none;
   }
 
+  .axesTitleY {
+    display: none;
+  }
+
+  .axesAxisLabelRight,
+  .axesAxisLabelLeft,
   .axesAxisLabelTop,
   .axesAxisLabelBottom {
-    font-size: 0.52rem;
+    display: none;
+  }
+
+  .axesLegendCompact {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+    font-size: 0.73rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .axesLegendCompact span {
+    border: 1px solid var(--color-border-subtle);
+    padding: 0.28rem 0.38rem;
+    text-align: center;
+  }
+
+  .axesCoordinate {
+    font-size: 1.1rem;
   }
 
   .axesPoint {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.28), 0 4px 12px rgba(0, 0, 0, 0.22);
+  }
+
+  .ideologyItem {
+    gap: 0.55rem;
+  }
+
+  .ideologyItem strong {
+    font-size: 0.9rem;
+  }
+
+  .ideologyItem em {
+    font-size: 0.82rem;
   }
 }

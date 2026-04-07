@@ -38,6 +38,14 @@ export default function Footer() {
               >
                 YouTube ↗
               </a>
+              <a
+                href={siteConfig.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.link}
+              >
+                Instagram ↗
+              </a>
               <Link href="/sobre" className={styles.link}>Manifiesto</Link>
             </div>
           </div>

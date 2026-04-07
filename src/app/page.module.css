@@ -33,7 +33,7 @@
 }
 
 .heroTitle {
-  font-size: clamp(2.4rem, 8vw, 6rem);
+  font-size: clamp(2.8rem, 8vw, 6rem);
   line-height: 1;
   margin-bottom: var(--space-lg);
   color: #fff;
@@ -191,11 +191,24 @@
     padding: 0.85rem 1rem;
   }
 
+  .heroDesc {
+    font-size: 1.16rem;
+    line-height: 1.7;
+  }
+
   .section {
     padding: var(--space-xl) 0;
   }
 
   .cardInner {
     padding: var(--space-lg);
+  }
+
+  .cardTitle {
+    font-size: 1.45rem;
+  }
+
+  .cardDesc {
+    font-size: 1rem;
   }
 }

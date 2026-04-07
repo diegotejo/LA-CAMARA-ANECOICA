@@ -96,7 +96,7 @@
   }
 
   .intro {
-    font-size: 1rem;
+    font-size: 1.08rem;
     line-height: 1.6;
   }
 
@@ -109,6 +109,17 @@
   .filterBtn {
     flex-shrink: 0;
     white-space: nowrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: clamp(2.4rem, 8vw, 3rem);
+  }
+
+  .filterBtn {
+    font-size: 0.9rem;
+    padding: 0.58rem 1rem;
   }
 }
 

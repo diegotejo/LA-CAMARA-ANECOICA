@@ -28,7 +28,7 @@ export default function SobrePage() {
       </motion.header>
 
       <motion.div 
-        className={styles.content}
+        className={`${styles.content} mixToneCopy`}
         initial="hidden" animate="show" variants={STAGGER}
       >
         <motion.div className={styles.block} variants={FADE_UP}>

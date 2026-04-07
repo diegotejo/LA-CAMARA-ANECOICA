@@ -118,4 +118,13 @@
   .title {
     font-size: 1.25rem;
   }
+
+  .tagline {
+    font-size: 1.02rem;
+    line-height: 1.65;
+  }
+
+  .link {
+    font-size: 0.95rem;
+  }
 }

@@ -204,26 +204,29 @@
   }
 
   .navItem {
-    min-width: 12.2rem;
+    min-width: 14.2rem;
+    padding: 0.85rem 0.95rem;
   }
 
   .navLabel {
-    font-size: 0.88rem;
+    font-size: 0.96rem;
+    line-height: 1.35;
   }
 
   .navMeta {
-    font-size: 0.68rem;
+    font-size: 0.74rem;
   }
 
   .quizContent {
-    padding: 0.9rem;
+    padding: 1.1rem;
   }
 
   .quizTitle {
-    font-size: 1.45rem;
+    font-size: 1.62rem;
   }
 
   .quizDesc {
-    font-size: 0.96rem;
+    font-size: 1.03rem;
+    line-height: 1.65;
   }
 }

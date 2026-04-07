@@ -70,7 +70,7 @@ export default async function ArticleDetailPage({
           </SpotlightCard>
         </aside>
 
-        <article className={styles.articleBody}>
+        <article className={`${styles.articleBody} mixToneCopy`}>
           {article.sections.map((section) => (
             <section key={section.title} className={styles.articleSection}>
               <h2 className={styles.sectionTitle}>{section.title}</h2>

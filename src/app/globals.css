@@ -13,13 +13,13 @@
 /* Tokens de diseño - Deep Dark */
 :root {
   /* Fondo principal ultra oscuro (Pure Dark/Jet) */
-  --color-bg: #050505;
-  --color-bg-card: #0A0A0A;
+  --color-bg: #0a0a0b;
+  --color-bg-card: #121214;
   
   /* Textos */
-  --color-text: #b8865b;
-  --color-text-secondary: #cf9f77;
-  --color-text-muted: #8d674a;
+  --color-text: #c69b74;
+  --color-text-secondary: #d8b496;
+  --color-text-muted: #9e7b5e;
   --logo-text-gradient: linear-gradient(110deg, #ff327f 0%, #ff7b4a 28%, #d290ff 58%, #8a63ff 100%);
 
   /* Acentos y Glow (Cobre iluminado) */
@@ -31,8 +31,8 @@
   --color-bg-warm: rgba(184, 134, 91, 0.08);
 
   /* Bordes sutiles Next.js style */
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border: rgba(255, 255, 255, 0.14);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
   
   /* Colores para tests validación sobre modo oscuro */
   --color-correct: #32d583;
@@ -71,6 +71,18 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-bg);
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 420px) {
+  html {
+    font-size: 16.5px;
+  }
 }
 
 body {
@@ -148,6 +160,22 @@ a:hover {
   :where(h1, h2, h3, h4, h5, h6, p, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time) {
     animation: none !important;
     background-position: 50% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mixToneCopy p {
+    color: var(--color-text-secondary);
+  }
+
+  .mixToneCopy p:nth-of-type(even) {
+    background-image: var(--logo-text-gradient);
+    background-size: 100% 100%;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
   }
 }
 

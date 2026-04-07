@@ -192,6 +192,12 @@ export default function QuizPlayer({ quiz }: { quiz: QuizData }) {
                   <span className={styles.axesAxisLabelBottom}>Progreso</span>
                   <span className={styles.axesAxisLabelLeft}>Estado</span>
                 </div>
+                <div className={styles.axesLegendCompact}>
+                  <span>Tradicion</span>
+                  <span>Mercado</span>
+                  <span>Progreso</span>
+                  <span>Estado</span>
+                </div>
                 <p className={styles.axesCoordinate}>
                   X {ideologyResult.x >= 0 ? "+" : ""}
                   {ideologyResult.x} / Y {ideologyResult.y >= 0 ? "+" : ""}
