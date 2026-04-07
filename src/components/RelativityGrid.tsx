@@ -32,7 +32,8 @@ export default function RelativityGrid() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "var(--color-bg)", // El fondo base ahora vive aquí
+        background:
+          "radial-gradient(circle at 50% 35%, rgba(255,255,255,0.04), rgba(255,255,255,0) 52%), var(--color-bg)",
       }}
     >
       <motion.div
@@ -48,10 +49,10 @@ export default function RelativityGrid() {
           position: "absolute",
           top: "-50%",
           left: "-50%",
-          // Genera la cuadrícula con más contraste
+          // Genera la cuadrícula con contraste suave
           backgroundImage: `
-            linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
+            linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px)
           `,
           backgroundSize: "80px 80px",
           // Máscara radial más amplia
@@ -70,7 +71,7 @@ export default function RelativityGrid() {
           position: "absolute",
           width: "40vw",
           height: "40vw",
-          background: "radial-gradient(circle, rgba(184, 134, 91, 0.15) 0%, transparent 60%)",
+          background: "radial-gradient(circle, rgba(198, 155, 116, 0.2) 0%, rgba(255,255,255,0.06) 34%, transparent 68%)",
           filter: "blur(60px)",
           borderRadius: "50%",
         }}

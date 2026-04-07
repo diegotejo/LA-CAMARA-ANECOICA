@@ -307,7 +307,7 @@ export default function QuizPlayer({ quiz }: { quiz: QuizData }) {
               disabled={answered}
             >
               <span className={styles.optionLetter}>{String.fromCharCode(65 + idx)}</span>
-              {typeof opt === "string" ? opt : opt.label}
+              <span className={styles.optionText}>{typeof opt === "string" ? opt : opt.label}</span>
             </button>
           );
         })}

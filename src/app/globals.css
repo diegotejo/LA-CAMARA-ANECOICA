@@ -13,8 +13,8 @@
 /* Tokens de diseño - Deep Dark */
 :root {
   /* Fondo principal ultra oscuro (Pure Dark/Jet) */
-  --color-bg: #0a0a0b;
-  --color-bg-card: #121214;
+  --color-bg: #121318;
+  --color-bg-card: #1a1c24;
   
   /* Textos */
   --color-text: #c69b74;
@@ -31,8 +31,8 @@
   --color-bg-warm: rgba(184, 134, 91, 0.08);
 
   /* Bordes sutiles Next.js style */
-  --color-border: rgba(255, 255, 255, 0.14);
-  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(255, 255, 255, 0.18);
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
   
   /* Colores para tests validación sobre modo oscuro */
   --color-correct: #32d583;

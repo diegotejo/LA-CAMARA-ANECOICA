@@ -203,8 +203,14 @@
     font-size: 1rem;
   }
 
+  .nav {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+
   .navItem {
-    min-width: 14.2rem;
+    width: 100%;
+    min-width: 0;
     padding: 0.85rem 0.95rem;
   }
 

@@ -36,6 +36,7 @@
   line-height: 1.45;
   color: var(--color-text);
   margin-bottom: var(--space-lg);
+  overflow-wrap: anywhere;
 }
 
 .options {
@@ -48,6 +49,8 @@
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
+  width: 100%;
+  min-width: 0;
   padding: 1rem 1.2rem;
   background: transparent;
   border: 1px solid var(--color-border);
@@ -58,6 +61,12 @@
   text-align: left;
   transition: all var(--duration-fast) ease;
   line-height: 1.5;
+}
+
+.optionText {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .option:hover:not(:disabled) {
