@@ -26,7 +26,7 @@ export default async function VideosPage() {
   const videos = await getVideos();
 
   return (
-    <div className={`container ${styles.page}`}>
+    <div className={`container ${styles.page} mixToneCopy`}>
       <header className={styles.header}>
         <p className={`${styles.label} fade-in`}>Archivo</p>
         <h1 className={`${styles.title} fade-in`}>Archivo Audiovisual</h1>

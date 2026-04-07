@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ArticulosPage() {
   return (
-    <div className={`container ${styles.page}`}>
+    <div className={`container ${styles.page} mixToneCopy`}>
       <header className={styles.header}>
         <p className={styles.label}>Editorial</p>
         <h1 className={styles.title}>Textos y Ensayos</h1>

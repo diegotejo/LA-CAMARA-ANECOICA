@@ -28,7 +28,7 @@ export default async function CuestionariosPage() {
 
   return (
     <div className={`container ${styles.page}`}>
-      <header className={styles.header}>
+      <header className={`${styles.header} mixToneCopy`}>
         <p className={`${styles.label} fade-in`}>Autoevaluación</p>
         <h1 className={`${styles.title} fade-in`}>Cuestionarios Temáticos</h1>
         <p className={`${styles.intro} slide-up`}>

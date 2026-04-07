@@ -26,7 +26,7 @@ const STAGGER: Variants = {
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className="container">
+      <main className="container mixToneCopy">
         {/* --- HERO SECTION --- */}
         <motion.section
           className={styles.hero}
