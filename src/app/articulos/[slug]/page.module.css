@@ -1,0 +1,109 @@
+.page {
+  padding: var(--space-2xl) 0;
+}
+
+.backRow {
+  margin-bottom: var(--space-lg);
+}
+
+.backLink {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.articleLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.articleMetaCard {
+  position: sticky;
+  top: 104px;
+  padding: var(--space-xl);
+  background-color: var(--color-bg-card);
+}
+
+.articleLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+
+.articleTitle {
+  font-size: 1.8rem;
+  line-height: 1.18;
+  margin-bottom: var(--space-lg);
+}
+
+.articleExcerpt {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.metaBlock {
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.metaBlock + .metaBlock {
+  margin-top: var(--space-md);
+}
+
+.metaBlock span {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.metaBlock a,
+.metaBlock strong {
+  color: var(--color-text);
+}
+
+.articleBody {
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+  border: 1px solid var(--color-border-subtle);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
+    rgba(8, 8, 8, 0.88);
+}
+
+.articleSection + .articleSection {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.sectionTitle {
+  font-size: 1.35rem;
+  margin-bottom: var(--space-md);
+}
+
+.articleSection p {
+  font-size: 1.02rem;
+  color: var(--color-text-secondary);
+  line-height: 1.9;
+  margin-bottom: var(--space-sm);
+}
+
+@media (max-width: 920px) {
+  .articleLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .articleMetaCard {
+    position: static;
+  }
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "video-01",
+    "title": "SYKES-PICOT para entender Oriente Medio",
+    "youtubeEmbedId": "6F8c0qLLr1o",
+    "slug": "sykes-picot-oriente-medio",
+    "topic": "Geopolítica",
+    "series": "Orbis Terrarum",
+    "shortDescription": "Una introducción breve al reparto colonial de Oriente Medio y a la manera en que ese acuerdo sigue condicionando la conflictividad de la región.",
+    "bibliography": [],
+    "relatedConcepts": ["Imperio otomano", "Mandatos coloniales", "Fronteras artificiales", "Oriente Medio"],
+    "publishedDate": "2026-03-11"
+  },
+  {
+    "id": "video-02",
+    "title": "EEUU E ISRAEL ATACAN IRÁN",
+    "youtubeEmbedId": "5WbboYoCm6Q",
+    "slug": "eeuu-israel-atacan-iran",
+    "topic": "Geopolítica",
+    "series": "Orbis Terrarum",
+    "shortDescription": "Aproximación al conflicto iraní-israelí-estadounidense a partir de tres claves para situar el choque más allá del titular inmediato.",
+    "bibliography": [],
+    "relatedConcepts": ["Irán", "Israel", "Estados Unidos", "Escalada regional"],
+    "publishedDate": "2026-03-01"
+  },
+  {
+    "id": "video-03",
+    "title": "¿A qué ideología perteneces?",
+    "youtubeEmbedId": "mUGBSHZyR_o",
+    "slug": "a-que-ideologia-perteneces",
+    "topic": "Filosofía política",
+    "series": "La Tribu",
+    "shortDescription": "Una reflexión introductoria sobre qué es una ideología, por qué las personas se posicionan políticamente y qué límites tiene reducirlo todo a etiquetas simples.",
+    "bibliography": [],
+    "relatedConcepts": ["Ideología", "Posicionamiento político", "Marcos de interpretación", "Cultura política"],
+    "publishedDate": "2026-03-17"
+  },
+  {
+    "id": "video-04",
+    "title": "Lenin no votaría a SUMAR",
+    "youtubeEmbedId": "YSmH6WbZYd0",
+    "slug": "lenin-no-votaria-a-sumar",
+    "topic": "Ideología",
+    "series": "La Tribu",
+    "shortDescription": "Análisis de la trayectoria de SUMAR y de la distancia entre su proyecto político y la tradición leninista evocada en el título.",
+    "bibliography": [],
+    "relatedConcepts": ["SUMAR", "Izquierda institucional", "Leninismo", "Yolanda Díaz"],
+    "publishedDate": "2026-04-03"
+  },
+  {
+    "id": "video-05",
+    "title": "¿Es España un Estado laico?",
+    "youtubeEmbedId": "tQlE-L-4Fk0",
+    "slug": "es-espana-estado-laico",
+    "topic": "Sociología política",
+    "series": "La Tribu",
+    "shortDescription": "La Semana Santa se toma aquí como punto de entrada para pensar la relación entre Iglesia, Estado y espacio público en España.",
+    "bibliography": [],
+    "relatedConcepts": ["Laicidad", "Aconfesionalidad", "Iglesia", "Estado"],
+    "publishedDate": "2026-03-31"
+  },
+  {
+    "id": "video-06",
+    "title": "ASÍ SECUESTRAN TU ATENCIÓN",
+    "youtubeEmbedId": "G5GGQy0jakY",
+    "slug": "asi-secuestran-tu-atencion",
+    "topic": "Pensamiento crítico",
+    "series": "Antipéndulo",
+    "shortDescription": "A partir de un caso mediático concreto, el vídeo examina cómo el sensacionalismo organiza la atención y desplaza el análisis.",
+    "bibliography": [],
+    "relatedConcepts": ["Atención", "Espectáculo mediático", "Sensacionalismo", "Agenda"],
+    "publishedDate": "2026-03-24"
+  },
+  {
+    "id": "video-07",
+    "title": "¿NO A LA GUERRA?",
+    "youtubeEmbedId": "4lhzs6WjeiE",
+    "slug": "no-a-la-guerra",
+    "topic": "Filosofía política",
+    "series": "Antipéndulo",
+    "shortDescription": "Comentario sobre las declaraciones cruzadas entre Trump y Sánchez para pensar el pacifismo y la política internacional sin respuestas reflejas.",
+    "bibliography": [],
+    "relatedConcepts": ["Pacifismo", "Guerra", "Trump", "Sánchez"],
+    "publishedDate": "2026-03-06"
+  },
+  {
+    "id": "video-08",
+    "title": "Ideología VS Identidad",
+    "youtubeEmbedId": "egXuXfNlmfg",
+    "slug": "ideologia-vs-identidad",
+    "topic": "Sociología política",
+    "series": "La Tribu",
+    "shortDescription": "Pieza de arranque de la serie dedicada a contraponer la lógica de la ideología y la lógica de la identidad en el debate contemporáneo.",
+    "bibliography": [],
+    "relatedConcepts": ["Identidad", "Ideología", "Pertenencia", "Conflicto cultural"],
+    "publishedDate": "2026-03-04"
+  },
+  {
+    "id": "video-09",
+    "title": "REGULARIZACIÓN",
+    "youtubeEmbedId": "vnSxZXg12Bo",
+    "slug": "regularizacion",
+    "topic": "Sociología política",
+    "series": "Antipéndulo",
+    "shortDescription": "Primer vídeo del canal: un análisis pausado de la propuesta de regularización de migrantes planteada por el Gobierno.",
+    "bibliography": [],
+    "relatedConcepts": ["Migración", "Regularización", "Política pública", "Debate social"],
+    "publishedDate": "2026-02-28"
+  }
+]

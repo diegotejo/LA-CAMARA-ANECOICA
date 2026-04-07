@@ -1,0 +1,507 @@
+[
+  {
+    "id": "quiz-01",
+    "title": "Sykes-Picot y la partición de Oriente Medio",
+    "description": "Diez preguntas para fijar conceptos históricos, actores y consecuencias políticas del acuerdo que marcó el reparto colonial de la región.",
+    "mode": "knowledge",
+    "relatedVideoId": "video-01",
+    "questions": [
+      {
+        "question": "¿En qué año se firmaron los acuerdos Sykes-Picot?",
+        "options": ["1914", "1916", "1918", "1920"],
+        "correctIndex": 1,
+        "explanation": "El acuerdo se negocia en 1916, en plena Primera Guerra Mundial, entre representantes británicos y franceses."
+      },
+      {
+        "question": "¿Qué potencias fueron las firmantes principales del acuerdo?",
+        "options": ["Alemania y Austria-Hungría", "Reino Unido y Francia", "Rusia y el Imperio otomano", "Italia y Grecia"],
+        "correctIndex": 1,
+        "explanation": "Sykes-Picot fue un acuerdo anglo-francés para repartirse zonas de influencia en los territorios árabes del Imperio otomano."
+      },
+      {
+        "question": "¿Sobre qué estructura imperial se proyectó el reparto?",
+        "options": ["Imperio persa", "Imperio ruso", "Imperio otomano", "Imperio austrohúngaro"],
+        "correctIndex": 2,
+        "explanation": "El reparto se pensó sobre las provincias árabes del Imperio otomano, cuya descomposición abrió el escenario colonial."
+      },
+      {
+        "question": "¿Qué promesa británica entró en contradicción con Sykes-Picot?",
+        "options": ["La Doctrina Truman", "La correspondencia Hussein-McMahon", "El Plan Marshall", "El Tratado de Lausana"],
+        "correctIndex": 1,
+        "explanation": "La correspondencia con Hussein sugería apoyo a una independencia árabe amplia, algo incompatible con el reparto secreto."
+      },
+      {
+        "question": "¿Qué lógica política expresa mejor el acuerdo?",
+        "options": ["Autodeterminación de los pueblos", "Equilibrio colonial entre potencias", "Federalismo democrático", "No alineamiento"],
+        "correctIndex": 1,
+        "explanation": "El acuerdo responde a una lógica de reparto colonial e interés estratégico, no a la voluntad de las poblaciones locales."
+      },
+      {
+        "question": "¿Qué país actual no surge directamente de ese reparto postotomano?",
+        "options": ["Irak", "Siria", "Irán", "Líbano"],
+        "correctIndex": 2,
+        "explanation": "Irán no es producto directo del reparto Sykes-Picot; Irak, Siria y Líbano sí quedan ligados al nuevo orden de mandatos."
+      },
+      {
+        "question": "¿Cómo se denominó el sistema jurídico-político con el que se administró después la región?",
+        "options": ["Protectorados de la OTAN", "Sistema de mandatos", "Confederación árabe", "Zona Schengen"],
+        "correctIndex": 1,
+        "explanation": "La Sociedad de Naciones legitimó la presencia colonial bajo la fórmula de los mandatos británicos y franceses."
+      },
+      {
+        "question": "¿Qué efecto político durable se asocia al trazado de fronteras externas?",
+        "options": ["Homogeneización cultural inmediata", "Desaparición de rivalidades locales", "Tensiones estatales y comunitarias persistentes", "Neutralidad geopolítica de la región"],
+        "correctIndex": 2,
+        "explanation": "Las fronteras impuestas no resolvieron las fracturas locales y contribuyeron a conflictos estatales, identitarios y territoriales duraderos."
+      },
+      {
+        "question": "¿Qué término se usa a menudo para describir la fragmentación artificiosa de territorios?",
+        "options": ["Panarabismo", "Balcanización", "Mercantilismo", "Soberanismo"],
+        "correctIndex": 1,
+        "explanation": "Balcanización alude a la división de espacios políticos en unidades pequeñas, inestables o conflictivas, muchas veces bajo presión externa."
+      },
+      {
+        "question": "¿Cuál es una buena razón para seguir estudiando Sykes-Picot hoy?",
+        "options": ["Porque explica por sí solo toda la historia de Oriente Medio", "Porque muestra cómo decisiones coloniales siguen pesando en conflictos presentes", "Porque fue el origen del derecho internacional contemporáneo", "Porque eliminó toda injerencia europea en la zona"],
+        "correctIndex": 1,
+        "explanation": "No lo explica todo, pero sigue siendo una pieza clave para entender fronteras, mandatos, legitimidades y memorias políticas de la región."
+      }
+    ]
+  },
+  {
+    "id": "quiz-02",
+    "title": "Ideologías políticas: conceptos fundamentales",
+    "description": "Diez preguntas para ordenar los conceptos básicos que aparecen al hablar de liberalismo, conservadurismo, marxismo y hegemonía.",
+    "mode": "knowledge",
+    "relatedVideoId": "video-03",
+    "questions": [
+      {
+        "question": "¿En la teoría marxista, qué nombre recibe el conjunto de instituciones políticas, jurídicas e ideológicas?",
+        "options": ["Infraestructura", "Superestructura", "Mercado", "Soberanía"],
+        "correctIndex": 1,
+        "explanation": "La superestructura designa el nivel político, jurídico e ideológico que se articula sobre una base material determinada."
+      },
+      {
+        "question": "¿Cuál es una premisa central del liberalismo clásico?",
+        "options": ["Propiedad colectiva universal", "Supremacía moral del Estado", "Limitación del poder para proteger libertades individuales", "Abolición de toda frontera"],
+        "correctIndex": 2,
+        "explanation": "El liberalismo clásico defiende limitar el poder político para proteger derechos, propiedad y libertades civiles."
+      },
+      {
+        "question": "¿Qué autor suele citarse como referencia fundacional del conservadurismo moderno?",
+        "options": ["Edmund Burke", "Thomas Paine", "Antonio Gramsci", "John Rawls"],
+        "correctIndex": 0,
+        "explanation": "Burke critica la ruptura revolucionaria y reivindica prudencia, continuidad histórica e instituciones heredadas."
+      },
+      {
+        "question": "¿Qué concepto de Gramsci describe la capacidad de una fuerza para presentar sus valores como sentido común?",
+        "options": ["Alienación", "Hegemonía cultural", "Estado de excepción", "Praxis"],
+        "correctIndex": 1,
+        "explanation": "La hegemonía cultural opera cuando una visión del mundo se vuelve común, legítima y aparentemente natural."
+      },
+      {
+        "question": "¿Para Norberto Bobbio, la gran distinción entre izquierda y derecha gira alrededor de qué problema?",
+        "options": ["La relación con la igualdad", "La defensa del nacionalismo", "La forma monárquica", "La técnica administrativa"],
+        "correctIndex": 0,
+        "explanation": "Bobbio coloca la actitud frente a la igualdad como diferencia estructural entre ambas tradiciones."
+      },
+      {
+        "question": "¿Qué intenta hacer una ideología, más allá de etiquetar a los actores?",
+        "options": ["Solo describir emociones colectivas", "Organizar una interpretación coherente de la sociedad", "Sustituir por completo a la religión", "Eliminar el conflicto social"],
+        "correctIndex": 1,
+        "explanation": "Una ideología articula principios, intereses, diagnósticos y fines políticos dentro de un marco coherente."
+      },
+      {
+        "question": "¿Qué rasgo diferencia a una doctrina conservadora de una revolucionaria?",
+        "options": ["La importancia concedida a la continuidad institucional", "El rechazo a la propiedad privada", "La eliminación del Estado", "La defensa automática del mercado global"],
+        "correctIndex": 0,
+        "explanation": "El conservadurismo tiende a valorar la continuidad, la reforma gradual y la experiencia histórica frente a la ruptura total."
+      },
+      {
+        "question": "¿Qué busca explicar la noción de ideología en sentido amplio?",
+        "options": ["Solo la propaganda electoral", "Cómo se interpreta el poder, la sociedad y el conflicto", "Únicamente la identidad de clase", "Exclusivamente las preferencias morales privadas"],
+        "correctIndex": 1,
+        "explanation": "La ideología no se reduce a slogans: organiza una lectura del orden social, de sus conflictos y de sus posibles salidas."
+      },
+      {
+        "question": "¿Qué autor relaciona especialmente ideología y conceptos políticos en disputa dentro de una tradición?",
+        "options": ["Michael Freeden", "Carl Schmitt", "Montesquieu", "Rousseau"],
+        "correctIndex": 0,
+        "explanation": "Freeden analiza las ideologías como configuraciones de conceptos políticos cuyos significados compiten por fijarse."
+      },
+      {
+        "question": "¿Qué problema aparece cuando se usa 'izquierda' o 'derecha' como etiqueta vacía?",
+        "options": ["Que desaparece la historia", "Que se pierde capacidad analítica y se simplifica en exceso", "Que se refuerza toda teoría política", "Que mejora la precisión del debate"],
+        "correctIndex": 1,
+        "explanation": "Cuando las etiquetas sustituyen al análisis, se vuelven marcas identitarias y dejan de aclarar posiciones reales sobre Estado, economía o cultura."
+      }
+    ]
+  },
+  {
+    "id": "quiz-03",
+    "title": "Estado, laicismo y poder religioso",
+    "description": "Diez preguntas para distinguir conceptos jurídicos, tensiones históricas y persistencias institucionales en la relación entre Iglesia y Estado.",
+    "mode": "knowledge",
+    "relatedVideoId": "video-05",
+    "questions": [
+      {
+        "question": "¿Qué diferencia fundamental existe entre un Estado laico y uno aconfesional?",
+        "options": ["Son exactamente lo mismo", "El laico separa más estrictamente religión y poder público", "El aconfesional prohíbe toda religión", "El laico reconoce una iglesia oficial"],
+        "correctIndex": 1,
+        "explanation": "La aconfesionalidad implica no tener religión oficial; el laicismo acentúa la separación entre esfera religiosa e instituciones públicas."
+      },
+      {
+        "question": "¿En qué año se firmaron los acuerdos entre el Estado español y la Santa Sede aún vigentes?",
+        "options": ["1931", "1953", "1978", "1979"],
+        "correctIndex": 3,
+        "explanation": "Los acuerdos de 1979 regulan ámbitos como la enseñanza religiosa, la asistencia espiritual y el régimen económico de la Iglesia."
+      },
+      {
+        "question": "¿Qué artículo constitucional recoge que ninguna confesión tendrá carácter estatal?",
+        "options": ["Artículo 1", "Artículo 9", "Artículo 16", "Artículo 27"],
+        "correctIndex": 2,
+        "explanation": "El artículo 16.3 afirma que ninguna confesión tendrá carácter estatal, aunque permite cooperación con las confesiones."
+      },
+      {
+        "question": "¿Qué indica mejor la expresión 'aconfesionalidad'?",
+        "options": ["Privatización absoluta de la fe", "Ausencia de religión oficial con posible cooperación institucional", "Imposición de ateísmo jurídico", "Supresión de toda simbología religiosa"],
+        "correctIndex": 1,
+        "explanation": "La aconfesionalidad no equivale a neutralidad radical: admite relaciones de cooperación con confesiones reconocidas."
+      },
+      {
+        "question": "¿Qué es la secularización en sentido sociológico?",
+        "options": ["La desaparición mecánica de toda creencia", "La transformación del lugar social de la religión", "La conversión obligatoria al racionalismo", "El control clerical del Estado"],
+        "correctIndex": 1,
+        "explanation": "La secularización suele describir la transformación de la religión dentro de la vida social, no necesariamente su extinción."
+      },
+      {
+        "question": "¿Qué problema político aparece cuando el Estado financia o privilegia una confesión?",
+        "options": ["Aumenta automáticamente la neutralidad", "Puede tensionar la igualdad de trato entre ciudadanos", "Desaparece el pluralismo", "Se elimina toda libertad religiosa"],
+        "correctIndex": 1,
+        "explanation": "La cooperación asimétrica puede generar desigualdad simbólica, jurídica o material entre distintas convicciones."
+      },
+      {
+        "question": "¿Qué describe el concepto de religión civil?",
+        "options": ["Una iglesia creada por decreto", "La sacralización simbólica de la comunidad política", "La teología oficial de la UE", "La religión mayoritaria en un Estado"],
+        "correctIndex": 1,
+        "explanation": "La religión civil designa rituales, símbolos y creencias que confieren un aura sagrada a la comunidad política."
+      },
+      {
+        "question": "¿Qué debate suele abrir la presencia de simbología religiosa en instituciones públicas?",
+        "options": ["El de la neutralidad del espacio común", "El de la balanza comercial", "El de la descentralización fiscal", "El del servicio militar"],
+        "correctIndex": 0,
+        "explanation": "La simbología en edificios, ceremonias o escuelas reabre la cuestión sobre qué significa neutralidad institucional."
+      },
+      {
+        "question": "¿Qué relación histórica ha sido especialmente relevante en España?",
+        "options": ["La del Estado con la Iglesia católica", "La del Estado con el budismo", "La del Estado con iglesias evangélicas pentecostales solamente", "La del Estado con religiones sin implantación"],
+        "correctIndex": 0,
+        "explanation": "El peso histórico del catolicismo en España explica buena parte del debate contemporáneo sobre laicidad y aconfesionalidad."
+      },
+      {
+        "question": "¿Qué mirada crítica propone el vídeo al tomar la Semana Santa como punto de entrada?",
+        "options": ["Reducirla a folclore apolítico", "Usarla para pensar vínculos entre tradición, institución y poder", "Negar cualquier valor cultural", "Tratar la religión como asunto puramente privado"],
+        "correctIndex": 1,
+        "explanation": "El vídeo utiliza una práctica social concreta para mostrar que la religión sigue teniendo espesor institucional y político."
+      }
+    ]
+  },
+  {
+    "id": "quiz-04",
+    "title": "Atención, medios y control cognitivo",
+    "description": "Diez preguntas para ordenar ideas sobre sensacionalismo, economía de la atención, propaganda y captura del debate público.",
+    "mode": "knowledge",
+    "relatedVideoId": "video-06",
+    "questions": [
+      {
+        "question": "¿Quién formula la idea de 'sociedad del espectáculo'?",
+        "options": ["Jean Baudrillard", "Guy Debord", "Michel Foucault", "Herbert Marcuse"],
+        "correctIndex": 1,
+        "explanation": "Debord analiza cómo la representación mediatizada sustituye la experiencia directa de la vida social."
+      },
+      {
+        "question": "¿Qué describe Shoshana Zuboff con 'capitalismo de la vigilancia'?",
+        "options": ["Un modelo de censura militar", "La extracción de datos conductuales para predecir y modular comportamientos", "La publicidad tradicional en prensa", "La propaganda estatal clásica"],
+        "correctIndex": 1,
+        "explanation": "Zuboff señala un modelo económico basado en convertir el comportamiento en materia prima explotable."
+      },
+      {
+        "question": "¿Qué rasgo subraya Byung-Chul Han al hablar de sociedad del cansancio?",
+        "options": ["Autoexplotación voluntaria", "Regreso del fordismo", "Dominio militar del trabajo", "Fin de la competitividad"],
+        "correctIndex": 0,
+        "explanation": "Han sostiene que el sujeto contemporáneo se explota a sí mismo en nombre del rendimiento y la libertad."
+      },
+      {
+        "question": "¿Qué favorecen los algoritmos cuando premian lo más emocional, polarizante o confirmatorio?",
+        "options": ["Deliberación pausada", "Cámaras de eco", "Neutralidad informativa", "Pluralismo estable"],
+        "correctIndex": 1,
+        "explanation": "La selección algorítmica tiende a reforzar sesgos previos y a reducir el encuentro con perspectivas distintas."
+      },
+      {
+        "question": "¿Qué expresión resume mejor el problema central de la economía de la atención?",
+        "options": ["Hay demasiada verdad disponible", "La atención humana se convierte en un recurso disputado", "Los medios ya no compiten", "La información pierde valor"],
+        "correctIndex": 1,
+        "explanation": "La cuestión principal es que plataformas, medios y actores políticos compiten por capturar tiempo, deseo y reacción."
+      },
+      {
+        "question": "¿Qué plantean Chomsky y Herman al hablar de 'modelo de propaganda'?",
+        "options": ["Que no existe ningún filtro mediático", "Que los medios seleccionan y enmarcan la realidad según estructuras de poder", "Que solo la televisión manipula", "Que el público siempre decide soberanamente"],
+        "correctIndex": 1,
+        "explanation": "Su tesis es que los medios no son transparentes: operan bajo filtros económicos, políticos y organizativos."
+      },
+      {
+        "question": "¿Qué efecto tiene el sensacionalismo sobre asuntos complejos?",
+        "options": ["Amplía necesariamente el contexto", "Suele reducirlos a estímulos de impacto rápido", "Elimina la emoción", "Incrementa el matiz argumentativo"],
+        "correctIndex": 1,
+        "explanation": "El sensacionalismo simplifica, dramatiza y reorganiza el foco para priorizar la reacción sobre la comprensión."
+      },
+      {
+        "question": "¿Qué significa que una noticia 'secuestre la atención'?",
+        "options": ["Que informa con más datos", "Que impone una agenda emocional desproporcionada", "Que corrige todos los sesgos", "Que vuelve irrelevante la política"],
+        "correctIndex": 1,
+        "explanation": "El secuestro de atención ocurre cuando una pieza absorbe energía mental y desplaza otros problemas o escalas de análisis."
+      },
+      {
+        "question": "¿Qué virtud reivindica el enfoque del canal frente al ruido mediático?",
+        "options": ["La respuesta inmediata", "La calma analítica", "La neutralidad sentimental total", "La espectacularización"],
+        "correctIndex": 1,
+        "explanation": "Frente a la captura de atención, el proyecto reivindica distancia, paciencia y análisis estructural."
+      },
+      {
+        "question": "¿Qué conviene preguntar ante un tema viral antes de reaccionar?",
+        "options": ["Quién gana con que yo mire solo esto", "Qué famoso lo comenta", "Cuántas visitas genera", "Qué meme lo resume mejor"],
+        "correctIndex": 0,
+        "explanation": "La pregunta por la agenda, el interés y el desplazamiento del foco ayuda a resistir la captura emocional inmediata."
+      }
+    ]
+  },
+  {
+    "id": "quiz-05",
+    "title": "¿Cuál es tu ideología?",
+    "description": "Test de 20 preguntas inspirado en el gráfico de doble eje: diez cuestiones económicas y diez socioculturales para situar tu posición aproximada.",
+    "mode": "axes",
+    "relatedVideoId": "video-03",
+    "questions": [
+      {
+        "type": "axis",
+        "axis": "economic",
+        "question": "¿Ante una crisis económica fuerte, qué debería hacer prioritariamente el Estado?",
+        "options": [
+          { "label": "Dirigir la recuperación con inversión pública y control estratégico.", "value": -2 },
+          { "label": "Intervenir bastante, aunque dejando espacio a la iniciativa privada.", "value": -1 },
+          { "label": "Ayudar solo de forma acotada para no distorsionar el mercado.", "value": 1 },
+          { "label": "Retirarse al máximo y dejar que el mercado reasigne recursos.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "economic",
+        "question": "¿Qué te parece más importante en política fiscal?",
+        "options": [
+          { "label": "Redistribuir riqueza aunque aumente la presión fiscal.", "value": -2 },
+          { "label": "Mantener progresividad, pero sin castigar demasiado la actividad económica.", "value": -1 },
+          { "label": "Bajar impuestos para estimular inversión y consumo.", "value": 1 },
+          { "label": "Reducir impuestos al mínimo porque cada uno debe gestionar sus recursos.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "economic",
+        "question": "¿Los sectores estratégicos como energía, transporte o agua deberían...?",
+        "options": [
+          { "label": "Estar bajo control público directo.", "value": -2 },
+          { "label": "Tener una fuerte regulación aunque admitan gestión privada.", "value": -1 },
+          { "label": "Operar en competencia con regulación básica.", "value": 1 },
+          { "label": "Funcionar casi enteramente como mercado abierto.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "economic",
+        "question": "¿Respecto al mercado laboral, cuál es tu intuición principal?",
+        "options": [
+          { "label": "Hace falta reforzar mucho la protección del trabajador.", "value": -2 },
+          { "label": "La flexibilidad es aceptable si hay buenas garantías sociales.", "value": -1 },
+          { "label": "Demasiada rigidez destruye empleo y debe corregirse.", "value": 1 },
+          { "label": "La prioridad es maximizar flexibilidad y reducir cargas empresariales.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "economic",
+        "question": "¿Cuando una gran empresa obtiene beneficios extraordinarios, lo razonable sería...?",
+        "options": [
+          { "label": "Gravarla de forma intensa para redistribuir ese excedente.", "value": -2 },
+          { "label": "Aplicar impuestos o topes temporales en casos concretos.", "value": -1 },
+          { "label": "No penalizarla salvo abuso claro de posición dominante.", "value": 1 },
+          { "label": "Evitar gravarla porque castigar el éxito frena la economía.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "economic",
+        "question": "¿Sobre la vivienda, cuál te parece la mejor orientación?",
+        "options": [
+          { "label": "Intervención fuerte: parque público amplio y control de precios.", "value": -2 },
+          { "label": "Regular alquileres en zonas tensionadas y ampliar oferta pública.", "value": -1 },
+          { "label": "Priorizar incentivos para construir más y desbloquear oferta privada.", "value": 1 },
+          { "label": "Evitar controles y dejar que el mercado fije precios libremente.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "economic",
+        "question": "¿Qué opinas del comercio internacional?",
+        "options": [
+          { "label": "Debe limitarse para proteger sectores nacionales y empleo interno.", "value": -2 },
+          { "label": "Conviene abrirse, pero con salvaguardas para sectores sensibles.", "value": -1 },
+          { "label": "El libre comercio suele ser beneficioso si hay reglas claras.", "value": 1 },
+          { "label": "Cuanto menos proteccionismo y menos aranceles, mejor.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "economic",
+        "question": "¿Las desigualdades económicas elevadas son sobre todo...?",
+        "options": [
+          { "label": "Una injusticia estructural que requiere corrección intensa.", "value": -2 },
+          { "label": "Un problema serio, aunque no toda desigualdad sea ilegítima.", "value": -1 },
+          { "label": "Aceptables si reflejan esfuerzo e innovación.", "value": 1 },
+          { "label": "Secundarias mientras haya libertad para prosperar.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "economic",
+        "question": "¿Qué debería primar en la prestación de servicios públicos?",
+        "options": [
+          { "label": "Gestión pública directa como regla general.", "value": -2 },
+          { "label": "Modelo mixto con preferencia pública en lo esencial.", "value": -1 },
+          { "label": "Colaboración público-privada orientada a eficiencia.", "value": 1 },
+          { "label": "Competencia privada con mínima intervención estatal.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "economic",
+        "question": "¿En términos económicos, qué te preocupa más?",
+        "options": [
+          { "label": "La concentración de riqueza y poder en pocas manos.", "value": -2 },
+          { "label": "La precariedad y la debilidad del tejido social.", "value": -1 },
+          { "label": "El exceso de regulación y de gasto improductivo.", "value": 1 },
+          { "label": "Que el Estado ahogue la libertad económica.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "sociocultural",
+        "question": "¿Qué papel deberían tener las tradiciones nacionales en la vida pública?",
+        "options": [
+          { "label": "Muy limitado; deben revisarse críticamente.", "value": -2 },
+          { "label": "Importante, pero compatible con revisión y cambio.", "value": -1 },
+          { "label": "Conviene preservarlas como eje de cohesión colectiva.", "value": 1 },
+          { "label": "Deben ocupar un lugar central y normativo.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "sociocultural",
+        "question": "¿Cómo entiendes la identidad nacional?",
+        "options": [
+          { "label": "Como una construcción abierta y cambiante.", "value": -2 },
+          { "label": "Como una referencia común flexible.", "value": -1 },
+          { "label": "Como un legado histórico que merece ser protegido.", "value": 1 },
+          { "label": "Como un núcleo estable que debe defenderse con firmeza.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "sociocultural",
+        "question": "¿Ante cambios rápidos en costumbres familiares o sexuales, tu reacción es...?",
+        "options": [
+          { "label": "Favorecer su normalización sin reservas.", "value": -2 },
+          { "label": "Aceptarlos como parte de una sociedad plural.", "value": -1 },
+          { "label": "Mantener cautela para no erosionar referentes comunes.", "value": 1 },
+          { "label": "Considerarlos una amenaza al orden moral.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "sociocultural",
+        "question": "¿Qué te parece más deseable en materia educativa?",
+        "options": [
+          { "label": "Formación crítica orientada a autonomía individual y diversidad.", "value": -2 },
+          { "label": "Equilibrar pensamiento crítico con transmisión cultural común.", "value": -1 },
+          { "label": "Reforzar autoridad, disciplina y continuidad de valores.", "value": 1 },
+          { "label": "Priorizar una educación claramente asentada en tradición y jerarquía.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "sociocultural",
+        "question": "¿Cómo valoras la inmigración en términos culturales?",
+        "options": [
+          { "label": "Enriquece la sociedad aunque exija adaptaciones recíprocas.", "value": -2 },
+          { "label": "Es positiva si se gestiona con integración cívica.", "value": -1 },
+          { "label": "Debe limitarse para proteger cohesión y costumbres.", "value": 1 },
+          { "label": "Debe restringirse fuertemente para preservar identidad nacional.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "sociocultural",
+        "question": "¿Cuando se discuten símbolos históricos polémicos, qué criterio priorizas?",
+        "options": [
+          { "label": "Revisarlos críticamente y retirarlos si perpetúan exclusión.", "value": -2 },
+          { "label": "Contextualizarlos sin sacralizarlos.", "value": -1 },
+          { "label": "Preservarlos salvo casos extremos porque forman parte del legado común.", "value": 1 },
+          { "label": "Defenderlos con firmeza frente a cualquier revisión presente.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "sociocultural",
+        "question": "¿Qué importancia concedes a la autoridad en la vida social?",
+        "options": [
+          { "label": "Debe cuestionarse siempre que limite autonomía y pluralismo.", "value": -2 },
+          { "label": "Es necesaria, pero sometida a control y debate.", "value": -1 },
+          { "label": "Es un pilar para evitar desorden y descomposición.", "value": 1 },
+          { "label": "Debe reforzarse claramente frente al exceso de permisividad.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "sociocultural",
+        "question": "¿En los debates sobre género e identidad, tiendes a pensar que...?",
+        "options": [
+          { "label": "La libertad individual debe primar ampliamente sobre normas heredadas.", "value": -2 },
+          { "label": "Hay que ampliar derechos sin perder capacidad de deliberación común.", "value": -1 },
+          { "label": "El cambio debe ser prudente para no romper marcos sociales compartidos.", "value": 1 },
+          { "label": "Conviene sostener con claridad modelos tradicionales.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "sociocultural",
+        "question": "¿Qué afirmación te convence más?",
+        "options": [
+          { "label": "Las culturas cambian y ninguna debe blindarse como esencia fija.", "value": -2 },
+          { "label": "La convivencia exige apertura y cierto suelo común flexible.", "value": -1 },
+          { "label": "Sin referentes culturales estables una sociedad se fragmenta.", "value": 1 },
+          { "label": "La continuidad cultural es prioritaria frente a experimentos sociales.", "value": 2 }
+        ]
+      },
+      {
+        "type": "axis",
+        "axis": "sociocultural",
+        "question": "¿Qué te preocupa más en el plano cultural?",
+        "options": [
+          { "label": "La exclusión de formas de vida diversas.", "value": -2 },
+          { "label": "La intolerancia frente al pluralismo.", "value": -1 },
+          { "label": "La pérdida de cohesión simbólica y costumbres compartidas.", "value": 1 },
+          { "label": "La disolución de identidad, autoridad y tradición.", "value": 2 }
+        ]
+      }
+    ]
+  }
+]

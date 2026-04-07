@@ -1,0 +1,240 @@
+/* ============================================================
+   La Cámara Anecoica — Design System v3 (Vercel | Next.js Engine)
+   Deep Dark Mode, Spotlight Borders, Framer Motion ready
+   ============================================================ */
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tokens de diseño - Deep Dark */
+:root {
+  /* Fondo principal ultra oscuro (Pure Dark/Jet) */
+  --color-bg: #050505;
+  --color-bg-card: #0A0A0A;
+  
+  /* Textos */
+  --color-text: #b8865b;
+  --color-text-secondary: #cf9f77;
+  --color-text-muted: #8d674a;
+  --logo-text-gradient: linear-gradient(110deg, #ff327f 0%, #ff7b4a 28%, #d290ff 58%, #8a63ff 100%);
+
+  /* Acentos y Glow (Cobre iluminado) */
+  --color-accent: #B8865B;
+  --color-accent-hover: #D4A373;
+  --color-accent-glow: rgba(184, 134, 91, 0.4);
+
+  /* Bordes sutiles Next.js style */
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  
+  /* Colores para tests validación sobre modo oscuro */
+  --color-correct: #32d583;
+  --color-correct-bg: rgba(50, 213, 131, 0.1);
+  --color-incorrect: #f04438;
+  --color-incorrect-bg: rgba(240, 68, 56, 0.1);
+
+  /* Tipografía */
+  --font-serif: var(--font-playfair), 'Georgia', 'Times New Roman', serif;
+  --font-sans: var(--font-inter), -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
+
+  /* Espaciado de sistema */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+
+  /* Curvas y Transiciones */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --duration-fast: 0.15s;
+  --duration-normal: 0.3s;
+}
+
+/* Base global */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: transparent; /* No oculta la malla de RelativityGrid */
+  color: var(--color-text);
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   Scroll Progress Fino
+   ============================================================ */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Tipografía General
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans); /* Next.js style usa sans-serif modernas, cambiamos los headers a Sans y los acentos a Serif */
+  letter-spacing: -0.04em;
+  color: var(--color-text);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: normal;
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--duration-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   Efecto global de texto (marron + gradiente del logo)
+   ============================================================ */
+:where(h1, h2, h3, h4, h5, h6, p, span, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time, button) {
+  color: var(--color-text) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :where(h1, h2, h3, h4, h5, h6, p, span, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time, button):hover {
+    background-image: var(--logo-text-gradient);
+    background-size: 180% 180%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 700ms ease;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  :where(h1, h2, h3, h4, h5, h6, p, span, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time, button) {
+    background-image: var(--logo-text-gradient);
+    background-size: 220% 220%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+    animation: logoTextGradientLoop 14s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(h1, h2, h3, h4, h5, h6, p, span, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time, button) {
+    animation: none !important;
+    background-position: 50% 50%;
+  }
+}
+
+@keyframes logoTextGradientLoop {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ============================================================
+   Distribución base
+   ============================================================ */
+.container {
+  max-width: var(--max-width, 1100px);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  position: relative;
+  z-index: 10;
+}
+
+/* Botones Vercel Style */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: #000000;
+  padding: 0.8rem 1.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 0 0 rgba(255,255,255,0);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #f0f0f0;
+  box-shadow: 0 4px 14px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.03);
+  color: #ffffff;
+  padding: 0.8rem 1.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 99px;
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.3);
+}
+
+/* Scrollbar dark */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}

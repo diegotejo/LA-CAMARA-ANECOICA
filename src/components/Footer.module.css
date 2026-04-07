@@ -1,0 +1,112 @@
+.footer {
+  padding: var(--space-3xl) 0 var(--space-xl);
+  background-color: #000;
+  border-top: 1px solid var(--color-border-subtle);
+  color: var(--color-text-secondary);
+}
+
+.inner {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-md);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.brand {
+  max-width: 400px;
+}
+
+.brandHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.logoMark {
+  width: 4.5rem;
+  height: auto;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.titleAccent {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.tagline {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.linksGroup {
+  display: flex;
+  gap: var(--space-2xl);
+}
+
+.linkColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.columnTitle {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin-bottom: var(--space-sm);
+}
+
+.link {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  transition: color var(--duration-fast);
+}
+
+.link:hover {
+  color: #fff;
+}
+
+.bottom {
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  justify-content: center;
+}
+
+.copy {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 600px) {
+  .top {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  
+  .linksGroup {
+    gap: var(--space-lg);
+  }
+
+  .brandHeader {
+    align-items: flex-start;
+  }
+
+  .logoMark {
+    width: 3.75rem;
+  }
+}

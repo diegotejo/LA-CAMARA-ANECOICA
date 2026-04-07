@@ -1,0 +1,133 @@
+# La Camara Anecoica - Web oficial
+
+Sitio editorial en Next.js para el canal [La Camara Anecoica](https://www.youtube.com/@CamaraAnecoica). La propuesta visual ya parte de una base sobria y atmosferica; sobre esa direccion se han ido incorporando activos propios del proyecto, estructura de archivo y piezas audiovisuales ligadas a cada serie.
+
+## Estado actual
+
+- Home con hero editorial, logo oficial y acceso directo al archivo audiovisual.
+- Navegacion persistente con branding integrado en cabecera y footer.
+- Pagina de `videos` con galeria de ensayos y una franja visual para las tres series del canal.
+- Paginas para `cuestionarios`, `articulos` y `sobre` alineadas con la identidad del proyecto.
+
+## Stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- CSS Modules
+- Framer Motion
+
+## Configuracion de entorno
+
+La web ya admite configuracion minima por variables de entorno. Copia `.env.example` a `.env.local` y ajusta los valores si hace falta.
+
+```bash
+PORT=3000
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_YOUTUBE_CHANNEL_URL=https://www.youtube.com/@CamaraAnecoica
+```
+
+- `PORT`: puerto de `next dev` y `next start`.
+- `NEXT_PUBLIC_SITE_URL`: URL base usada para metadata y referencias canonicas.
+- `NEXT_PUBLIC_YOUTUBE_CHANNEL_URL`: URL centralizada del canal para CTAs y enlaces globales.
+
+La configuracion publica se centraliza en `src/lib/site-config.ts`.
+
+## Activos del proyecto integrados
+
+Se han copiado al proyecto los recursos propietarios usados ya por la web:
+
+- `public/brand/logo-anecoica.png`
+- `public/brand/logo-anecoica-white.png`
+- `public/intros/orbis-terrarum.mp4`
+- `public/intros/la-tribu.mp4`
+- `public/intros/antipendulo.mp4`
+
+Origen local de los archivos:
+
+- `C:\Users\daiki\Desktop\Cámara Anecoica\RECURSOS GRÁFICOS`
+- `C:\Users\daiki\Desktop\Cámara Anecoica\INTROS`
+
+## Estructura relevante
+
+```text
+public/
+  brand/
+    logo-anecoica.png
+    logo-anecoica-white.png
+  intros/
+    antipendulo.mp4
+    la-tribu.mp4
+    orbis-terrarum.mp4
+src/
+  app/
+    page.tsx
+    videos/page.tsx
+    cuestionarios/page.tsx
+    articulos/page.tsx
+    sobre/page.tsx
+    layout.tsx
+    globals.css
+  components/
+    BrandLogo.tsx
+    Navbar.tsx
+    Footer.tsx
+    SeriesPreviewStrip.tsx
+    VideoGallery.tsx
+    VideoCard.tsx
+data/
+  videos.json
+  quizzes.json
+```
+
+## Gestion de contenidos
+
+### Anadir un video
+
+Edita `data/videos.json` y anade un objeto con esta forma:
+
+```json
+{
+  "id": "video-10",
+  "title": "Titulo del video",
+  "youtubeEmbedId": "ID_DEL_VIDEO_YOUTUBE",
+  "slug": "slug-url",
+  "topic": "Tema",
+  "series": "Orbis Terrarum",
+  "shortDescription": "Descripcion breve",
+  "bibliography": ["Autor - Obra (ano)"],
+  "relatedConcepts": ["Concepto 1", "Concepto 2"],
+  "publishedDate": "YYYY-MM-DD"
+}
+```
+
+Series actualmente contempladas por la interfaz:
+
+- `Orbis Terrarum`
+- `La Tribu`
+- `Antipendulo`
+
+### Anadir un cuestionario
+
+Edita `data/quizzes.json` siguiendo la estructura ya presente en el archivo.
+
+## Desarrollo local
+
+```bash
+npm install
+npm run dev
+```
+
+Por defecto el servidor local queda en `http://localhost:3000`, pero puedes cambiarlo definiendo `PORT` en `.env.local`.
+
+## Verificacion recomendada
+
+```bash
+npm run lint
+npm run build
+```
+
+## Logs de desarrollo
+
+- El script `npm run dev` limpia `dev-server.log` antes de cada arranque para evitar ruido de sesiones anteriores.
+- `dev-server.log` esta ignorado en git.

@@ -1,0 +1,109 @@
+.page {
+  padding: var(--space-2xl) 0;
+}
+
+.header {
+  max-width: 56rem;
+  margin-bottom: var(--space-2xl);
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+
+.title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+}
+
+.intro {
+  font-size: 1.08rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.card {
+  height: 100%;
+}
+
+.cardInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  height: 100%;
+  padding: var(--space-xl);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.cardNumber {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--color-border);
+}
+
+.cardLabel {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.cardTitle {
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.cardExcerpt {
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  flex-grow: 1;
+}
+
+.cardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.2rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cardLink {
+  width: fit-content;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  padding-bottom: 0.15rem;
+}
+
+.cardLink:hover {
+  color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+@media (max-width: 900px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}

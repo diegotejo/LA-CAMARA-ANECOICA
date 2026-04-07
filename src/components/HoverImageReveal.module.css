@@ -1,0 +1,105 @@
+.container {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  position: relative;
+  padding: var(--space-xl) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity var(--duration-normal) var(--ease-spring);
+  z-index: 10;
+}
+
+.itemDimmed {
+  opacity: 0.3;
+}
+
+.itemContent {
+  max-width: 60%;
+}
+
+.themeName {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+  color: #fff;
+  transition: transform var(--duration-normal) var(--ease-spring);
+}
+
+.item:hover .themeName {
+  transform: translateX(10px);
+}
+
+.themeDesc {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  transition: transform var(--duration-normal) var(--ease-spring);
+}
+
+.item:hover .themeDesc {
+  transform: translateX(10px);
+}
+
+.arrow {
+  font-size: 2rem;
+  color: var(--color-accent);
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all var(--duration-normal) var(--ease-spring);
+}
+
+.item:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-border-subtle);
+  transition: background var(--duration-normal);
+}
+
+.item:hover .divider {
+  background: var(--color-border);
+}
+
+/* Floating Image */
+.floatingImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 400px;
+  border-radius: 4px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5; /* Queda por detrás del texto pero visible */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.05);
+  /* Un ligero desenfoque en el fondo al flotar */
+  backdrop-filter: blur(10px);
+}
+
+.image {
+  pointer-events: none;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+  mix-blend-mode: multiply;
+}
