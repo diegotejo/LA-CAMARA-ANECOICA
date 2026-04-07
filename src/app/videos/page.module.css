@@ -86,6 +86,32 @@
   gap: var(--space-xl);
 }
 
+@media (max-width: 900px) {
+  .page {
+    padding: var(--space-xl) 0;
+  }
+
+  .header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .filterBar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+  }
+
+  .filterBtn {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
 @media (min-width: 992px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);

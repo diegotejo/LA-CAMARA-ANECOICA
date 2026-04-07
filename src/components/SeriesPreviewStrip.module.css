@@ -103,6 +103,26 @@
   margin-bottom: var(--space-md);
 }
 
+@media (max-width: 640px) {
+  .card {
+    min-height: 20rem;
+    border-radius: 20px;
+  }
+
+  .content {
+    padding: var(--space-lg);
+  }
+
+  .title {
+    font-size: clamp(1.4rem, 7vw, 2rem);
+  }
+
+  .desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+}
+
 @media (min-width: 900px) {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));

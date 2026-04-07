@@ -461,4 +461,34 @@
   .axesCoordinate {
     font-size: 1.2rem;
   }
+
+  .ideologyItem {
+    padding: 0.6rem;
+  }
+
+  .ideologyItem span {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .axesTitleX {
+    width: 5.2rem;
+    font-size: 0.62rem;
+  }
+
+  .axesAxisLabelRight,
+  .axesAxisLabelLeft {
+    display: none;
+  }
+
+  .axesAxisLabelTop,
+  .axesAxisLabelBottom {
+    font-size: 0.52rem;
+  }
+
+  .axesPoint {
+    width: 16px;
+    height: 16px;
+  }
 }

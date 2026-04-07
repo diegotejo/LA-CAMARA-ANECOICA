@@ -26,6 +26,9 @@
   --color-accent: #B8865B;
   --color-accent-hover: #D4A373;
   --color-accent-glow: rgba(184, 134, 91, 0.4);
+  --color-accent-subtle: rgba(184, 134, 91, 0.14);
+  --color-bg-dark: #080808;
+  --color-bg-warm: rgba(184, 134, 91, 0.08);
 
   /* Bordes sutiles Next.js style */
   --color-border: rgba(255, 255, 255, 0.1);
@@ -52,8 +55,13 @@
 
   /* Curvas y Transiciones */
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 0.15s;
   --duration-normal: 0.3s;
+
+  /* Anchuras de layout */
+  --max-width: 1100px;
+  --max-width-narrow: 760px;
 }
 
 /* Base global */
@@ -124,7 +132,7 @@ a:hover {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  :where(h1, h2, h3, h4, h5, h6, p, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time):hover {
+  :where(h1, h2, h3, h4, h5, h6, p, li, strong, em, small, label, blockquote, figcaption, dt, dd, time):hover {
     background-image: var(--logo-text-gradient);
     background-size: 180% 180%;
     background-position: 0% 50%;
@@ -133,18 +141,6 @@ a:hover {
     color: transparent;
     -webkit-text-fill-color: transparent;
     transition: background-position 700ms ease;
-  }
-}
-
-@media (hover: none), (pointer: coarse) {
-  :where(h1, h2, h3, h4, h5, h6, p, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time) {
-    background-image: var(--logo-text-gradient);
-    background-size: 220% 220%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    animation: logoTextGradientLoop 14s ease-in-out infinite;
   }
 }
 
@@ -176,6 +172,18 @@ a:hover {
   padding: 0 var(--space-lg);
   position: relative;
   z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding: 0 0.85rem;
+  }
 }
 
 /* Botones Vercel Style */

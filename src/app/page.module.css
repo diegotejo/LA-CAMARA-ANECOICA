@@ -33,7 +33,7 @@
 }
 
 .heroTitle {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2.4rem, 8vw, 6rem);
   line-height: 1;
   margin-bottom: var(--space-lg);
   color: #fff;
@@ -175,6 +175,7 @@
   .hero {
     min-height: auto;
     padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
   }
 
   .heroLogoWrap {
@@ -188,5 +189,13 @@
     white-space: normal;
     line-height: 1.35;
     padding: 0.85rem 1rem;
+  }
+
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  .cardInner {
+    padding: var(--space-lg);
   }
 }

@@ -99,11 +99,29 @@
 }
 
 @media (max-width: 920px) {
+  .page {
+    padding: var(--space-xl) 0;
+  }
+
   .articleLayout {
     grid-template-columns: 1fr;
   }
 
   .articleMetaCard {
     position: static;
+    padding: var(--space-lg);
+  }
+
+  .articleBody {
+    padding: 1.1rem;
+  }
+
+  .articleTitle {
+    font-size: 1.5rem;
+  }
+
+  .articleSection p {
+    font-size: 0.96rem;
+    line-height: 1.75;
   }
 }

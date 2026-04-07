@@ -75,6 +75,28 @@
 }
 
 @media (max-width: 768px) {
+  .page {
+    padding: var(--space-xl) 0;
+  }
+
+  .header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .block {
+    margin-bottom: var(--space-xl);
+  }
+
+  .blockTitle {
+    font-size: 1.25rem;
+  }
+
+  .block p,
+  .formatList li {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
   .principles {
     grid-template-columns: 1fr;
   }

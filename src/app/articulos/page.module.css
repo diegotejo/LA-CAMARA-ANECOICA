@@ -103,7 +103,28 @@
 }
 
 @media (max-width: 900px) {
+  .page {
+    padding: var(--space-xl) 0;
+  }
+
+  .header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
   .list {
     grid-template-columns: 1fr;
+  }
+
+  .cardInner {
+    padding: var(--space-lg);
+  }
+
+  .cardTitle {
+    font-size: 1.35rem;
   }
 }
