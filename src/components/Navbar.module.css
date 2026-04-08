@@ -29,19 +29,48 @@
 }
 
 .logoMark {
-  width: 3.4rem;
+  width: 4rem;
   height: auto;
   border-radius: 16px;
   overflow: hidden;
   -webkit-mask-image: radial-gradient(circle at center, #000 70%, transparent 98%);
   mask-image: radial-gradient(circle at center, #000 70%, transparent 98%);
-  filter: drop-shadow(0 0 10px rgba(255, 84, 156, 0.2));
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.35rem;
+  filter: drop-shadow(0 0 12px rgba(255, 84, 156, 0.22));
 }
 
 .logoText {
   display: inline-flex;
   align-items: baseline;
   gap: 0.35rem;
+  color: #fff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logo:hover .logoText {
+    background-image: var(--logo-text-gradient);
+    background-size: 180% 180%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 700ms ease;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .logoText {
+    background-image: var(--logo-text-gradient);
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: logoTextGradientLoop 14s ease-in-out infinite;
+  }
 }
 
 .nav {
@@ -199,6 +228,6 @@
   }
 
   .logoMark {
-    width: 3.8rem;
+    width: 4.4rem;
   }
 }

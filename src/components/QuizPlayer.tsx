@@ -185,18 +185,22 @@ export default function QuizPlayer({ quiz }: { quiz: QuizData }) {
                     className={styles.axesPoint}
                     style={{ left: ideologyResult.dotLeft, bottom: ideologyResult.dotBottom }}
                   />
-                  <span className={styles.axesTitleY}>Valores socioculturales</span>
-                  <span className={styles.axesTitleX}>Posicionamiento económico</span>
-                  <span className={styles.axesAxisLabelTop}>Tradición</span>
-                  <span className={styles.axesAxisLabelRight}>Mercado</span>
-                  <span className={styles.axesAxisLabelBottom}>Progreso</span>
-                  <span className={styles.axesAxisLabelLeft}>Estado</span>
                 </div>
-                <div className={styles.axesLegendCompact}>
-                  <span>Tradicion</span>
-                  <span>Mercado</span>
-                  <span>Progreso</span>
-                  <span>Estado</span>
+                <div className={styles.axesLegend}>
+                  <div className={styles.axesLegendBlock}>
+                    <span className={styles.axesLegendTitle}>Valores socioculturales</span>
+                    <div className={styles.axesLegendRow}>
+                      <span>Tradición</span>
+                      <span>Progreso</span>
+                    </div>
+                  </div>
+                  <div className={styles.axesLegendBlock}>
+                    <span className={styles.axesLegendTitle}>Posicionamiento económico</span>
+                    <div className={styles.axesLegendRow}>
+                      <span>Estado</span>
+                      <span>Mercado</span>
+                    </div>
+                  </div>
                 </div>
                 <p className={styles.axesCoordinate}>
                   X {ideologyResult.x >= 0 ? "+" : ""}
