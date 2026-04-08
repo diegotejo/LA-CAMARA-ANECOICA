@@ -5,6 +5,8 @@
   display: grid;
   place-items: center;
   isolation: isolate;
+  perspective: 1200px;
+  transform-style: preserve-3d;
 }
 
 .layer {
@@ -13,6 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transform-style: preserve-3d;
 }
 
 .image {
@@ -25,6 +28,7 @@
   opacity: 1;
   animation: baseCycle 40s ease-in-out infinite;
   filter: drop-shadow(0 0 22px rgba(255, 77, 148, 0.2));
+  transform: translateZ(20px);
 }
 
 .glitch {
@@ -36,13 +40,13 @@
 .glitchOne {
   animation: glitchBurst 6s steps(2, end) infinite;
   filter: hue-rotate(18deg) contrast(1.2) saturate(1.1);
-  transform: translate(2px, -1px);
+  transform: translate(2px, -1px) translateZ(40px) rotateY(6deg);
 }
 
 .glitchTwo {
   animation: glitchBurst 6s steps(2, end) infinite 1.5s;
   filter: hue-rotate(-18deg) contrast(1.15) saturate(1.2);
-  transform: translate(-2px, 1px);
+  transform: translate(-2px, 1px) translateZ(30px) rotateX(-6deg);
 }
 
 .face {
@@ -50,7 +54,7 @@
   image-rendering: pixelated;
   mix-blend-mode: screen;
   filter: saturate(1.35) contrast(1.15);
-  transform: translateZ(0) scale(1.04);
+  transform: translateZ(60px) scale(1.04);
 }
 
 .faceLenin {
@@ -83,7 +87,7 @@
   88%,
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: translateZ(20px) scale(1);
   }
   12%,
   28%,
@@ -92,7 +96,7 @@
   76%,
   92% {
     opacity: 0.45;
-    transform: scale(0.98);
+    transform: translateZ(0) scale(0.92) rotateX(6deg);
   }
 }
 
@@ -113,6 +117,7 @@
   68%,
   83% {
     opacity: 0.55;
+    transform: translateZ(50px) rotateY(12deg) rotateX(-6deg);
   }
 }
 
@@ -125,12 +130,12 @@
   12%,
   20% {
     opacity: 1;
-    transform: scale(1.05);
+    transform: translateZ(80px) scale(1.08) rotateY(-8deg);
   }
   22%,
   26% {
     opacity: 0;
-    transform: scale(0.35);
+    transform: translateZ(-120px) scale(0.3) rotateX(18deg);
   }
   100% {
     opacity: 0;
@@ -146,12 +151,12 @@
   30%,
   38% {
     opacity: 1;
-    transform: scale(1.05);
+    transform: translateZ(80px) scale(1.08) rotateY(8deg);
   }
   40%,
   44% {
     opacity: 0;
-    transform: scale(0.35);
+    transform: translateZ(-120px) scale(0.3) rotateX(-18deg);
   }
   100% {
     opacity: 0;
@@ -167,12 +172,12 @@
   48%,
   56% {
     opacity: 1;
-    transform: scale(1.05);
+    transform: translateZ(80px) scale(1.08) rotateY(-6deg);
   }
   58%,
   62% {
     opacity: 0;
-    transform: scale(0.35);
+    transform: translateZ(-120px) scale(0.3) rotateX(16deg);
   }
   100% {
     opacity: 0;
@@ -188,12 +193,12 @@
   66%,
   74% {
     opacity: 1;
-    transform: scale(1.05);
+    transform: translateZ(80px) scale(1.08) rotateY(6deg);
   }
   76%,
   80% {
     opacity: 0;
-    transform: scale(0.35);
+    transform: translateZ(-120px) scale(0.3) rotateX(-16deg);
   }
   100% {
     opacity: 0;
@@ -203,5 +208,17 @@
 @media (max-width: 768px) {
   .stage {
     aspect-ratio: 4 / 3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logoBase,
+  .glitchOne,
+  .glitchTwo,
+  .faceLenin,
+  .faceNapoleon,
+  .faceAristoteles,
+  .faceIsabel {
+    animation: none !important;
   }
 }
