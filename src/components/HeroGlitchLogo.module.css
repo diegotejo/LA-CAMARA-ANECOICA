@@ -7,6 +7,7 @@
   isolation: isolate;
   perspective: 1200px;
   transform-style: preserve-3d;
+  transform: translateZ(0);
 }
 
 .layer {
@@ -16,6 +17,7 @@
   align-items: center;
   justify-content: center;
   transform-style: preserve-3d;
+  will-change: transform, opacity, filter;
 }
 
 .image {
@@ -27,7 +29,9 @@
 .logoBase {
   opacity: 1;
   animation: baseCycle 40s ease-in-out infinite;
-  filter: drop-shadow(0 0 22px rgba(255, 77, 148, 0.2));
+  filter:
+    drop-shadow(0 0 28px rgba(255, 120, 200, 0.28))
+    drop-shadow(0 18px 30px rgba(0, 0, 0, 0.35));
   transform: translateZ(20px);
 }
 
@@ -39,13 +43,15 @@
 
 .glitchOne {
   animation: glitchBurst 6s steps(2, end) infinite;
-  filter: hue-rotate(18deg) contrast(1.2) saturate(1.1);
+  filter: hue-rotate(18deg) contrast(1.35) saturate(1.25)
+    drop-shadow(0 10px 20px rgba(255, 90, 210, 0.35));
   transform: translate(2px, -1px) translateZ(40px) rotateY(6deg);
 }
 
 .glitchTwo {
   animation: glitchBurst 6s steps(2, end) infinite 1.5s;
-  filter: hue-rotate(-18deg) contrast(1.15) saturate(1.2);
+  filter: hue-rotate(-18deg) contrast(1.3) saturate(1.3)
+    drop-shadow(0 8px 18px rgba(90, 180, 255, 0.35));
   transform: translate(-2px, 1px) translateZ(30px) rotateX(-6deg);
 }
 
@@ -53,27 +59,52 @@
   opacity: 0;
   image-rendering: pixelated;
   mix-blend-mode: screen;
-  filter: saturate(1.35) contrast(1.15);
+  filter: saturate(1.55) contrast(1.28) brightness(1.06)
+    drop-shadow(0 18px 30px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 -10px 18px rgba(255, 160, 230, 0.32));
   transform: translateZ(60px) scale(1.04);
 }
 
+.face::before {
+  content: "";
+  position: absolute;
+  inset: -8% -4%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.55) 45%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0.7;
+  mix-blend-mode: screen;
+  transform: translateX(-40%) rotate(2deg);
+  animation: faceSweep 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.face::after {
+  content: "";
+  position: absolute;
+  inset: -6% -6%;
+  background: radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.45), transparent 55%);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
 .faceLenin {
-  animation: faceLenin 40s ease-in-out infinite;
+  animation: faceLenin 40s ease-in-out infinite, faceGlow 4.5s ease-in-out infinite;
   filter: saturate(1.5) hue-rotate(-8deg) contrast(1.2);
 }
 
 .faceNapoleon {
-  animation: faceNapoleon 40s ease-in-out infinite;
+  animation: faceNapoleon 40s ease-in-out infinite, faceGlow 4.5s ease-in-out infinite;
   filter: saturate(1.45) hue-rotate(12deg) contrast(1.2);
 }
 
 .faceAristoteles {
-  animation: faceAristoteles 40s ease-in-out infinite;
+  animation: faceAristoteles 40s ease-in-out infinite, faceGlow 4.5s ease-in-out infinite;
   filter: saturate(1.35) hue-rotate(32deg) contrast(1.15);
 }
 
 .faceIsabel {
-  animation: faceIsabel 40s ease-in-out infinite;
+  animation: faceIsabel 40s ease-in-out infinite, faceGlow 4.5s ease-in-out infinite;
   filter: saturate(1.5) hue-rotate(-22deg) contrast(1.18);
 }
 
@@ -118,6 +149,31 @@
   83% {
     opacity: 0.55;
     transform: translateZ(50px) rotateY(12deg) rotateX(-6deg);
+  }
+}
+
+@keyframes faceSweep {
+  0% {
+    transform: translateX(-45%) rotate(2deg);
+    opacity: 0.15;
+  }
+  45% {
+    transform: translateX(10%) rotate(2deg);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(55%) rotate(2deg);
+    opacity: 0.15;
+  }
+}
+
+@keyframes faceGlow {
+  0%,
+  100% {
+    filter: saturate(1.35) contrast(1.1) brightness(1.02);
+  }
+  50% {
+    filter: saturate(1.7) contrast(1.32) brightness(1.14);
   }
 }
 
@@ -220,5 +276,10 @@
   .faceAristoteles,
   .faceIsabel {
     animation: none !important;
+  }
+
+  .face::before,
+  .face::after {
+    opacity: 0;
   }
 }
