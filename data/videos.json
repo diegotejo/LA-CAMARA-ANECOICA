@@ -7,7 +7,16 @@
     "topic": "Geopolítica",
     "series": "Orbis Terrarum",
     "shortDescription": "Una introducción breve al reparto colonial de Oriente Medio y a la manera en que ese acuerdo sigue condicionando la conflictividad de la región.",
-    "bibliography": [],
+    "bibliography": [
+      {
+        "title": "James Barr — A Line in the Sand",
+        "note": "Explica el reparto anglo-frances y como los acuerdos coloniales moldean las fronteras actuales."
+      },
+      {
+        "title": "Eugene Rogan — The Fall of the Ottomans",
+        "note": "Da contexto al derrumbe otomano y a las decisiones geoestrategicas que abrieron la crisis regional."
+      }
+    ],
     "relatedConcepts": ["Imperio otomano", "Mandatos coloniales", "Fronteras artificiales", "Oriente Medio"],
     "publishedDate": "2026-03-11"
   },
@@ -19,7 +28,16 @@
     "topic": "Geopolítica",
     "series": "Orbis Terrarum",
     "shortDescription": "Aproximación al conflicto iraní-israelí-estadounidense a partir de tres claves para situar el choque más allá del titular inmediato.",
-    "bibliography": [],
+    "bibliography": [
+      {
+        "title": "Trita Parsi — Treacherous Alliance",
+        "note": "Analiza la relacion Iran-Israel-EEUU para entender las capas historicas del conflicto actual."
+      },
+      {
+        "title": "Vali Nasr — The Shia Revival",
+        "note": "Relaciona los equilibrios sectarios con la proyeccion regional irani y sus alianzas."
+      }
+    ],
     "relatedConcepts": ["Irán", "Israel", "Estados Unidos", "Escalada regional"],
     "publishedDate": "2026-03-01"
   },
@@ -31,7 +49,16 @@
     "topic": "Filosofía política",
     "series": "La Tribu",
     "shortDescription": "Una reflexión introductoria sobre qué es una ideología, por qué las personas se posicionan políticamente y qué límites tiene reducirlo todo a etiquetas simples.",
-    "bibliography": [],
+    "bibliography": [
+      {
+        "title": "Michael Freeden — Ideologies and Political Theory",
+        "note": "Plantea las ideologias como mapas conceptuales y no como etiquetas cerradas."
+      },
+      {
+        "title": "Karl Mannheim — Ideology and Utopia",
+        "note": "Explora como las posiciones sociales moldean nuestras categorias politicas."
+      }
+    ],
     "relatedConcepts": ["Ideología", "Posicionamiento político", "Marcos de interpretación", "Cultura política"],
     "publishedDate": "2026-03-17"
   },
@@ -43,7 +70,16 @@
     "topic": "Ideología",
     "series": "La Tribu",
     "shortDescription": "Análisis de la trayectoria de SUMAR y de la distancia entre su proyecto político y la tradición leninista evocada en el título.",
-    "bibliography": [],
+    "bibliography": [
+      {
+        "title": "V. I. Lenin — What Is to Be Done?",
+        "note": "Sirve para contrastar el leninismo clasico con la estrategia politica actual en España."
+      },
+      {
+        "title": "Ernesto Laclau — On Populist Reason",
+        "note": "Aporta marco teorico para leer la construccion de sujeto politico en proyectos como SUMAR."
+      }
+    ],
     "relatedConcepts": ["SUMAR", "Izquierda institucional", "Leninismo", "Yolanda Díaz"],
     "publishedDate": "2026-04-03"
   },
@@ -55,7 +91,16 @@
     "topic": "Sociología política",
     "series": "La Tribu",
     "shortDescription": "La Semana Santa se toma aquí como punto de entrada para pensar la relación entre Iglesia, Estado y espacio público en España.",
-    "bibliography": [],
+    "bibliography": [
+      {
+        "title": "Jose Casanova — Public Religions in the Modern World",
+        "note": "Aporta claves sobre la presencia publica de la religion en Estados formalmente laicos."
+      },
+      {
+        "title": "Julio de la Cueva — Clericales y anticlericales",
+        "note": "Contextualiza la tension Iglesia-Estado en la historia contemporanea española."
+      }
+    ],
     "relatedConcepts": ["Laicidad", "Aconfesionalidad", "Iglesia", "Estado"],
     "publishedDate": "2026-03-31"
   },
@@ -67,7 +112,16 @@
     "topic": "Pensamiento crítico",
     "series": "Antipéndulo",
     "shortDescription": "A partir de un caso mediático concreto, el vídeo examina cómo el sensacionalismo organiza la atención y desplaza el análisis.",
-    "bibliography": [],
+    "bibliography": [
+      {
+        "title": "Neil Postman — Amusing Ourselves to Death",
+        "note": "Explica como el formato mediatico convierte la informacion en espectaculo."
+      },
+      {
+        "title": "Shoshana Zuboff — The Age of Surveillance Capitalism",
+        "note": "Relaciona la economia digital con la captura sistematica de atencion."
+      }
+    ],
     "relatedConcepts": ["Atención", "Espectáculo mediático", "Sensacionalismo", "Agenda"],
     "publishedDate": "2026-03-24"
   },
@@ -79,7 +133,16 @@
     "topic": "Filosofía política",
     "series": "Antipéndulo",
     "shortDescription": "Comentario sobre las declaraciones cruzadas entre Trump y Sánchez para pensar el pacifismo y la política internacional sin respuestas reflejas.",
-    "bibliography": [],
+    "bibliography": [
+      {
+        "title": "Michael Walzer — Just and Unjust Wars",
+        "note": "Da un marco etico clasico para evaluar argumentos belicos y pacifistas."
+      },
+      {
+        "title": "Hedley Bull — The Anarchical Society",
+        "note": "Situa el debate sobre guerra y paz dentro del orden internacional real."
+      }
+    ],
     "relatedConcepts": ["Pacifismo", "Guerra", "Trump", "Sánchez"],
     "publishedDate": "2026-03-06"
   },
@@ -91,7 +154,16 @@
     "topic": "Sociología política",
     "series": "La Tribu",
     "shortDescription": "Pieza de arranque de la serie dedicada a contraponer la lógica de la ideología y la lógica de la identidad en el debate contemporáneo.",
-    "bibliography": [],
+    "bibliography": [
+      {
+        "title": "Francis Fukuyama — Identity",
+        "note": "Distingue reconocimiento e identidad como motores politicos contemporaneos."
+      },
+      {
+        "title": "Rogers Brubaker — Ethnicity without Groups",
+        "note": "Ayuda a pensar identidad como proceso social y no como esencia fija."
+      }
+    ],
     "relatedConcepts": ["Identidad", "Ideología", "Pertenencia", "Conflicto cultural"],
     "publishedDate": "2026-03-04"
   },
@@ -103,7 +175,16 @@
     "topic": "Sociología política",
     "series": "Antipéndulo",
     "shortDescription": "Primer vídeo del canal: un análisis pausado de la propuesta de regularización de migrantes planteada por el Gobierno.",
-    "bibliography": [],
+    "bibliography": [
+      {
+        "title": "Saskia Sassen — Guests and Aliens",
+        "note": "Analiza como las economias avanzadas generan dependencia de migracion precaria."
+      },
+      {
+        "title": "Stephen Castles y Mark J. Miller — The Age of Migration",
+        "note": "Marco amplio para interpretar politicas de regularizacion y sus efectos sociales."
+      }
+    ],
     "relatedConcepts": ["Migración", "Regularización", "Política pública", "Debate social"],
     "publishedDate": "2026-02-28"
   }

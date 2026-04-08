@@ -9,9 +9,14 @@ export interface VideoData {
   topic: string;
   series: string;
   shortDescription: string;
-  bibliography: string[];
+  bibliography: BibliographyEntry[];
   relatedConcepts?: string[];
   publishedDate: string;
+}
+
+export interface BibliographyEntry {
+  title: string;
+  note: string;
 }
 
 export default function VideoCard({ video }: { video: VideoData }) {
@@ -49,19 +54,20 @@ export default function VideoCard({ video }: { video: VideoData }) {
         )}
 
         {video.bibliography && video.bibliography.length > 0 && (
-          <div className={styles.biblio}>
-            <h3 className={styles.biblioHeading}>
+          <details className={styles.biblio}>
+            <summary className={styles.biblioSummary}>
               <span className={styles.biblioLine} />
-              Referencias y lecturas
-            </h3>
+              Bibliografía comentada
+            </summary>
             <ul className={styles.biblioList}>
-              {video.bibliography.map((item, index) => (
-                <li key={index} className={styles.biblioItem}>
-                  {item}
+              {video.bibliography.map((item) => (
+                <li key={item.title} className={styles.biblioItem}>
+                  <span className={styles.biblioTitle}>{item.title}</span>
+                  <span className={styles.biblioNote}>{item.note}</span>
                 </li>
               ))}
             </ul>
-          </div>
+          </details>
         )}
 
         <div className={styles.date}>

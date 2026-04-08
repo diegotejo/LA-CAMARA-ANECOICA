@@ -97,7 +97,12 @@ Edita `data/videos.json` y anade un objeto con esta forma:
   "topic": "Tema",
   "series": "Orbis Terrarum",
   "shortDescription": "Descripcion breve",
-  "bibliography": ["Autor - Obra (ano)"],
+  "bibliography": [
+    {
+      "title": "Autor — Obra (ano)",
+      "note": "Breve nota que conecta la obra con el tema del video."
+    }
+  ],
   "relatedConcepts": ["Concepto 1", "Concepto 2"],
   "publishedDate": "YYYY-MM-DD"
 }

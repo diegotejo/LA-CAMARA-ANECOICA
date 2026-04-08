@@ -29,7 +29,7 @@
 }
 
 .logoMark {
-  width: 3rem;
+  width: 3.4rem;
   height: auto;
   border-radius: 16px;
   overflow: hidden;
@@ -166,15 +166,20 @@
 
 @media (max-width: 640px) {
   .header {
-    min-height: 72px;
+    min-height: 84px;
   }
 
   .inner {
-    height: 72px;
+    height: 84px;
   }
 
   .logoText {
-    display: none;
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+    line-height: 1.05;
+    max-width: 12.5rem;
+    white-space: normal;
   }
 
   .nav {
@@ -184,6 +189,6 @@
   }
 
   .logoMark {
-    width: 3.4rem;
+    width: 3.8rem;
   }
 }

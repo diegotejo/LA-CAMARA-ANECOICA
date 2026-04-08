@@ -15,10 +15,6 @@ export default function Footer() {
                 <span className="serif-accent">La</span> Cámara Anecoica
               </h3>
             </div>
-            <p className={styles.tagline}>
-              Un canal para quienes prefieren pensar antes que repetir eslóganes.
-              Análisis pausado en un mundo que grita.
-            </p>
           </div>
 
           <div className={styles.linksGroup}>
