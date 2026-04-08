@@ -63,6 +63,15 @@
     drop-shadow(0 18px 30px rgba(0, 0, 0, 0.45))
     drop-shadow(0 -10px 18px rgba(255, 160, 230, 0.32));
   transform: translateZ(60px) scale(1.04);
+  -webkit-mask-image: var(--face-mask);
+  mask-image: var(--face-mask);
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  backface-visibility: hidden;
 }
 
 .face::before {

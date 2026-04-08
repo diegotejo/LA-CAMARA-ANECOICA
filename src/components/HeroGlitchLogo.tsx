@@ -47,7 +47,11 @@ export default function HeroGlitchLogo({ className, priority = false }: HeroGlit
       </div>
 
       {faces.map((face) => (
-        <div key={face.key} className={`${styles.layer} ${styles.face} ${face.className}`}>
+        <div
+          key={face.key}
+          className={`${styles.layer} ${styles.face} ${face.className}`}
+          style={{ "--face-mask": `url(${face.src})` } as React.CSSProperties}
+        >
           <Image
             src={face.src}
             alt=""
