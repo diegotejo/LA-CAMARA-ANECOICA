@@ -64,6 +64,11 @@
   color: #fff;
 }
 
+.link:focus-visible {
+  outline: 2px solid rgba(212, 163, 115, 0.7);
+  outline-offset: 2px;
+}
+
 .linkActive {
   color: #fff;
 }
@@ -103,6 +108,11 @@
   border-radius: 2px;
   background-color: #fff;
   transition: all var(--duration-normal);
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid rgba(212, 163, 115, 0.7);
+  outline-offset: 3px;
 }
 
 .hamburgerOpen span:nth-child(1) {
