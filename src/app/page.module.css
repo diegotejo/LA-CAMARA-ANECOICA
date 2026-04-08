@@ -13,7 +13,7 @@
 }
 
 .heroLogoWrap {
-  width: min(34rem, 78vw);
+  width: min(44rem, 88vw);
   margin-bottom: var(--space-sm);
 }
 
@@ -179,7 +179,7 @@
   }
 
   .heroLogoWrap {
-    width: min(30rem, 90vw);
+    width: min(36rem, 92vw);
   }
 
   .heroCtaArea :global(.btn-primary) {

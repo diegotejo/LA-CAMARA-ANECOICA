@@ -1,0 +1,207 @@
+.stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logoBase {
+  opacity: 1;
+  animation: baseCycle 40s ease-in-out infinite;
+  filter: drop-shadow(0 0 22px rgba(255, 77, 148, 0.2));
+}
+
+.glitch {
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.glitchOne {
+  animation: glitchBurst 6s steps(2, end) infinite;
+  filter: hue-rotate(18deg) contrast(1.2) saturate(1.1);
+  transform: translate(2px, -1px);
+}
+
+.glitchTwo {
+  animation: glitchBurst 6s steps(2, end) infinite 1.5s;
+  filter: hue-rotate(-18deg) contrast(1.15) saturate(1.2);
+  transform: translate(-2px, 1px);
+}
+
+.face {
+  opacity: 0;
+  image-rendering: pixelated;
+  mix-blend-mode: screen;
+  filter: saturate(1.35) contrast(1.15);
+  transform: translateZ(0) scale(1.04);
+}
+
+.faceLenin {
+  animation: faceLenin 40s ease-in-out infinite;
+  filter: saturate(1.5) hue-rotate(-8deg) contrast(1.2);
+}
+
+.faceNapoleon {
+  animation: faceNapoleon 40s ease-in-out infinite;
+  filter: saturate(1.45) hue-rotate(12deg) contrast(1.2);
+}
+
+.faceAristoteles {
+  animation: faceAristoteles 40s ease-in-out infinite;
+  filter: saturate(1.35) hue-rotate(32deg) contrast(1.15);
+}
+
+.faceIsabel {
+  animation: faceIsabel 40s ease-in-out infinite;
+  filter: saturate(1.5) hue-rotate(-22deg) contrast(1.18);
+}
+
+@keyframes baseCycle {
+  0%,
+  8%,
+  24%,
+  40%,
+  56%,
+  72%,
+  88%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  12%,
+  28%,
+  44%,
+  60%,
+  76%,
+  92% {
+    opacity: 0.45;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes glitchBurst {
+  0%,
+  15%,
+  30%,
+  45%,
+  60%,
+  75%,
+  100% {
+    opacity: 0;
+  }
+  8%,
+  23%,
+  38%,
+  53%,
+  68%,
+  83% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes faceLenin {
+  0%,
+  10% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  12%,
+  20% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  22%,
+  26% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes faceNapoleon {
+  0%,
+  28% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  30%,
+  38% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  40%,
+  44% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes faceAristoteles {
+  0%,
+  46% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  48%,
+  56% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  58%,
+  62% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes faceIsabel {
+  0%,
+  64% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  66%,
+  74% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  76%,
+  80% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .stage {
+    aspect-ratio: 4 / 3;
+  }
+}

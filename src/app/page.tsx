@@ -5,7 +5,7 @@ import { motion, Variants } from "framer-motion";
 import SpotlightCard from "@/components/SpotlightCard";
 import AnimatedText from "@/components/AnimatedText";
 import Magnetic from "@/components/Magnetic";
-import BrandLogo from "@/components/BrandLogo";
+import HeroGlitchLogo from "@/components/HeroGlitchLogo";
 import SeriesPreviewStrip from "@/components/SeriesPreviewStrip";
 import { siteConfig } from "@/lib/site-config";
 import styles from "./page.module.css";
@@ -35,7 +35,7 @@ export default function Home() {
           variants={STAGGER}
         >
           <motion.div className={styles.heroLogoWrap} variants={FADE_UP}>
-            <BrandLogo className={styles.heroLogo} priority />
+            <HeroGlitchLogo className={styles.heroLogo} priority />
           </motion.div>
 
           <motion.div className={styles.heroPretitle} variants={FADE_UP}>
