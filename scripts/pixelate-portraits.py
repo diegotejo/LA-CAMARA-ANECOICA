@@ -72,9 +72,13 @@ def main() -> None:
     output_dir = Path("public/brand/portraits")
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    sources = [p for p in source_dir.iterdir() if p.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"}]
+    if source_dir.exists():
+        sources = [p for p in source_dir.iterdir() if p.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"}]
+    else:
+        sources = [p for p in output_dir.iterdir() if p.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"}]
+
     if not sources:
-        raise SystemExit("No source images found. Add files to public/brand/portraits/source")
+        raise SystemExit("No source images found. Add files to public/brand/portraits or /source")
 
     for path in sources:
         process_portrait(path, output_dir)
