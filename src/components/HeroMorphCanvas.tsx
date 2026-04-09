@@ -701,6 +701,32 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
     triggerGestureTransition(dx, dy);
   };
 
+  const triggerMobileTapTransition = () => {
+    if (!pointerRef.current.coarse || !wrapRef.current) {
+      return;
+    }
+
+    const rect = wrapRef.current.getBoundingClientRect();
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const dxFromCenter = pointerRef.current.currentX - centerX;
+    const dyFromCenter = pointerRef.current.currentY - centerY;
+    const horizontalWins = Math.abs(dxFromCenter) >= Math.abs(dyFromCenter);
+
+    const syntheticDeltaX = horizontalWins
+      ? dxFromCenter < 0
+        ? GESTURE_MIN_DISTANCE_MOBILE + 10
+        : -(GESTURE_MIN_DISTANCE_MOBILE + 10)
+      : 0;
+    const syntheticDeltaY = horizontalWins
+      ? 0
+      : dyFromCenter < 0
+        ? GESTURE_MIN_DISTANCE_MOBILE + 10
+        : -(GESTURE_MIN_DISTANCE_MOBILE + 10);
+
+    triggerGestureTransition(syntheticDeltaX, syntheticDeltaY);
+  };
+
   return (
     <div
       ref={wrapRef}
@@ -730,7 +756,11 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
       onPointerUp={(event) => {
         setPointerPoint(event);
         if (pointerRef.current.coarse && pointerRef.current.pressed && ready) {
+          const beforeMode = sequenceRef.current.mode;
           maybeTriggerMobileGesture();
+          if (beforeMode === sequenceRef.current.mode) {
+            triggerMobileTapTransition();
+          }
         }
         pointerRef.current.pressed = false;
       }}
