@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const NATURAL_EARTH_URL =
@@ -77,42 +77,120 @@ function pickNaturalEarthIso3(properties) {
   return null;
 }
 
-function classifyPoliticalSystem(governmentForm) {
-  if (!governmentForm || governmentForm === "No disponible") {
-    return "No clasificado";
+// Reglas explícitas de normalización política:
+// - Forma de gobierno: dinámica ejecutivo-legislativa.
+// - Modelo de organización: distribución territorial del poder.
+// - Estructura de gobierno: arquitectura institucional del Estado.
+const GOVERNMENT_FORM_RULES = [
+  { match: /semipresid/i, label: "Semipresidencialismo" },
+  { match: /parlament/i, label: "Parlamentarismo" },
+  { match: /presidencial/i, label: "Presidencialismo" },
+  { match: /asamblea/i, label: "Gobierno de asamblea" },
+  { match: /colegiad/i, label: "Gobierno colegiado" },
+];
+
+const ORGANIZATION_MODEL_RULES = [
+  { match: /confeder/i, label: "Confederalismo" },
+  { match: /feder/i, label: "Federalismo" },
+  { match: /unitari|centrali/i, label: "Estado unitario" },
+  { match: /autonom/i, label: "Estado autonómico" },
+  { match: /descentr/i, label: "Descentralización territorial" },
+];
+
+const GOVERNMENT_STRUCTURE_RULES = [
+  { match: /monarqu.{0,14}parlament/i, label: "Monarquía parlamentaria" },
+  { match: /monarqu.{0,14}constitucional/i, label: "Monarquía constitucional" },
+  { match: /monarqu/i, label: "Monarquía" },
+  { match: /teocr/i, label: "Teocracia" },
+  { match: /emirat/i, label: "Emirato" },
+  { match: /rep[úu]blic/i, label: "República" },
+];
+
+function toNormalizedTokens(values) {
+  return values
+    .flatMap((value) => value.split(/·|,|\/|;|\(|\)/g))
+    .map((value) => value.trim())
+    .filter(Boolean);
+}
+
+function applyRules(tokens, rules) {
+  const found = new Set();
+
+  for (const token of tokens) {
+    for (const rule of rules) {
+      if (rule.match.test(token)) {
+        found.add(rule.label);
+      }
+    }
   }
 
-  const value = governmentForm.toLowerCase();
+  return Array.from(found).sort((a, b) => a.localeCompare(b, "es"));
+}
 
-  if (value.includes("semipresid")) {
+function derivePrimaryPoliticalSystem(characteristics) {
+  const joined = characteristics.governmentForm.join(" · ").toLowerCase();
+  if (joined.includes("semipresid")) {
     return "Semipresidencial";
   }
 
-  if (value.includes("parlament")) {
+  if (joined.includes("parlament")) {
     return "Parlamentario";
   }
 
-  if (value.includes("presidencial")) {
+  if (joined.includes("presidencial")) {
     return "Presidencial";
   }
 
-  if (value.includes("monarqu") && value.includes("constitucional")) {
+  const structureJoined = characteristics.governmentStructure.join(" · ").toLowerCase();
+  if (structureJoined.includes("monarquía constitucional")) {
     return "Monarquía constitucional";
   }
 
-  if (value.includes("monarqu")) {
+  if (structureJoined.includes("monarquía parlamentaria")) {
+    return "Monarquía parlamentaria";
+  }
+
+  if (structureJoined.includes("monarquía")) {
     return "Monarquía";
   }
 
-  if (value.includes("federal")) {
-    return "Federal";
-  }
-
-  if (value.includes("teocr")) {
+  if (structureJoined.includes("teocracia")) {
     return "Teocrático";
   }
 
-  return "Otros / mixto";
+  if (characteristics.organizationModel.includes("Federalismo")) {
+    return "Federal";
+  }
+
+  return "No clasificado";
+}
+
+function classifyPoliticalCharacteristics(governmentFormValues) {
+  const tokens = toNormalizedTokens(governmentFormValues);
+
+  const characteristics = {
+    governmentForm: applyRules(tokens, GOVERNMENT_FORM_RULES),
+    organizationModel: applyRules(tokens, ORGANIZATION_MODEL_RULES),
+    governmentStructure: applyRules(tokens, GOVERNMENT_STRUCTURE_RULES),
+  };
+
+  const politicalSystem = derivePrimaryPoliticalSystem(characteristics);
+  const politicalFilterTags = Array.from(
+    new Set(
+      [
+        ...characteristics.governmentForm,
+        ...characteristics.organizationModel,
+        ...characteristics.governmentStructure,
+        politicalSystem !== "No clasificado" ? politicalSystem : null,
+      ].filter(Boolean),
+    ),
+  ).sort((a, b) => a.localeCompare(b, "es"));
+
+  return {
+    characteristics,
+    politicalSystem,
+    politicalFilterTags,
+  };
 }
 
 async function fetchJson(url, label) {
@@ -311,10 +389,14 @@ function buildCountryRecord({
   restEntry,
   worldBankGdp,
   worldBankGdpPc,
+  existingCountry,
   wikidataEntry,
   generatedAt,
 }) {
-  const governmentForm = setToDisplayValue(wikidataEntry?.governmentForms);
+  const governmentFormValues = wikidataEntry?.governmentForms
+    ? Array.from(wikidataEntry.governmentForms)
+    : [];
+  const politicalClassification = classifyPoliticalCharacteristics(governmentFormValues);
   const headOfState = setToDisplayValue(wikidataEntry?.headsOfState);
   const headOfGovernment = setToDisplayValue(wikidataEntry?.headsOfGovernment);
 
@@ -327,15 +409,16 @@ function buildCountryRecord({
       restEntry?.countryName || geometryProperties?.countryName || "No disponible",
     capital: restEntry?.capital || "No disponible",
     population: restEntry?.population ?? null,
-    gdp: worldBankGdp?.value ?? null,
-    gdpPerCapita: worldBankGdpPc?.value ?? null,
-    governmentForm,
+    gdp: worldBankGdp?.value ?? existingCountry?.gdp ?? null,
+    gdpPerCapita: worldBankGdpPc?.value ?? existingCountry?.gdpPerCapita ?? null,
+    politicalCharacteristics: politicalClassification.characteristics,
+    politicalFilterTags: politicalClassification.politicalFilterTags,
     headOfState,
     headOfGovernment,
     updatedAt: generatedAt,
     source: SOURCE_LABEL,
     continent,
-    politicalSystem: classifyPoliticalSystem(governmentForm),
+    politicalSystem: politicalClassification.politicalSystem,
   };
 }
 
@@ -362,8 +445,12 @@ function collectIssues(record) {
     issues.push("PIB per cápita no disponible en Banco Mundial");
   }
 
-  if (record.governmentForm === "No disponible") {
-    issues.push("Forma de gobierno no disponible en Wikidata");
+  if (
+    record.politicalCharacteristics.governmentForm.length === 0 &&
+    record.politicalCharacteristics.organizationModel.length === 0 &&
+    record.politicalCharacteristics.governmentStructure.length === 0
+  ) {
+    issues.push("Características del sistema político no disponibles en Wikidata");
   }
 
   if (record.headOfState === "No disponible") {
@@ -381,8 +468,24 @@ async function writeJson(filePath, data) {
   await writeFile(filePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
 
+async function readExistingCountriesMap() {
+  try {
+    const raw = await readFile(path.join(OUTPUT_DIR, "countries.normalized.json"), "utf8");
+    const parsed = JSON.parse(raw);
+
+    if (!Array.isArray(parsed)) {
+      return new Map();
+    }
+
+    return new Map(parsed.map((country) => [country.iso3, country]));
+  } catch {
+    return new Map();
+  }
+}
+
 async function main() {
   await mkdir(OUTPUT_DIR, { recursive: true });
+  const existingCountriesMap = await readExistingCountriesMap();
 
   const sourceStatus = [];
   const generatedAt = new Date().toISOString().slice(0, 10);
@@ -450,6 +553,7 @@ async function main() {
       restEntry: restMap.get(iso3),
       worldBankGdp: worldBankGdpMap.get(iso3),
       worldBankGdpPc: worldBankGdpPcMap.get(iso3),
+      existingCountry: existingCountriesMap.get(iso3),
       wikidataEntry: wikidataMap.get(iso3),
       generatedAt,
     });
@@ -468,6 +572,13 @@ async function main() {
 
   countries.sort((a, b) => a.countryName.localeCompare(b.countryName, "es"));
 
+  const gdpFromCache = countries.filter(
+    (country) => country.gdp !== null && !worldBankGdpMap.has(country.iso3),
+  ).length;
+  const gdpPerCapitaFromCache = countries.filter(
+    (country) => country.gdpPerCapita !== null && !worldBankGdpPcMap.has(country.iso3),
+  ).length;
+
   const report = {
     generatedAt,
     totals: {
@@ -482,7 +593,13 @@ async function main() {
       withRestCountries: countries.filter((c) => c.flag).length,
       withWorldBankGdp: countries.filter((c) => c.gdp !== null).length,
       withWorldBankGdpPerCapita: countries.filter((c) => c.gdpPerCapita !== null).length,
-      withWikidataGovernmentForm: countries.filter((c) => c.governmentForm !== "No disponible").length,
+      withWikidataGovernmentForm: countries.filter((c) => c.politicalCharacteristics.governmentForm.length > 0).length,
+      withWikidataOrganizationModel: countries.filter((c) => c.politicalCharacteristics.organizationModel.length > 0).length,
+      withWikidataGovernmentStructure: countries.filter((c) => c.politicalCharacteristics.governmentStructure.length > 0).length,
+    },
+    fallbackCoverage: {
+      worldBankGdpFromCache: gdpFromCache,
+      worldBankGdpPerCapitaFromCache: gdpPerCapitaFromCache,
     },
   };
 

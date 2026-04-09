@@ -154,6 +154,15 @@ Salida del pipeline:
 - `data/mapamundi/countries.normalized.json`: dataset unificado por ISO3.
 - `data/mapamundi/geometry.geo.json`: geometria optimizada para Leaflet.
 - `data/mapamundi/update-report.json`: incidencias por pais/fuente.
+- Si Banco Mundial falla temporalmente, el pipeline conserva los ultimos valores validos de PIB/PIB per capita y lo deja reflejado en `update-report.json`.
+
+Clasificacion politica normalizada en la ficha:
+
+- `Forma de gobierno`: parlamentarismo, presidencialismo, semipresidencialismo, etc.
+- `Modelo de organizacion`: federalismo, confederalismo, estado unitario, etc.
+- `Estructura de gobierno`: monarquia, republica, teocracia, etc.
+
+La separacion se hace con reglas de normalizacion declaradas en `scripts/mapamundi/update-dataset.mjs`.
 
 Automatizacion:
 

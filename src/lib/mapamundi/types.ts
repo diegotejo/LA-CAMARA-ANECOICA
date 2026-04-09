@@ -8,7 +8,12 @@ export interface MapCountryRecord {
   population: number | null;
   gdp: number | null;
   gdpPerCapita: number | null;
-  governmentForm: string;
+  politicalCharacteristics: {
+    governmentForm: string[];
+    organizationModel: string[];
+    governmentStructure: string[];
+  };
+  politicalFilterTags: string[];
   headOfState: string;
   headOfGovernment: string;
   updatedAt: string;

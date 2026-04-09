@@ -2,7 +2,7 @@
   "generatedAt": "2026-04-09",
   "totals": {
     "countries": 176,
-    "countriesWithIssues": 44,
+    "countriesWithIssues": 45,
     "discardedNaturalEarthFeatures": 1
   },
   "sourceStatus": [
@@ -20,11 +20,13 @@
     },
     {
       "source": "Banco Mundial GDP",
-      "status": "ok"
+      "status": "error",
+      "message": "Error: Banco Mundial NY.GDP.MKTP.CD respondió 502"
     },
     {
       "source": "Banco Mundial GDP per cápita",
-      "status": "ok"
+      "status": "error",
+      "message": "Error: Banco Mundial NY.GDP.PCAP.CD respondió 502"
     }
   ],
   "countriesWithIssues": [
@@ -32,14 +34,14 @@
       "iso3": "FJI",
       "countryName": "Fiji",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "TZA",
       "countryName": "Tanzania",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
@@ -51,7 +53,7 @@
         "Población no disponible en REST Countries",
         "PIB no disponible en Banco Mundial",
         "PIB per cápita no disponible en Banco Mundial",
-        "Forma de gobierno no disponible en Wikidata",
+        "Características del sistema político no disponibles en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
       ]
@@ -60,35 +62,35 @@
       "iso3": "PNG",
       "countryName": "Papua New Guinea",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "KEN",
       "countryName": "Kenya",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "TCD",
       "countryName": "Chad",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "HTI",
       "countryName": "Haiti",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "DOM",
       "countryName": "Dominican Republic",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
@@ -97,7 +99,7 @@
       "issues": [
         "PIB no disponible en Banco Mundial",
         "PIB per cápita no disponible en Banco Mundial",
-        "Forma de gobierno no disponible en Wikidata",
+        "Características del sistema político no disponibles en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
       ]
@@ -108,7 +110,7 @@
       "issues": [
         "PIB no disponible en Banco Mundial",
         "PIB per cápita no disponible en Banco Mundial",
-        "Forma de gobierno no disponible en Wikidata",
+        "Características del sistema político no disponibles en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
       ]
@@ -117,7 +119,7 @@
       "iso3": "CRI",
       "countryName": "Costa Rica",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
@@ -131,7 +133,7 @@
       "iso3": "PRI",
       "countryName": "Puerto Rico",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata",
+        "Características del sistema político no disponibles en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
       ]
@@ -140,14 +142,14 @@
       "iso3": "JAM",
       "countryName": "Jamaica",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "ZWE",
       "countryName": "Zimbabwe",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
@@ -161,77 +163,84 @@
       "iso3": "NAM",
       "countryName": "Namibia",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "MLI",
       "countryName": "Mali",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "MRT",
       "countryName": "Mauritania",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "NER",
       "countryName": "Niger",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "TGO",
       "countryName": "Togo",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
+      ]
+    },
+    {
+      "iso3": "GHA",
+      "countryName": "Ghana",
+      "issues": [
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "GNB",
       "countryName": "Guinea-Bissau",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "LBR",
       "countryName": "Liberia",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "CAF",
       "countryName": "Central African Republic",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "GNQ",
       "countryName": "Equatorial Guinea",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "MWI",
       "countryName": "Malawi",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "MOZ",
       "countryName": "Mozambique",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
@@ -243,7 +252,7 @@
         "Población no disponible en REST Countries",
         "PIB no disponible en Banco Mundial",
         "PIB per cápita no disponible en Banco Mundial",
-        "Forma de gobierno no disponible en Wikidata",
+        "Características del sistema político no disponibles en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
       ]
@@ -252,14 +261,14 @@
       "iso3": "JOR",
       "countryName": "Jordan",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "VUT",
       "countryName": "Vanuatu",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
@@ -282,7 +291,7 @@
       "iso3": "NCL",
       "countryName": "New Caledonia",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata",
+        "Características del sistema político no disponibles en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
       ]
@@ -291,14 +300,14 @@
       "iso3": "SLB",
       "countryName": "Solomon Islands",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "LKA",
       "countryName": "Sri Lanka",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
@@ -315,14 +324,14 @@
       "issues": [
         "PIB no disponible en Banco Mundial",
         "PIB per cápita no disponible en Banco Mundial",
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
       "iso3": "PRY",
       "countryName": "Paraguay",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
@@ -334,7 +343,7 @@
         "Población no disponible en REST Countries",
         "PIB no disponible en Banco Mundial",
         "PIB per cápita no disponible en Banco Mundial",
-        "Forma de gobierno no disponible en Wikidata",
+        "Características del sistema político no disponibles en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
       ]
@@ -343,7 +352,7 @@
       "iso3": "DJI",
       "countryName": "Djibouti",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
@@ -355,7 +364,7 @@
         "Población no disponible en REST Countries",
         "PIB no disponible en Banco Mundial",
         "PIB per cápita no disponible en Banco Mundial",
-        "Forma de gobierno no disponible en Wikidata",
+        "Características del sistema político no disponibles en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
       ]
@@ -364,7 +373,7 @@
       "iso3": "SRB",
       "countryName": "Serbia",
       "issues": [
-        "Forma de gobierno no disponible en Wikidata"
+        "Características del sistema político no disponibles en Wikidata"
       ]
     },
     {
@@ -376,7 +385,7 @@
         "Población no disponible en REST Countries",
         "PIB no disponible en Banco Mundial",
         "PIB per cápita no disponible en Banco Mundial",
-        "Forma de gobierno no disponible en Wikidata",
+        "Características del sistema político no disponibles en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
       ]
@@ -390,7 +399,7 @@
         "Población no disponible en REST Countries",
         "PIB no disponible en Banco Mundial",
         "PIB per cápita no disponible en Banco Mundial",
-        "Forma de gobierno no disponible en Wikidata",
+        "Características del sistema político no disponibles en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
       ]
@@ -401,6 +410,12 @@
     "withRestCountries": 170,
     "withWorldBankGdp": 165,
     "withWorldBankGdpPerCapita": 165,
-    "withWikidataGovernmentForm": 137
+    "withWikidataGovernmentForm": 76,
+    "withWikidataOrganizationModel": 37,
+    "withWikidataGovernmentStructure": 112
+  },
+  "fallbackCoverage": {
+    "worldBankGdpFromCache": 165,
+    "worldBankGdpPerCapitaFromCache": 165
   }
 }

@@ -7,7 +7,22 @@
     "population": 43844000,
     "gdp": 17152234636.8715,
     "gdpPerCapita": 413.757894705303,
-    "governmentForm": "estado unitario · emirato · teocracia islámica",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": [
+        "Emirato",
+        "Teocracia"
+      ]
+    },
+    "politicalFilterTags": [
+      "Emirato",
+      "Estado unitario",
+      "Teocracia",
+      "Teocrático"
+    ],
     "headOfState": "Haibatulá Ajundzadá",
     "headOfGovernment": "Mohammad Hasan Akhund",
     "updatedAt": "2026-04-09",
@@ -23,7 +38,17 @@
     "population": 2363314,
     "gdp": 27046429296.6673,
     "gdpPerCapita": 11377.7757431099,
-    "governmentForm": "parlamentarismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo"
+    ],
     "headOfState": "Bajram Begaj",
     "headOfGovernment": "Edi Rama",
     "updatedAt": "2026-04-09",
@@ -39,7 +64,19 @@
     "population": 47400000,
     "gdp": 269322281664.773,
     "gdpPerCapita": 5752.99076651465,
-    "governmentForm": "semipresidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencialismo",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "Abdelmadjid Tebboune",
     "headOfGovernment": "Sifi Ghrieb",
     "updatedAt": "2026-04-09",
@@ -55,7 +92,20 @@
     "population": 36170961,
     "gdp": 100998916781.079,
     "gdpPerCapita": 2665.87444776753,
-    "governmentForm": "república · presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo",
+      "República"
+    ],
     "headOfState": "João Lourenço",
     "headOfGovernment": "João Lourenço",
     "updatedAt": "2026-04-09",
@@ -71,7 +121,20 @@
     "population": 46735004,
     "gdp": 638365455340.04,
     "gdpPerCapita": 13969.7836603737,
-    "governmentForm": "república federal",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federal",
+      "Federalismo",
+      "República"
+    ],
     "headOfState": "Javier Milei",
     "headOfGovernment": "Javier Milei",
     "updatedAt": "2026-04-09",
@@ -87,7 +150,23 @@
     "population": 3076200,
     "gdp": 25955275380.0321,
     "gdpPerCapita": 8556.21406956719,
-    "governmentForm": "república · parlamentarismo · estado unitario",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Vahagn Jachaturián",
     "headOfGovernment": "Nikol Pashinián",
     "updatedAt": "2026-04-09",
@@ -103,7 +182,21 @@
     "population": 27536874,
     "gdp": 1757022451652.83,
     "gdpPerCapita": 64603.9856308464,
-    "governmentForm": "monarquía constitucional · federación · democracia representativa",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federalismo",
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Carlos III del Reino Unido",
     "headOfGovernment": "Anthony Albanese",
     "updatedAt": "2026-04-09",
@@ -119,7 +212,27 @@
     "population": 9200931,
     "gdp": 534790720466.822,
     "gdpPerCapita": 58268.8787651601,
-    "governmentForm": "semipresidencialismo · república parlamentaria federal",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo",
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federalismo",
+      "Parlamentarismo",
+      "Presidencialismo",
+      "República",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "Alexander Van der Bellen",
     "headOfGovernment": "Christian Stocker",
     "updatedAt": "2026-04-09",
@@ -135,7 +248,25 @@
     "population": 10241722,
     "gdp": 74315882352.9412,
     "gdpPerCapita": 7283.8499076179,
-    "governmentForm": "república · semipresidencialismo · estado unitario",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "Presidencialismo",
+      "República",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "Ilham Alíyev",
     "headOfGovernment": "Ali Asadov",
     "updatedAt": "2026-04-09",
@@ -151,7 +282,18 @@
     "population": 398165,
     "gdp": 15832800000,
     "gdpPerCapita": 39455.4466548546,
-    "governmentForm": "monarquía constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Carlos III del Reino Unido",
     "headOfGovernment": "Philip \"Brave\" Davis",
     "updatedAt": "2026-04-09",
@@ -167,7 +309,20 @@
     "population": 169828911,
     "gdp": 450119432068.852,
     "gdpPerCapita": 2593.41611680774,
-    "governmentForm": "sistema Westminster · república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Mohammad Shahabuddin",
     "headOfGovernment": "Muhammad Yunus",
     "updatedAt": "2026-04-09",
@@ -183,7 +338,17 @@
     "population": 9109280,
     "gdp": 75961865471.9129,
     "gdpPerCapita": 8317.63399913792,
-    "governmentForm": "presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "Alejandro Lukashenka",
     "headOfGovernment": "Alexandre Tourchine",
     "updatedAt": "2026-04-09",
@@ -199,7 +364,17 @@
     "population": 11825551,
     "gdp": 671370081636.406,
     "gdpPerCapita": 56614.5679499036,
-    "governmentForm": "federal parliamentary monarchy",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Federal",
+      "Federalismo"
+    ],
     "headOfState": "Felipe I de Bélgica",
     "headOfGovernment": "Bart De Wever",
     "updatedAt": "2026-04-09",
@@ -215,7 +390,24 @@
     "population": 417634,
     "gdp": 3203631800,
     "gdpPerCapita": 7681.24400583113,
-    "governmentForm": "monarquía constitucional · monarquía parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional",
+        "Monarquía parlamentaria"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional",
+      "Monarquía parlamentaria",
+      "Parlamentario",
+      "Parlamentarismo"
+    ],
     "headOfState": "Carlos III del Reino Unido",
     "headOfGovernment": "Johnny Briceño",
     "updatedAt": "2026-04-09",
@@ -231,13 +423,22 @@
     "population": 13224860,
     "gdp": 21482643706.4249,
     "gdpPerCapita": 1485.38018885134,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Patrice Talon",
     "headOfGovernment": "Patrice Talon",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Africa",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "BTN",
@@ -247,7 +448,18 @@
     "population": 784043,
     "gdp": 3012896789.24928,
     "gdpPerCapita": 3831.32535494609,
-    "governmentForm": "monarquía constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Jigme Khesar Namgyal Wangchuck",
     "headOfGovernment": "Tshering Tobgay",
     "updatedAt": "2026-04-09",
@@ -263,7 +475,20 @@
     "population": 11365333,
     "gdp": 54881327452.9667,
     "gdpPerCapita": 4421.16609889999,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Rodrigo Paz",
     "headOfGovernment": "Rodrigo Paz",
     "updatedAt": "2026-04-09",
@@ -279,7 +504,20 @@
     "population": 3422000,
     "gdp": 29613572022.8993,
     "gdpPerCapita": 9358.78768951134,
-    "governmentForm": "república · república federal",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federal",
+      "Federalismo",
+      "República"
+    ],
     "headOfState": "Željko Komšić · Željka Cvijanović · Denis Bećirović",
     "headOfGovernment": "Borjana Krišto",
     "updatedAt": "2026-04-09",
@@ -295,7 +533,20 @@
     "population": 2359609,
     "gdp": 19402063512.9066,
     "gdpPerCapita": 7695.75319445165,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Duma Boko",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -311,7 +562,23 @@
     "population": 213421037,
     "gdp": 2185821648943.86,
     "gdpPerCapita": 10310.5488778166,
-    "governmentForm": "presidencialismo · democracia representativa · república federal",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federalismo",
+      "Presidencial",
+      "Presidencialismo",
+      "República"
+    ],
     "headOfState": "Luiz Inácio Lula da Silva",
     "headOfGovernment": "Luiz Inácio Lula da Silva",
     "updatedAt": "2026-04-09",
@@ -327,7 +594,19 @@
     "population": 455500,
     "gdp": 15340808592.48,
     "gdpPerCapita": 33153.4738913513,
-    "governmentForm": "estado unitario · monarquía absoluta · estado islámico",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": [
+        "Monarquía"
+      ]
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "Monarquía"
+    ],
     "headOfState": "Muda Hassanal Bolkiah",
     "headOfGovernment": "Muda Hassanal Bolkiah",
     "updatedAt": "2026-04-09",
@@ -343,7 +622,20 @@
     "population": 6437360,
     "gdp": 113343355779.985,
     "gdpPerCapita": 17596.0173663521,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Iliana Yotova",
     "headOfGovernment": "Rosen Zhelyazkov",
     "updatedAt": "2026-04-09",
@@ -359,13 +651,22 @@
     "population": 24070553,
     "gdp": 23124729853.0218,
     "gdpPerCapita": 981.992649769081,
-    "governmentForm": "república · junta militar",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Ibrahim Traoré",
     "headOfGovernment": "Apollinaire Joachim Kyélem de Tambèla",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Africa",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "BDI",
@@ -375,7 +676,17 @@
     "population": 12332788,
     "gdp": 3082433067.32634,
     "gdpPerCapita": 219.424830882698,
-    "governmentForm": "presidencialismo · democracia representativa",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "Évariste Ndayishimiye",
     "headOfGovernment": "Gervais Ndirakobuca",
     "updatedAt": "2026-04-09",
@@ -391,7 +702,18 @@
     "population": 17577760,
     "gdp": 46352647037.2406,
     "gdpPerCapita": 2627.87969756224,
-    "governmentForm": "monarquía constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Norodom Sihamoní",
     "headOfGovernment": "Hun Manet",
     "updatedAt": "2026-04-09",
@@ -407,13 +729,22 @@
     "population": 29442327,
     "gdp": 53296694320.2057,
     "gdpPerCapita": 1830.00833684727,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Paul Biya",
     "headOfGovernment": "Joseph Dion Ngute",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Africa",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "CAN",
@@ -423,7 +754,25 @@
     "population": 41651653,
     "gdp": 2243636826633.76,
     "gdpPerCapita": 54340.3477224733,
-    "governmentForm": "monarquía constitucional · federación · parlamentarismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federalismo",
+      "Monarquía",
+      "Monarquía constitucional",
+      "Parlamentario",
+      "Parlamentarismo"
+    ],
     "headOfState": "Carlos III del Reino Unido",
     "headOfGovernment": "Mark Carney",
     "updatedAt": "2026-04-09",
@@ -439,7 +788,12 @@
     "population": 6470307,
     "gdp": 2751494281.06887,
     "gdpPerCapita": 516.160999996036,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Faustin-Archange Touadéra",
     "headOfGovernment": "Félix Moloua",
     "updatedAt": "2026-04-09",
@@ -455,7 +809,12 @@
     "population": 19340757,
     "gdp": 19518819751.283,
     "gdpPerCapita": 961.55975562506,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Mahamat Déby Itno",
     "headOfGovernment": "Idriss Déby",
     "updatedAt": "2026-04-09",
@@ -471,13 +830,22 @@
     "population": 20206953,
     "gdp": 330267137371.592,
     "gdpPerCapita": 16709.8893972307,
-    "governmentForm": "república democrática",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Gabriel Boric",
     "headOfGovernment": "José Antonio Kast",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Americas",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "CHN",
@@ -487,13 +855,29 @@
     "population": 1408280000,
     "gdp": 18743803170827.2,
     "gdpPerCapita": 13303.1481543868,
-    "governmentForm": "república · unipartidismo · estado unitario",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Xi Jinping",
     "headOfGovernment": "Li Qiang",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Asia",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "Parlamentario"
   },
   {
     "iso3": "COL",
@@ -503,13 +887,22 @@
     "population": 53057212,
     "gdp": 418818154879.271,
     "gdpPerCapita": 7919.20886825345,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Gustavo Petro",
     "headOfGovernment": "Gustavo Petro",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Americas",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "CRI",
@@ -519,7 +912,12 @@
     "population": 5309625,
     "gdp": 95350423176.5962,
     "gdpPerCapita": 18587.1532203482,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Rodrigo Chaves",
     "headOfGovernment": "Rodrigo Chaves",
     "updatedAt": "2026-04-09",
@@ -535,13 +933,22 @@
     "population": 3866233,
     "gdp": 92983810328.9088,
     "gdpPerCapita": 24050.4397933135,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Zoran Milanović",
     "headOfGovernment": "Andrej Plenković",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Europe",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "CUB",
@@ -551,13 +958,22 @@
     "population": 9748007,
     "gdp": 107352000000,
     "gdpPerCapita": 9605.27914559614,
-    "governmentForm": "estado unitario",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Estado unitario"
+    ],
     "headOfState": "Miguel Díaz-Canel",
     "headOfGovernment": "Manuel Marrero Cruz",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Americas",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "CYP",
@@ -567,7 +983,20 @@
     "population": 1442614,
     "gdp": 37634533331.8902,
     "gdpPerCapita": 38674.29296875,
-    "governmentForm": "república · presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo",
+      "República"
+    ],
     "headOfState": "Níkos Christodoulídis",
     "headOfGovernment": "Níkos Christodoulídis",
     "updatedAt": "2026-04-09",
@@ -583,7 +1012,20 @@
     "population": 10882341,
     "gdp": 347034062928.479,
     "gdpPerCapita": 31823.3078290564,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Petr Pavel",
     "headOfGovernment": "Andrej Babiš",
     "updatedAt": "2026-04-09",
@@ -599,7 +1041,18 @@
     "population": 6011488,
     "gdp": 424524722037.047,
     "gdpPerCapita": 71026.4832271897,
-    "governmentForm": "monarquía constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Federico X de Dinamarca",
     "headOfGovernment": "Mette Frederiksen",
     "updatedAt": "2026-04-09",
@@ -615,7 +1068,12 @@
     "population": 1066809,
     "gdp": 4152145939.98458,
     "gdpPerCapita": 3552.72335079222,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Ismail Omar Guelleh",
     "headOfGovernment": "Dileita Mohamed Dileita · Abdoulkader Kamil Mohamed",
     "updatedAt": "2026-04-09",
@@ -631,7 +1089,12 @@
     "population": 10771504,
     "gdp": 124282245638.568,
     "gdpPerCapita": 10875.6618443092,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Luis Abinader",
     "headOfGovernment": "Luis Abinader",
     "updatedAt": "2026-04-09",
@@ -647,13 +1110,22 @@
     "population": 112832000,
     "gdp": 70962185790.7094,
     "gdpPerCapita": 649.383338556725,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Félix Tshisekedi",
     "headOfGovernment": "Sylvestre Ilunga Ilukamba",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Africa",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "ECU",
@@ -663,7 +1135,20 @@
     "population": 18103660,
     "gdp": 124676074700,
     "gdpPerCapita": 6874.705739766,
-    "governmentForm": "república · presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo",
+      "República"
+    ],
     "headOfState": "Daniel Noboa",
     "headOfGovernment": "Daniel Noboa",
     "updatedAt": "2026-04-09",
@@ -679,13 +1164,22 @@
     "population": 107271260,
     "gdp": 389059911003.566,
     "gdpPerCapita": 3338.47371395895,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Abdul Fatah Khalil Al-Sisi",
     "headOfGovernment": "Mostafá Madbuli",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Africa",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "SLV",
@@ -695,7 +1189,20 @@
     "population": 6029976,
     "gdp": 35364960000,
     "gdpPerCapita": 5579.65969165029,
-    "governmentForm": "república · presidencialismo · democracia representativa",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo",
+      "República"
+    ],
     "headOfState": "Nayib Bukele",
     "headOfGovernment": "Nayib Bukele",
     "updatedAt": "2026-04-09",
@@ -711,7 +1218,12 @@
     "population": 1668768,
     "gdp": 12765777677.0622,
     "gdpPerCapita": 6745.40013244916,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Teodoro Obiang",
     "headOfGovernment": "Manuel Osa Nsue Nsua",
     "updatedAt": "2026-04-09",
@@ -727,7 +1239,12 @@
     "population": 3607000,
     "gdp": null,
     "gdpPerCapita": null,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Issaías Afewerki",
     "headOfGovernment": "Issaías Afewerki",
     "updatedAt": "2026-04-09",
@@ -743,7 +1260,20 @@
     "population": 1369995,
     "gdp": 43130419829.35,
     "gdpPerCapita": 31428.3547816104,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Alar Karis",
     "headOfGovernment": "Kristen Michal",
     "updatedAt": "2026-04-09",
@@ -759,7 +1289,16 @@
     "population": 1235549,
     "gdp": 4858885840.77236,
     "gdpPerCapita": 3909.55892378182,
-    "governmentForm": "monarquía absoluta",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía"
+    ],
     "headOfState": "Mswati III",
     "headOfGovernment": "Russell Dlamini",
     "updatedAt": "2026-04-09",
@@ -775,7 +1314,20 @@
     "population": 111652998,
     "gdp": 149740297952.986,
     "gdpPerCapita": 1133.88279681719,
-    "governmentForm": "república federal",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federal",
+      "Federalismo",
+      "República"
+    ],
     "headOfState": "Taye Atskeselassie",
     "headOfGovernment": "Abiy Ahmed Ali",
     "updatedAt": "2026-04-09",
@@ -791,7 +1343,12 @@
     "population": 3662,
     "gdp": null,
     "gdpPerCapita": null,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "No disponible",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -807,7 +1364,12 @@
     "population": 900869,
     "gdp": 5968125909.27126,
     "gdpPerCapita": 6425.74151715712,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Wiliame Katonivere",
     "headOfGovernment": "Sitiveni Rabuka",
     "updatedAt": "2026-04-09",
@@ -823,7 +1385,20 @@
     "population": 5650325,
     "gdp": 298696961297.656,
     "gdpPerCapita": 53149.7671934051,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Alexander Stubb",
     "headOfGovernment": "Petteri Orpo",
     "updatedAt": "2026-04-09",
@@ -839,7 +1414,19 @@
     "population": 66351959,
     "gdp": 3160442622465.08,
     "gdpPerCapita": 46103.0840855884,
-    "governmentForm": "semipresidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencialismo",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "Emmanuel Macron",
     "headOfGovernment": "Sébastien Lecornu",
     "updatedAt": "2026-04-09",
@@ -855,7 +1442,12 @@
     "population": 400,
     "gdp": null,
     "gdpPerCapita": null,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "No disponible",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -871,13 +1463,22 @@
     "population": 2469296,
     "gdp": 20895684425.6752,
     "gdpPerCapita": 8230.04311451151,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Brice Oligui Nguema",
     "headOfGovernment": "Raymond Ndong Sima",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Africa",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "GMB",
@@ -887,13 +1488,22 @@
     "population": 2422712,
     "gdp": 2404888749.21907,
     "gdpPerCapita": 871.340291776294,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Adama Barrow",
     "headOfGovernment": "Adama Barrow",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Africa",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "GEO",
@@ -903,7 +1513,27 @@
     "population": 4000921,
     "gdp": 34189423544.9955,
     "gdpPerCapita": 9241.49122313713,
-    "governmentForm": "república · semipresidencialismo · estado unitario",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo",
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "Parlamentarismo",
+      "Presidencialismo",
+      "República",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "Salome Zourabichvili",
     "headOfGovernment": "Irakli Kobakhidze",
     "updatedAt": "2026-04-09",
@@ -919,7 +1549,23 @@
     "population": 83491249,
     "gdp": 4685592577804.69,
     "gdpPerCapita": 56103.7323182554,
-    "governmentForm": "república · federación · república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federalismo",
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Frank-Walter Steinmeier",
     "headOfGovernment": "Friedrich Merz",
     "updatedAt": "2026-04-09",
@@ -935,13 +1581,18 @@
     "population": 33742380,
     "gdp": 82308110386.4641,
     "gdpPerCapita": 2390.77237652715,
-    "governmentForm": "democracia",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "John Dramani Mahama",
     "headOfGovernment": "Nana Akufo-Addo",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Africa",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "GRC",
@@ -951,7 +1602,20 @@
     "population": 10400720,
     "gdp": 256238371778.118,
     "gdpPerCapita": 24626.1481858973,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Konstantínos Tasoúlas",
     "headOfGovernment": "Kyriákos Mitsotákis",
     "updatedAt": "2026-04-09",
@@ -967,7 +1631,22 @@
     "population": 56542,
     "gdp": 3326543974.39193,
     "gdpPerCapita": 58498.9707973609,
-    "governmentForm": "monarquía parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía parlamentaria"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía parlamentaria",
+      "Parlamentario",
+      "Parlamentarismo"
+    ],
     "headOfState": "Federico X de Dinamarca",
     "headOfGovernment": "Jens-Frederik Nielsen",
     "updatedAt": "2026-04-09",
@@ -983,7 +1662,17 @@
     "population": 18079810,
     "gdp": 113199581158.203,
     "gdpPerCapita": 6150.02571438505,
-    "governmentForm": "presidencialismo · democracia representativa",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "Bernardo Arévalo de León",
     "headOfGovernment": "Bernardo Arévalo de León",
     "updatedAt": "2026-04-09",
@@ -999,13 +1688,22 @@
     "population": 14363931,
     "gdp": 25008678293.4084,
     "gdpPerCapita": 1694.95375862193,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Mamady Doumbouya",
     "headOfGovernment": "Bah Oury",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Africa",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "GNB",
@@ -1015,7 +1713,12 @@
     "population": 1781308,
     "gdp": 2218393804.54798,
     "gdpPerCapita": 1007.74151728028,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Manuel Serifo Nhamadjo · Umaro Sissoco Embaló · José Mario Vaz",
     "headOfGovernment": "Rui Duarte de Barros",
     "updatedAt": "2026-04-09",
@@ -1031,7 +1734,20 @@
     "population": 772975,
     "gdp": 24662709832.1343,
     "gdpPerCapita": 29675.2443873316,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Irfaan Ali",
     "headOfGovernment": "Mark Phillips",
     "updatedAt": "2026-04-09",
@@ -1047,7 +1763,12 @@
     "population": 11867032,
     "gdp": 25224154990.7946,
     "gdpPerCapita": 2142.62330526788,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Consejo Presidencial de Transición",
     "headOfGovernment": "Alix Didier Fils-Aimé",
     "updatedAt": "2026-04-09",
@@ -1063,13 +1784,22 @@
     "population": 9892632,
     "gdp": 37093565854.0437,
     "gdpPerCapita": 3426.43483328923,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Q16146159",
     "headOfGovernment": "Q16146159",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Americas",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "HUN",
@@ -1079,7 +1809,20 @@
     "population": 9539502,
     "gdp": 222722738925.641,
     "gdpPerCapita": 23292.3263882478,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Tamás Sulyok",
     "headOfGovernment": "Viktor Orbán",
     "updatedAt": "2026-04-09",
@@ -1095,7 +1838,20 @@
     "population": 391810,
     "gdp": 33255181468.9382,
     "gdpPerCapita": 86040.5309851288,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Halla Tómasdóttir",
     "headOfGovernment": "Kristrún Frostadottir",
     "updatedAt": "2026-04-09",
@@ -1111,7 +1867,23 @@
     "population": 1417492000,
     "gdp": 3909891533858.08,
     "gdpPerCapita": 2694.73780859961,
-    "governmentForm": "república federal · democracia parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federalismo",
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Draupadi Murmu",
     "headOfGovernment": "Narendra Modi",
     "updatedAt": "2026-04-09",
@@ -1127,7 +1899,20 @@
     "population": 284438782,
     "gdp": 1396300098190.97,
     "gdpPerCapita": 4925.43048751861,
-    "governmentForm": "presidencialismo · república",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo",
+      "República"
+    ],
     "headOfState": "Prabowo Subianto",
     "headOfGovernment": "Prabowo Subianto",
     "updatedAt": "2026-04-09",
@@ -1143,7 +1928,25 @@
     "population": 85961000,
     "gdp": 475252089215.416,
     "gdpPerCapita": 5190.16959024821,
-    "governmentForm": "presidencialismo · estado unitario · república islámica",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": [
+        "República",
+        "Teocracia"
+      ]
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "Presidencial",
+      "Presidencialismo",
+      "República",
+      "Teocracia"
+    ],
     "headOfState": "Mochtabá Jameneí",
     "headOfGovernment": "Masoud Pezeshkian",
     "updatedAt": "2026-04-09",
@@ -1159,7 +1962,20 @@
     "population": 46118793,
     "gdp": 279641257615.385,
     "gdpPerCapita": 6073.61032342708,
-    "governmentForm": "federación · república federal",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federal",
+      "Federalismo",
+      "República"
+    ],
     "headOfState": "Latif Rashid",
     "headOfGovernment": "Mohammed Shia' Al Sudani",
     "updatedAt": "2026-04-09",
@@ -1175,13 +1991,25 @@
     "population": 5458600,
     "gdp": 609157459747.205,
     "gdpPerCapita": 112894.953240805,
-    "governmentForm": "república · estado unitario",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "República"
+    ],
     "headOfState": "Catherine Connolly",
     "headOfGovernment": "Micheál Martin",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Europe",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "ISR",
@@ -1191,7 +2019,23 @@
     "population": 10134800,
     "gdp": 540379921261.681,
     "gdpPerCapita": 54176.6844383302,
-    "governmentForm": "estado unitario · república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Isaac Herzog",
     "headOfGovernment": "Benjamín Netanyahu",
     "updatedAt": "2026-04-09",
@@ -1207,7 +2051,20 @@
     "population": 58927633,
     "gdp": 2380825077243.59,
     "gdpPerCapita": 40385.3413957669,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Sergio Mattarella",
     "headOfGovernment": "Giorgia Meloni",
     "updatedAt": "2026-04-09",
@@ -1223,13 +2080,22 @@
     "population": 31719275,
     "gdp": 87113179149.284,
     "gdpPerCapita": 2727.8935220697,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Alassane Ouattara",
     "headOfGovernment": "Robert Beugré Mambé",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Africa",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "JAM",
@@ -1239,7 +2105,12 @@
     "population": 2825544,
     "gdp": 22014397089.7689,
     "gdpPerCapita": 7753.8006955432,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Carlos III del Reino Unido",
     "headOfGovernment": "Andrew Holness",
     "updatedAt": "2026-04-09",
@@ -1255,7 +2126,18 @@
     "population": 123210000,
     "gdp": 4027597523550.58,
     "gdpPerCapita": 32487.0778047567,
-    "governmentForm": "monarquía constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Naruhito",
     "headOfGovernment": "Sanae Takaichi",
     "updatedAt": "2026-04-09",
@@ -1271,7 +2153,12 @@
     "population": 11734000,
     "gdp": 53352289577.4648,
     "gdpPerCapita": 4618.09592498567,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Abdalá II de Jordania",
     "headOfGovernment": "Jafar Hassan",
     "updatedAt": "2026-04-09",
@@ -1287,7 +2174,17 @@
     "population": 20426568,
     "gdp": 291480274648.826,
     "gdpPerCapita": 14154.6324958076,
-    "governmentForm": "presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "Kasim-Yomart Tokaev",
     "headOfGovernment": "Alihan Smaiylov",
     "updatedAt": "2026-04-09",
@@ -1303,7 +2200,12 @@
     "population": 53330978,
     "gdp": 120339557905.932,
     "gdpPerCapita": 2132.43452097647,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "William Ruto",
     "headOfGovernment": "William Ruto",
     "updatedAt": "2026-04-09",
@@ -1319,7 +2221,12 @@
     "population": null,
     "gdp": null,
     "gdpPerCapita": null,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "No disponible",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -1335,7 +2242,18 @@
     "population": 4881254,
     "gdp": 160227273053.334,
     "gdpPerCapita": 32717.7186631255,
-    "governmentForm": "monarquía constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Mishal Al-Ahmad Al-Jaber Al-Sabah",
     "headOfGovernment": "Sabah Al-Jalid Al-Sabah",
     "updatedAt": "2026-04-09",
@@ -1351,7 +2269,20 @@
     "population": 7281800,
     "gdp": 17478259659.2625,
     "gdpPerCapita": 2420.18542283831,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Sadyr Zhaparov",
     "headOfGovernment": "Akylbek Japarov · Sooronbay Jeenbekov · Sadyr Zhaparov",
     "updatedAt": "2026-04-09",
@@ -1367,13 +2298,22 @@
     "population": 7647000,
     "gdp": 16502933121.3379,
     "gdpPerCapita": 2123.97909415109,
-    "governmentForm": "república popular · dictadura comunista",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Thongloun Sisoulith",
     "headOfGovernment": "Sonexay Siphandone",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Asia",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "LVA",
@@ -1383,7 +2323,20 @@
     "population": 1829000,
     "gdp": 43684254432.3609,
     "gdpPerCapita": 23409.0845154775,
-    "governmentForm": "república · república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Edgars Rinkēvičs",
     "headOfGovernment": "Evika Siliņa",
     "updatedAt": "2026-04-09",
@@ -1399,7 +2352,20 @@
     "population": 5490000,
     "gdp": 20078620356.9931,
     "gdpPerCapita": 3477.72489842684,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Joseph Aoun",
     "headOfGovernment": "Nawaf Salam",
     "updatedAt": "2026-04-09",
@@ -1415,7 +2381,18 @@
     "population": 2116427,
     "gdp": 2271759454.51107,
     "gdpPerCapita": 971.90771824829,
-    "governmentForm": "monarquía constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Letsie III",
     "headOfGovernment": "Sam Matekane",
     "updatedAt": "2026-04-09",
@@ -1431,7 +2408,12 @@
     "population": 5248621,
     "gdp": 4779300900,
     "gdpPerCapita": 851.497723870206,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Joseph Boakai",
     "headOfGovernment": "Joseph Boakai",
     "updatedAt": "2026-04-09",
@@ -1447,13 +2429,22 @@
     "population": 7459000,
     "gdp": 48487151215.345,
     "gdpPerCapita": 6569.16408678648,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Mohamed Menfi",
     "headOfGovernment": "Abdul Hamid Dabaiba",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Africa",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "LTU",
@@ -1463,7 +2454,24 @@
     "population": 2894886,
     "gdp": 84869215513.3648,
     "gdpPerCapita": 29384.0189598663,
-    "governmentForm": "semipresidencialismo · república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo",
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentarismo",
+      "Presidencialismo",
+      "República",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "Gitanas Nausėda",
     "headOfGovernment": "Inga Ruginienė",
     "updatedAt": "2026-04-09",
@@ -1479,7 +2487,18 @@
     "population": 681973,
     "gdp": 93279851863.4062,
     "gdpPerCapita": 137781.681659123,
-    "governmentForm": "monarquía constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Guillermo V de Luxemburgo",
     "headOfGovernment": "Luc Frieden",
     "updatedAt": "2026-04-09",
@@ -1495,13 +2514,22 @@
     "population": 31727042,
     "gdp": 17420501490.1231,
     "gdpPerCapita": 544.987501003384,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Michael Randrianirina",
     "headOfGovernment": "Ruphin Zafisambo",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Africa",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "MWI",
@@ -1511,7 +2539,12 @@
     "population": 20734262,
     "gdp": 11316411329.4619,
     "gdpPerCapita": 522.570393642547,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Peter Mutharika",
     "headOfGovernment": "Lazarus Chakwera",
     "updatedAt": "2026-04-09",
@@ -1527,13 +2560,33 @@
     "population": 34231700,
     "gdp": 422227005428.688,
     "gdpPerCapita": 11874.4273684245,
-    "governmentForm": "monarquía constitucional · monarquía electiva · monarquía federal",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional",
+        "Monarquía parlamentaria"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federalismo",
+      "Monarquía",
+      "Monarquía constitucional",
+      "Monarquía parlamentaria",
+      "Parlamentario",
+      "Parlamentarismo"
+    ],
     "headOfState": "Ibrahim Ismail of Johor",
     "headOfGovernment": "Anwar Ibrahim",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Asia",
-    "politicalSystem": "Monarquía constitucional"
+    "politicalSystem": "Parlamentario"
   },
   {
     "iso3": "MLI",
@@ -1543,7 +2596,12 @@
     "population": 22395489,
     "gdp": 26794747239.8805,
     "gdpPerCapita": 1094.61949265799,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Assimi Goita",
     "headOfGovernment": "Choguel Maïga",
     "updatedAt": "2026-04-09",
@@ -1559,7 +2617,12 @@
     "population": 4927532,
     "gdp": 10908045686.8808,
     "gdpPerCapita": 2110.12036938187,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Mohamed Ould Ghazouani",
     "headOfGovernment": "Moctar Ould Djay",
     "updatedAt": "2026-04-09",
@@ -1575,7 +2638,20 @@
     "population": 130575786,
     "gdp": 1856365616165.94,
     "gdpPerCapita": 14185.7812248529,
-    "governmentForm": "república federal",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federal",
+      "Federalismo",
+      "República"
+    ],
     "headOfState": "Q5771800",
     "headOfGovernment": "Q5771800",
     "updatedAt": "2026-04-09",
@@ -1591,7 +2667,20 @@
     "population": 2749076,
     "gdp": 18200340853.6517,
     "gdpPerCapita": 7576.19589413326,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Maia Sandu",
     "headOfGovernment": "Alexandru Munteanu",
     "updatedAt": "2026-04-09",
@@ -1607,7 +2696,17 @@
     "population": 3544835,
     "gdp": 23794540024.5132,
     "gdpPerCapita": 6750.6301157724,
-    "governmentForm": "parlamentarismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo"
+    ],
     "headOfState": "Ukhnaagiin Khürelsükh",
     "headOfGovernment": "Uchral Nyam-Osor",
     "updatedAt": "2026-04-09",
@@ -1623,13 +2722,22 @@
     "population": 623327,
     "gdp": 8270016670.86774,
     "gdpPerCapita": 13263.3281277699,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Jakov Milatović",
     "headOfGovernment": "Milojko Spajić",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Europe",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "MAR",
@@ -1639,7 +2747,18 @@
     "population": 36828330,
     "gdp": 160610994054.734,
     "gdpPerCapita": 4153.1943359375,
-    "governmentForm": "monarquía constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Mohamed VI de Marruecos",
     "headOfGovernment": "Aziz Akhannouch",
     "updatedAt": "2026-04-09",
@@ -1655,7 +2774,12 @@
     "population": 34090466,
     "gdp": 22745341305.0622,
     "gdpPerCapita": 656.776824637306,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Daniel Chapo",
     "headOfGovernment": "Maria Benvida Levy",
     "updatedAt": "2026-04-09",
@@ -1671,13 +2795,22 @@
     "population": 51316756,
     "gdp": 74068349523.8095,
     "gdpPerCapita": 1359.05001560107,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Myint Swe",
     "headOfGovernment": "Min Aung Hlaing",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Asia",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "NAM",
@@ -1687,7 +2820,12 @@
     "population": 3022401,
     "gdp": 13372354511.716,
     "gdpPerCapita": 4413.12752211572,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Netumbo Nandi-Ndaitwah",
     "headOfGovernment": "Elijah Ngurare",
     "updatedAt": "2026-04-09",
@@ -1703,7 +2841,20 @@
     "population": 29911840,
     "gdp": 42914268286.7109,
     "gdpPerCapita": 1447.31004458428,
-    "governmentForm": "república federal",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federal",
+      "Federalismo",
+      "República"
+    ],
     "headOfState": "Ram Chandra Poudel",
     "headOfGovernment": "Prachanda",
     "updatedAt": "2026-04-09",
@@ -1719,7 +2870,18 @@
     "population": 18100436,
     "gdp": 1214927698572.66,
     "gdpPerCapita": 67520.4218956281,
-    "governmentForm": "monarquía constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Guillermo Alejandro de los Países Bajos",
     "headOfGovernment": "Rob Jetten",
     "updatedAt": "2026-04-09",
@@ -1735,7 +2897,12 @@
     "population": 264596,
     "gdp": 8548919387.12607,
     "gdpPerCapita": 29213.1923192946,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "No disponible",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -1751,7 +2918,22 @@
     "population": 5324700,
     "gdp": 260172385097.616,
     "gdpPerCapita": 49205.1792146792,
-    "governmentForm": "monarquía parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía parlamentaria"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía parlamentaria",
+      "Parlamentario",
+      "Parlamentarismo"
+    ],
     "headOfState": "Carlos III del Reino Unido",
     "headOfGovernment": "Christopher Luxon",
     "updatedAt": "2026-04-09",
@@ -1767,13 +2949,22 @@
     "population": 6803886,
     "gdp": 19693982967.5926,
     "gdpPerCapita": 2847.53966339498,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Daniel Ortega",
     "headOfGovernment": "Daniel Ortega",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Americas",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "NER",
@@ -1783,7 +2974,12 @@
     "population": 26312034,
     "gdp": 19876128485.7857,
     "gdpPerCapita": 735.270255787226,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Abdourahamane Tchiani",
     "headOfGovernment": "Ali Lamine Zeine",
     "updatedAt": "2026-04-09",
@@ -1799,7 +2995,20 @@
     "population": 223800000,
     "gdp": 252261880141.151,
     "gdpPerCapita": 1084.16041805436,
-    "governmentForm": "república federal",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federal",
+      "Federalismo",
+      "República"
+    ],
     "headOfState": "Bola Tinubu",
     "headOfGovernment": "Bola Tinubu",
     "updatedAt": "2026-04-09",
@@ -1815,13 +3024,25 @@
     "population": 25950000,
     "gdp": null,
     "gdpPerCapita": null,
-    "governmentForm": "república · unipartidismo · estado unitario",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "República"
+    ],
     "headOfState": "Kim Jong-un",
     "headOfGovernment": "Pak Thae-song",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Asia",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "MKD",
@@ -1831,7 +3052,20 @@
     "population": 1822612,
     "gdp": 16951682245.4202,
     "gdpPerCapita": 9291.85661671864,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Gordana Siljanovska-Davkova",
     "headOfGovernment": "Hristijan Mickoski",
     "updatedAt": "2026-04-09",
@@ -1847,7 +3081,12 @@
     "population": null,
     "gdp": null,
     "gdpPerCapita": null,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "No disponible",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -1863,7 +3102,18 @@
     "population": 5606944,
     "gdp": 483592648313.301,
     "gdpPerCapita": 86785.4334489176,
-    "governmentForm": "monarquía constitucional · democracia representativa",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Harald V de Noruega",
     "headOfGovernment": "Jonas Gahr Støre",
     "updatedAt": "2026-04-09",
@@ -1879,7 +3129,16 @@
     "population": 5343630,
     "gdp": 107137198769.386,
     "gdpPerCapita": 20285.2272897377,
-    "governmentForm": "monarquía absoluta",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía"
+    ],
     "headOfState": "Haitham de Omán",
     "headOfGovernment": "Haitham de Omán",
     "updatedAt": "2026-04-09",
@@ -1895,7 +3154,23 @@
     "population": 241499431,
     "gdp": 371570000121.266,
     "gdpPerCapita": 1478.77277977996,
-    "governmentForm": "república federal · república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federalismo",
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Asif Ali Zardari",
     "headOfGovernment": "Shahbaz Sharif",
     "updatedAt": "2026-04-09",
@@ -1911,7 +3186,12 @@
     "population": null,
     "gdp": null,
     "gdpPerCapita": null,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "No disponible",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -1927,7 +3207,17 @@
     "population": 4064780,
     "gdp": 86523959131.7472,
     "gdpPerCapita": 19161.2188501596,
-    "governmentForm": "presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "José Raúl Mulino",
     "headOfGovernment": "José Raúl Mulino",
     "updatedAt": "2026-04-09",
@@ -1943,7 +3233,12 @@
     "population": 11781559,
     "gdp": 31800428265.5246,
     "gdpPerCapita": 3006.70564478923,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Carlos III del Reino Unido",
     "headOfGovernment": "James Marape",
     "updatedAt": "2026-04-09",
@@ -1959,7 +3254,12 @@
     "population": 6109644,
     "gdp": 44458118397.4445,
     "gdpPerCapita": 6416.09708970845,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Santiago Peña Palacios",
     "headOfGovernment": "Santiago Peña Palacios",
     "updatedAt": "2026-04-09",
@@ -1975,7 +3275,17 @@
     "population": 34350244,
     "gdp": 289221969062.941,
     "gdpPerCapita": 8452.37167056621,
-    "governmentForm": "presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "José María Balcázar",
     "headOfGovernment": "José María Balcázar",
     "updatedAt": "2026-04-09",
@@ -1991,13 +3301,22 @@
     "population": 114123600,
     "gdp": 461617509782.355,
     "gdpPerCapita": 3984.8315387656,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Ferdinand R. Marcos",
     "headOfGovernment": "Ferdinand R. Marcos",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Asia",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "POL",
@@ -2007,7 +3326,24 @@
     "population": 37392000,
     "gdp": 917767106146.761,
     "gdpPerCapita": 25103.565661423,
-    "governmentForm": "semipresidencialismo · parlamentarismo · estado unitario",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo",
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "Parlamentarismo",
+      "Presidencialismo",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "Karol Nawrocki",
     "headOfGovernment": "Donald Tusk",
     "updatedAt": "2026-04-09",
@@ -2023,13 +3359,22 @@
     "population": 10749635,
     "gdp": 313271185085.102,
     "gdpPerCapita": 29292.242104753,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "António José Seguro",
     "headOfGovernment": "Luís Montenegro",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Europe",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "PRI",
@@ -2039,7 +3384,12 @@
     "population": 3203295,
     "gdp": 126029527033.705,
     "gdpPerCapita": 39343.7154660139,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "No disponible",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -2055,7 +3405,18 @@
     "population": 3173024,
     "gdp": 219162637362.637,
     "gdpPerCapita": 76688.6941743178,
-    "governmentForm": "monarquía constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Tamim bin Hamad Al Thani",
     "headOfGovernment": "Mohammed bin Abdulrahman Al Thani",
     "updatedAt": "2026-04-09",
@@ -2071,7 +3432,20 @@
     "population": 6142180,
     "gdp": 15719986076.6464,
     "gdpPerCapita": 2482.2489948456,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Denis Sassou-Nguesso",
     "headOfGovernment": "Anatole Collinet Makosso",
     "updatedAt": "2026-04-09",
@@ -2087,7 +3461,19 @@
     "population": 19036031,
     "gdp": 382564217988.866,
     "gdpPerCapita": 20080.2096215595,
-    "governmentForm": "semipresidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencialismo",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "Nicușor Dan",
     "headOfGovernment": "Ilie Bolojan",
     "updatedAt": "2026-04-09",
@@ -2103,13 +3489,22 @@
     "population": 146028325,
     "gdp": 2173835806671.66,
     "gdpPerCapita": 14889.0185546875,
-    "governmentForm": "super-presidential republic",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Vladímir Putin",
     "headOfGovernment": "Mijaíl Mishustin",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Europe",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "RWA",
@@ -2119,7 +3514,19 @@
     "population": 14104969,
     "gdp": 14251642235.0968,
     "gdpPerCapita": 999.65456165547,
-    "governmentForm": "semipresidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencialismo",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "Paul Kagame",
     "headOfGovernment": "Justin Nsengiyumva",
     "updatedAt": "2026-04-09",
@@ -2135,7 +3542,18 @@
     "population": 35300280,
     "gdp": 1239804533333.33,
     "gdpPerCapita": 35121.6628687742,
-    "governmentForm": "monarquía · monarquía absoluta · teocracia islámica",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Teocracia"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Teocracia"
+    ],
     "headOfState": "Salman bin Abdul-Aziz Al Saud",
     "headOfGovernment": "Salman bin Abdul-Aziz Al Saud",
     "updatedAt": "2026-04-09",
@@ -2151,7 +3569,17 @@
     "population": 18593258,
     "gdp": 32808056600.9436,
     "gdpPerCapita": 1773.21829923448,
-    "governmentForm": "presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "Bassirou Diomaye Diakhar Faye",
     "headOfGovernment": "Bassirou Diomaye Diakhar Faye",
     "updatedAt": "2026-04-09",
@@ -2167,7 +3595,12 @@
     "population": 6567783,
     "gdp": 90097765959.1114,
     "gdpPerCapita": 13679.2065983557,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Aleksandar Vučić",
     "headOfGovernment": "Djuro Macut",
     "updatedAt": "2026-04-09",
@@ -2183,7 +3616,17 @@
     "population": 9077691,
     "gdp": 6971127235.3123,
     "gdpPerCapita": 806.654650417726,
-    "governmentForm": "presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "Julius Maada Bio",
     "headOfGovernment": "David Sengeh",
     "updatedAt": "2026-04-09",
@@ -2199,7 +3642,20 @@
     "population": 5413813,
     "gdp": 140934076532.375,
     "gdpPerCapita": 25992.6748502048,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Peter Pellegrini",
     "headOfGovernment": "Robert Fico",
     "updatedAt": "2026-04-09",
@@ -2215,13 +3671,22 @@
     "population": 2130638,
     "gdp": 72972015197.3859,
     "gdpPerCapita": 34301.0318686594,
-    "governmentForm": "república democrática",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Nataša Pirc Musar",
     "headOfGovernment": "Robert Golob",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Europe",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "SLB",
@@ -2231,7 +3696,12 @@
     "population": 750325,
     "gdp": 1583964703.75061,
     "gdpPerCapita": 1933.55538435227,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Carlos III del Reino Unido",
     "headOfGovernment": "Jeremiah Manele",
     "updatedAt": "2026-04-09",
@@ -2247,7 +3717,20 @@
     "population": 19655000,
     "gdp": 11967000000,
     "gdpPerCapita": 629.538899449007,
-    "governmentForm": "república federal",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federal",
+      "Federalismo",
+      "República"
+    ],
     "headOfState": "Hassan Sheikh Mohamud",
     "headOfGovernment": "Mohamed Hussein Roble",
     "updatedAt": "2026-04-09",
@@ -2263,7 +3746,12 @@
     "population": null,
     "gdp": null,
     "gdpPerCapita": null,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "No disponible",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -2279,7 +3767,20 @@
     "population": 63100945,
     "gdp": 401144998373.585,
     "gdpPerCapita": 6267.186814093,
-    "governmentForm": "república parlamentaria · democracia representativa",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Cyril Ramaphosa",
     "headOfGovernment": "Cyril Ramaphosa",
     "updatedAt": "2026-04-09",
@@ -2295,7 +3796,20 @@
     "population": 51159889,
     "gdp": 1875388209406.8,
     "gdpPerCapita": 36238.639908315,
-    "governmentForm": "república · presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo",
+      "República"
+    ],
     "headOfState": "Lee Jae-myung",
     "headOfGovernment": "Lee Jae-myung",
     "updatedAt": "2026-04-09",
@@ -2311,7 +3825,12 @@
     "population": null,
     "gdp": null,
     "gdpPerCapita": null,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "No disponible",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -2327,7 +3846,22 @@
     "population": 49315949,
     "gdp": 1725671652742.19,
     "gdpPerCapita": 35326.7683069278,
-    "governmentForm": "monarquía parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía parlamentaria"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía parlamentaria",
+      "Parlamentario",
+      "Parlamentarismo"
+    ],
     "headOfState": "Felipe VI de España",
     "headOfGovernment": "Pedro Sánchez",
     "updatedAt": "2026-04-09",
@@ -2343,7 +3877,12 @@
     "population": 21763170,
     "gdp": 98963185509.6499,
     "gdpPerCapita": 4515.56787322732,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Anura Kumara Dissanayake",
     "headOfGovernment": "Harini Amarasuriya",
     "updatedAt": "2026-04-09",
@@ -2359,7 +3898,20 @@
     "population": 51662000,
     "gdp": 49672435513.1126,
     "gdpPerCapita": 984.607666015625,
-    "governmentForm": "república federal",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federal",
+      "Federalismo",
+      "República"
+    ],
     "headOfState": "Abdel Fattah Abdelrahman Burhan",
     "headOfGovernment": "Abdalla Hamdok",
     "updatedAt": "2026-04-09",
@@ -2375,13 +3927,22 @@
     "population": 616500,
     "gdp": 4416775112.09627,
     "gdpPerCapita": 6961.78955961526,
-    "governmentForm": "república",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "República"
+    ],
     "headOfState": "Jennifer Simons",
     "headOfGovernment": "Jennifer Simons",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Americas",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "SWE",
@@ -2391,7 +3952,18 @@
     "population": 10605098,
     "gdp": 603715224265.798,
     "gdpPerCapita": 57117.4877440616,
-    "governmentForm": "monarquía constitucional · democracia representativa",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Carlos XVI Gustavo de Suecia",
     "headOfGovernment": "Ulf Kristersson",
     "updatedAt": "2026-04-09",
@@ -2407,7 +3979,20 @@
     "population": 9082848,
     "gdp": 936564198048.516,
     "gdpPerCapita": 103998.186685604,
-    "governmentForm": "república federal · sistema directorial",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federal",
+      "Federalismo",
+      "República"
+    ],
     "headOfState": "Consejo Federal de Suiza",
     "headOfGovernment": "Consejo Federal de Suiza",
     "updatedAt": "2026-04-09",
@@ -2423,7 +4008,19 @@
     "population": 25620000,
     "gdp": 23622827079.5047,
     "gdpPerCapita": 1051.67149587463,
-    "governmentForm": "semipresidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencialismo",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "No disponible",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -2439,7 +4036,22 @@
     "population": 23317031,
     "gdp": null,
     "gdpPerCapita": null,
-    "governmentForm": "democracia · semipresidencialismo · república constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Presidencialismo",
+      "República",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "Lai Ching‑te",
     "headOfGovernment": "Chuo Rung-tai",
     "updatedAt": "2026-04-09",
@@ -2455,7 +4067,17 @@
     "population": 10499000,
     "gdp": 14204575548.5536,
     "gdpPerCapita": 1341.20229027672,
-    "governmentForm": "presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "Emomali Rahmon",
     "headOfGovernment": "Kokhir Rasulzoda",
     "updatedAt": "2026-04-09",
@@ -2471,7 +4093,12 @@
     "population": 68153004,
     "gdp": 78844405385.2195,
     "gdpPerCapita": 1186.71691894531,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Samia Suluhu",
     "headOfGovernment": "Samia Suluhu",
     "updatedAt": "2026-04-09",
@@ -2487,7 +4114,24 @@
     "population": 65859640,
     "gdp": 526517658841.684,
     "gdpPerCapita": 7346.62022142185,
-    "governmentForm": "monarquía constitucional · monarquía parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional",
+        "Monarquía parlamentaria"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional",
+      "Monarquía parlamentaria",
+      "Parlamentario",
+      "Parlamentarismo"
+    ],
     "headOfState": "Maha Vajiralongkorn",
     "headOfGovernment": "Peatongtarn Shinawatra",
     "updatedAt": "2026-04-09",
@@ -2503,7 +4147,25 @@
     "population": 1391221,
     "gdp": 1865608515.41321,
     "gdpPerCapita": 1331.9705130185,
-    "governmentForm": "república · semipresidencialismo · estado unitario",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "Presidencialismo",
+      "República",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "José Ramos-Horta",
     "headOfGovernment": "Xanana Gusmão",
     "updatedAt": "2026-04-09",
@@ -2519,7 +4181,12 @@
     "population": 8095498,
     "gdp": 10651180146.531,
     "gdpPerCapita": 1119.38160509429,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Jean-Lucien Savi de Tové",
     "headOfGovernment": "Faure Gnassingbé",
     "updatedAt": "2026-04-09",
@@ -2535,7 +4202,20 @@
     "population": 1367764,
     "gdp": 25633544529.4849,
     "gdpPerCapita": 18733.4110406494,
-    "governmentForm": "república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentario",
+      "Parlamentarismo",
+      "República"
+    ],
     "headOfState": "Christine Kangaloo",
     "headOfGovernment": "Kamla Persad-Bissessar",
     "updatedAt": "2026-04-09",
@@ -2551,7 +4231,24 @@
     "population": 11972169,
     "gdp": 51332285656.5422,
     "gdpPerCapita": 4181.13789301228,
-    "governmentForm": "semipresidencialismo · república parlamentaria",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Parlamentarismo",
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Parlamentarismo",
+      "Presidencialismo",
+      "República",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "Kais Saied",
     "headOfGovernment": "Sara Zaafarani",
     "updatedAt": "2026-04-09",
@@ -2567,7 +4264,20 @@
     "population": 85664944,
     "gdp": 1359123768774.12,
     "gdpPerCapita": 15892.7157287241,
-    "governmentForm": "presidencialismo · estado unitario",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "Recep Tayyip Erdoğan",
     "headOfGovernment": "Recep Tayyip Erdoğan",
     "updatedAt": "2026-04-09",
@@ -2583,7 +4293,20 @@
     "population": 7057841,
     "gdp": 51387209872.2994,
     "gdpPerCapita": 6856.65802730208,
-    "governmentForm": "república · presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo",
+      "República"
+    ],
     "headOfState": "Serdar Berdimuhamedow",
     "headOfGovernment": "Serdar Berdimuhamedow",
     "updatedAt": "2026-04-09",
@@ -2599,7 +4322,17 @@
     "population": 45905417,
     "gdp": 53911907086.1525,
     "gdpPerCapita": 1077.91278452817,
-    "governmentForm": "presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "Yoweri Museveni",
     "headOfGovernment": "Robinah Nabbanja",
     "updatedAt": "2026-04-09",
@@ -2615,7 +4348,19 @@
     "population": 32862000,
     "gdp": 190741262414.705,
     "gdpPerCapita": 5389.47314453125,
-    "governmentForm": "semipresidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo",
+        "Semipresidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencialismo",
+      "Semipresidencial",
+      "Semipresidencialismo"
+    ],
     "headOfState": "Volodímir Zelenski",
     "headOfGovernment": "Yulia Svyrydenko",
     "updatedAt": "2026-04-09",
@@ -2631,7 +4376,21 @@
     "population": 11294243,
     "gdp": 552324846834.581,
     "gdpPerCapita": 50273.5060469837,
-    "governmentForm": "monarquía constitucional · monarquía absoluta · monarquía federal",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federalismo",
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Mohammed bin Zayed Al Nahyan",
     "headOfGovernment": "Mohammed bin Rashid Al Maktoum",
     "updatedAt": "2026-04-09",
@@ -2647,7 +4406,18 @@
     "population": 69281437,
     "gdp": 3686033044482.13,
     "gdpPerCapita": 53246.3676145108,
-    "governmentForm": "monarquía constitucional",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": [
+        "Monarquía",
+        "Monarquía constitucional"
+      ]
+    },
+    "politicalFilterTags": [
+      "Monarquía",
+      "Monarquía constitucional"
+    ],
     "headOfState": "Carlos III del Reino Unido",
     "headOfGovernment": "Keir Starmer",
     "updatedAt": "2026-04-09",
@@ -2663,7 +4433,23 @@
     "population": 340110988,
     "gdp": 28750956130731.2,
     "gdpPerCapita": 84534.0407841548,
-    "governmentForm": "república · presidencialismo · república federal",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federalismo",
+      "Presidencial",
+      "Presidencialismo",
+      "República"
+    ],
     "headOfState": "Donald Trump",
     "headOfGovernment": "Donald Trump",
     "updatedAt": "2026-04-09",
@@ -2679,7 +4465,20 @@
     "population": 3499451,
     "gdp": 80961511073.5797,
     "gdpPerCapita": 23906.5133029408,
-    "governmentForm": "república · presidencialismo · democracia participativa",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo",
+      "República"
+    ],
     "headOfState": "Yamandú Orsi",
     "headOfGovernment": "Yamandú Orsi",
     "updatedAt": "2026-04-09",
@@ -2695,7 +4494,17 @@
     "population": 37859698,
     "gdp": 114965293466.611,
     "gdpPerCapita": 3161.70010632875,
-    "governmentForm": "presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "Shavkat Mirziyoyev",
     "headOfGovernment": "Abdulla Aripov",
     "updatedAt": "2026-04-09",
@@ -2711,7 +4520,12 @@
     "population": 321409,
     "gdp": 1117972034.22642,
     "gdpPerCapita": 3410.77023167097,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Nikenike Vurobaravu",
     "headOfGovernment": "Bob Loughman",
     "updatedAt": "2026-04-09",
@@ -2727,7 +4541,23 @@
     "population": 28517000,
     "gdp": 119802963257.783,
     "gdpPerCapita": 4217.59102643391,
-    "governmentForm": "presidencialismo · república federal",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [
+        "Federalismo"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Federalismo",
+      "Presidencial",
+      "Presidencialismo",
+      "República"
+    ],
     "headOfState": "Q15081116",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -2743,13 +4573,25 @@
     "population": 101343800,
     "gdp": 476388230307.175,
     "gdpPerCapita": 4717.29028732449,
-    "governmentForm": "república · unipartidismo · estado unitario",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [
+        "Estado unitario"
+      ],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Estado unitario",
+      "República"
+    ],
     "headOfState": "Tô Lâm",
     "headOfGovernment": "Phạm Minh Chính",
     "updatedAt": "2026-04-09",
     "source": "Natural Earth · REST Countries · Banco Mundial · Wikidata",
     "continent": "Asia",
-    "politicalSystem": "Otros / mixto"
+    "politicalSystem": "No clasificado"
   },
   {
     "iso3": "SAH",
@@ -2759,7 +4601,12 @@
     "population": null,
     "gdp": null,
     "gdpPerCapita": null,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "No disponible",
     "headOfGovernment": "No disponible",
     "updatedAt": "2026-04-09",
@@ -2775,7 +4622,20 @@
     "population": 32684503,
     "gdp": 21606160663.0318,
     "gdpPerCapita": 633.887202451545,
-    "governmentForm": "república · presidencialismo",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": [
+        "República"
+      ]
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo",
+      "República"
+    ],
     "headOfState": "Rashad al-Alimi",
     "headOfGovernment": "Salem Saleh Salem bin brek",
     "updatedAt": "2026-04-09",
@@ -2791,7 +4651,17 @@
     "population": 19693423,
     "gdp": 25303185342.2511,
     "gdpPerCapita": 1187.10943350064,
-    "governmentForm": "presidencialismo · democracia representativa",
+    "politicalCharacteristics": {
+      "governmentForm": [
+        "Presidencialismo"
+      ],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [
+      "Presidencial",
+      "Presidencialismo"
+    ],
     "headOfState": "Hakainde Hichilema",
     "headOfGovernment": "Edgar Lungu",
     "updatedAt": "2026-04-09",
@@ -2807,7 +4677,12 @@
     "population": 17073087,
     "gdp": 41539411516.4448,
     "gdpPerCapita": 2497.20332208763,
-    "governmentForm": "No disponible",
+    "politicalCharacteristics": {
+      "governmentForm": [],
+      "organizationModel": [],
+      "governmentStructure": []
+    },
+    "politicalFilterTags": [],
     "headOfState": "Emmerson Mnangagwa",
     "headOfGovernment": "Emmerson Mnangagwa",
     "updatedAt": "2026-04-09",

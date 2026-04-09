@@ -15,7 +15,7 @@ const CURRENCY_FORMATTER = new Intl.NumberFormat("es-ES", {
 
 function formatNumber(value: number | null) {
   if (value === null) {
-    return "No disponible";
+    return "No hay datos disponibles";
   }
 
   return NUMBER_FORMATTER.format(value);
@@ -23,7 +23,7 @@ function formatNumber(value: number | null) {
 
 function formatCurrency(value: number | null) {
   if (value === null) {
-    return "No disponible";
+    return "No hay datos disponibles";
   }
 
   return CURRENCY_FORMATTER.format(value);
@@ -34,6 +34,14 @@ function normalizeSearchValue(value: string) {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
+}
+
+function formatTextValue(value: string | null | undefined) {
+  if (!value || value.trim().length === 0 || value === "No disponible") {
+    return "No hay datos disponibles";
+  }
+
+  return value;
 }
 
 interface MapamundiPoliticoProps {
@@ -49,7 +57,7 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
 
   const [search, setSearch] = useState("");
   const [continent, setContinent] = useState("Todos");
-  const [politicalSystem, setPoliticalSystem] = useState("Todos");
+  const [politicalFilter, setPoliticalFilter] = useState("Todos");
   const [manualSelectedIso3, setManualSelectedIso3] = useState<string | null>(countries[0]?.iso3 ?? null);
 
   const countriesByIso = useMemo(() => {
@@ -71,10 +79,10 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
     ];
   }, [countries]);
 
-  const politicalSystems = useMemo(() => {
+  const politicalFilters = useMemo(() => {
     return [
       "Todos",
-      ...Array.from(new Set(countries.map((country) => country.politicalSystem))).sort((a, b) =>
+      ...Array.from(new Set(countries.flatMap((country) => country.politicalFilterTags))).sort((a, b) =>
         a.localeCompare(b, "es"),
       ),
     ];
@@ -90,11 +98,24 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
 
       const matchesContinent = continent === "Todos" || country.continent === continent;
       const matchesSystem =
-        politicalSystem === "Todos" || country.politicalSystem === politicalSystem;
+        politicalFilter === "Todos" || country.politicalFilterTags.includes(politicalFilter);
 
-      return matchesSearch && matchesContinent && matchesSystem;
+      const matchesPoliticalSearch =
+        normalizedSearch.length === 0 ||
+        country.politicalFilterTags.some((tag) => normalizeSearchValue(tag).includes(normalizedSearch)) ||
+        country.politicalCharacteristics.governmentForm.some((value) =>
+          normalizeSearchValue(value).includes(normalizedSearch),
+        ) ||
+        country.politicalCharacteristics.organizationModel.some((value) =>
+          normalizeSearchValue(value).includes(normalizedSearch),
+        ) ||
+        country.politicalCharacteristics.governmentStructure.some((value) =>
+          normalizeSearchValue(value).includes(normalizedSearch),
+        );
+
+      return (matchesSearch || matchesPoliticalSearch) && matchesContinent && matchesSystem;
     });
-  }, [countries, continent, politicalSystem, search]);
+  }, [countries, continent, politicalFilter, search]);
 
   const filteredIsoSet = useMemo(() => {
     return new Set(filteredCountries.map((country) => country.iso3));
@@ -319,11 +340,11 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
         <label className={styles.controlLabel}>
           Sistema político
           <select
-            value={politicalSystem}
-            onChange={(event) => setPoliticalSystem(event.target.value)}
+            value={politicalFilter}
+            onChange={(event) => setPoliticalFilter(event.target.value)}
             className={styles.select}
           >
-            {politicalSystems.map((item) => (
+            {politicalFilters.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
@@ -362,7 +383,7 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
               <dl className={styles.dataList}>
                 <div>
                   <dt>capital</dt>
-                  <dd>{selectedCountry.capital}</dd>
+                  <dd>{formatTextValue(selectedCountry.capital)}</dd>
                 </div>
                 <div>
                   <dt>población</dt>
@@ -377,16 +398,12 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
                   <dd>{formatCurrency(selectedCountry.gdpPerCapita)}</dd>
                 </div>
                 <div>
-                  <dt>forma de gobierno</dt>
-                  <dd>{selectedCountry.governmentForm}</dd>
-                </div>
-                <div>
                   <dt>jefe de Estado</dt>
-                  <dd>{selectedCountry.headOfState}</dd>
+                  <dd>{formatTextValue(selectedCountry.headOfState)}</dd>
                 </div>
                 <div>
                   <dt>jefe de Gobierno</dt>
-                  <dd>{selectedCountry.headOfGovernment}</dd>
+                  <dd>{formatTextValue(selectedCountry.headOfGovernment)}</dd>
                 </div>
                 <div>
                   <dt>fecha de actualización</dt>
@@ -394,9 +411,44 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
                 </div>
                 <div>
                   <dt>fuente</dt>
-                  <dd>{selectedCountry.source}</dd>
+                  <dd>{formatTextValue(selectedCountry.source)}</dd>
                 </div>
               </dl>
+
+              {(selectedCountry.politicalCharacteristics.governmentForm.length > 0 ||
+                selectedCountry.politicalCharacteristics.organizationModel.length > 0 ||
+                selectedCountry.politicalCharacteristics.governmentStructure.length > 0) && (
+                <section className={styles.politicalBlock}>
+                  <h3 className={styles.politicalTitle}>Características del sistema político</h3>
+
+                  {selectedCountry.politicalCharacteristics.governmentForm.length > 0 && (
+                    <div className={styles.politicalRow}>
+                      <p className={styles.politicalLabel}>Forma de gobierno</p>
+                      <p className={styles.politicalValue}>
+                        {selectedCountry.politicalCharacteristics.governmentForm.join(" · ")}
+                      </p>
+                    </div>
+                  )}
+
+                  {selectedCountry.politicalCharacteristics.organizationModel.length > 0 && (
+                    <div className={styles.politicalRow}>
+                      <p className={styles.politicalLabel}>Modelo de organización</p>
+                      <p className={styles.politicalValue}>
+                        {selectedCountry.politicalCharacteristics.organizationModel.join(" · ")}
+                      </p>
+                    </div>
+                  )}
+
+                  {selectedCountry.politicalCharacteristics.governmentStructure.length > 0 && (
+                    <div className={styles.politicalRow}>
+                      <p className={styles.politicalLabel}>Estructura de gobierno</p>
+                      <p className={styles.politicalValue}>
+                        {selectedCountry.politicalCharacteristics.governmentStructure.join(" · ")}
+                      </p>
+                    </div>
+                  )}
+                </section>
+              )}
             </>
           ) : (
             <p className={styles.emptyPanel}>No hay países para el filtro actual.</p>
