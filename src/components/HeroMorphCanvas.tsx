@@ -18,26 +18,27 @@ interface TargetPoint {
 }
 
 interface Particle {
-  x: number;
-  y: number;
-  z: number;
-  vx: number;
-  vy: number;
-  vz: number;
   seed: number;
-  shimmer: number;
   size: number;
   logo: TargetPoint;
   portraits: TargetPoint[];
 }
 
-type Mode = "idle" | "explode" | "morph" | "hold" | "return";
+type Mode = "idleLogo" | "transition" | "portraitLocked";
 
 interface SequenceState {
   mode: Mode;
-  modeStartedAt: number;
   portraitIndex: number;
+  targetPortraitIndex: number;
+  transitionStartedAt: number;
   cooldownUntil: number;
+  directionX: number;
+  directionY: number;
+}
+
+interface QualityProfile {
+  minParticles: number;
+  maxParticles: number;
 }
 
 const LOGO_SRC = "/brand/logo-anecoica.png";
@@ -48,27 +49,19 @@ const PORTRAITS = [
   { id: "confucio", src: "/brand/portraits/confucio.png" },
 ] as const;
 
-const PARTICLE_COUNT = 1900;
-const LOGO_THRESHOLD = 15;
-const PORTRAIT_THRESHOLD = 28;
-const EXPLODE_MS = 820;
-const MORPH_MS = 1150;
-const HOLD_MS = 1200;
-const RETURN_MS = 1100;
-const MIN_PARTICLES = 2600;
-const MAX_PARTICLES = 5200;
-const DENSITY_MULTIPLIER = 10;
-const GESTURE_MIN_DISTANCE = 42;
-
-const DENSE_MIN_PARTICLES = MIN_PARTICLES * DENSITY_MULTIPLIER;
-const DENSE_MAX_PARTICLES = MAX_PARTICLES * DENSITY_MULTIPLIER;
-
 const PORTRAIT_INDEX_BY_ID = {
   lenin: 0,
   isabel: 1,
   aristoteles: 2,
   confucio: 3,
 } as const;
+
+const LOGO_THRESHOLD = 14;
+const PORTRAIT_THRESHOLD = 26;
+const TRANSITION_TOTAL_MS = 760;
+const EXPLODE_RATIO = 0.3;
+const GESTURE_MIN_DISTANCE_DESKTOP = 54;
+const GESTURE_MIN_DISTANCE_MOBILE = 40;
 
 const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
 
@@ -80,33 +73,13 @@ function easeOutCubic(t: number) {
   return 1 - Math.pow(1 - t, 3);
 }
 
-function easeInOutSine(t: number) {
-  return -(Math.cos(Math.PI * t) - 1) / 2;
+function easeInOutCubic(t: number) {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }
 
-function getPaletteColor(seed: number, glow = 0) {
-  const hues = [209, 228, 268, 322, 22];
-  const hue = hues[Math.floor(seed * hues.length) % hues.length] + glow * 12;
-  const sat = 68 + glow * 14;
-  const light = 53 + glow * 10;
-
-  return `hsl(${hue} ${sat}% ${light}%)`;
-}
-
-function getAdaptiveParticleCount(width: number, height: number) {
-  const estimated = Math.floor((width * height) / 7);
-  return Math.max(DENSE_MIN_PARTICLES, Math.min(DENSE_MAX_PARTICLES, estimated || PARTICLE_COUNT));
-}
-
-function getParticleSizeRange(particleCount: number) {
-  const densityT = clamp01(
-    (particleCount - DENSE_MIN_PARTICLES) / (DENSE_MAX_PARTICLES - DENSE_MIN_PARTICLES),
-  );
-
-  return {
-    min: lerp(0.86, 0.26, densityT),
-    max: lerp(1.68, 0.74, densityT),
-  };
+function normalizeVector(x: number, y: number) {
+  const mag = Math.hypot(x, y) || 1;
+  return { x: x / mag, y: y / mag };
 }
 
 function getPortraitIndexFromGesture(deltaX: number, deltaY: number) {
@@ -115,6 +88,58 @@ function getPortraitIndexFromGesture(deltaX: number, deltaY: number) {
   }
 
   return deltaY >= 0 ? PORTRAIT_INDEX_BY_ID.aristoteles : PORTRAIT_INDEX_BY_ID.isabel;
+}
+
+function getQualityProfile() {
+  if (typeof window === "undefined") {
+    return { minParticles: 12000, maxParticles: 22000 } satisfies QualityProfile;
+  }
+
+  const coarse = window.matchMedia("(pointer: coarse)").matches;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const nav = navigator as Navigator & { deviceMemory?: number; connection?: { saveData?: boolean } };
+  const memory = nav.deviceMemory ?? 4;
+  const cores = navigator.hardwareConcurrency ?? 6;
+  const saveData = nav.connection?.saveData === true;
+
+  if (reducedMotion || saveData || memory <= 2 || cores <= 4) {
+    return { minParticles: 6500, maxParticles: 11000 } satisfies QualityProfile;
+  }
+
+  if (coarse || memory <= 4 || cores <= 6) {
+    return { minParticles: 10000, maxParticles: 18000 } satisfies QualityProfile;
+  }
+
+  return { minParticles: 26000, maxParticles: 52000 } satisfies QualityProfile;
+}
+
+function getAdaptiveParticleCount(width: number, height: number, profile: QualityProfile) {
+  const estimated = Math.floor((width * height) / 7);
+  return Math.max(profile.minParticles, Math.min(profile.maxParticles, estimated));
+}
+
+function getParticleSizeRange(particleCount: number, profile: QualityProfile) {
+  const t = clamp01((particleCount - profile.minParticles) / Math.max(1, profile.maxParticles - profile.minParticles));
+  return {
+    min: lerp(1.05, 0.3, t),
+    max: lerp(1.9, 0.95, t),
+  };
+}
+
+function getLogoColor(seed: number, tone: number) {
+  const hues = [212, 230, 268, 324, 24];
+  const hue = hues[Math.floor(seed * hues.length) % hues.length];
+  const sat = 64 + tone * 14;
+  const light = 30 + tone * 42;
+  return `hsl(${hue} ${sat}% ${light}%)`;
+}
+
+function getAccentColor(seed: number, intensity = 0.4) {
+  const hues = [207, 226, 262, 318, 28];
+  const hue = hues[Math.floor(seed * hues.length) % hues.length] + intensity * 8;
+  const sat = 72 + intensity * 14;
+  const light = 52 + intensity * 10;
+  return `hsl(${hue} ${sat}% ${light}%)`;
 }
 
 function fitContain(sourceWidth: number, sourceHeight: number, targetWidth: number, targetHeight: number) {
@@ -158,14 +183,14 @@ function sampleTargetPoints(
     return [] as TargetPoint[];
   }
 
-  ctx.clearRect(0, 0, width, height);
   const fit = fitContain(image.naturalWidth, image.naturalHeight, width, height);
+  ctx.clearRect(0, 0, width, height);
   ctx.drawImage(image, fit.x, fit.y, fit.width, fit.height);
 
   const data = ctx.getImageData(0, 0, width, height).data;
   const baseStep = Math.sqrt((width * height) / targetCount);
-  const samplingFactor = profile === "portrait" ? 0.7 : 0.82;
-  const step = Math.max(1, Math.floor(baseStep * samplingFactor));
+  const sampleFactor = profile === "portrait" ? 0.66 : 0.8;
+  const step = Math.max(1, Math.floor(baseStep * sampleFactor));
   const points: TargetPoint[] = [];
 
   for (let y = 0; y < height; y += step) {
@@ -181,6 +206,7 @@ function sampleTargetPoints(
       const g = data[idx + 1];
       const b = data[idx + 2];
       const tone = (r * 0.2126 + g * 0.7152 + b * 0.0722) / 255;
+
       const xNext = Math.min(width - 1, x + step);
       const yNext = Math.min(height - 1, y + step);
       const idxRight = (y * width + xNext) * 4;
@@ -189,18 +215,19 @@ function sampleTargetPoints(
         (data[idxRight] * 0.2126 + data[idxRight + 1] * 0.7152 + data[idxRight + 2] * 0.0722) / 255;
       const toneDown =
         (data[idxDown] * 0.2126 + data[idxDown + 1] * 0.7152 + data[idxDown + 2] * 0.0722) / 255;
-      const edgeStrength = clamp01(Math.abs(tone - toneRight) * 1.8 + Math.abs(tone - toneDown) * 1.8);
 
+      const edge = clamp01(Math.abs(tone - toneRight) * 1.7 + Math.abs(tone - toneDown) * 1.7);
       const normalizedX = (x - width / 2) / (width / 2);
-      const normalizedY = (y - height * 0.45) / (height / 2);
-      const centerBias = Math.exp(-(normalizedX * normalizedX * 0.9 + normalizedY * normalizedY * 0.8));
-      const profileBoost = profile === "portrait" ? 0.42 + centerBias * 0.38 : 0.7 + centerBias * 0.15;
-      const tonalDetail = 1 - Math.abs(tone - 0.52);
-      const emphasis = clamp01(edgeStrength * 0.58 + tonalDetail * 0.26 + centerBias * 0.16);
-      const alphaWeight = alpha / 255;
-      const weight = alphaWeight * (0.25 + emphasis * 0.95) * profileBoost;
+      const normalizedY = (y - height * 0.46) / (height / 2);
+      const centerBias = Math.exp(-(normalizedX * normalizedX * 0.9 + normalizedY * normalizedY * 0.75));
+      const tonalDetail = 1 - Math.abs(tone - 0.53);
+      const emphasis = clamp01(edge * 0.58 + tonalDetail * 0.24 + centerBias * 0.18);
 
-      if (Math.random() > Math.min(1, weight * 1.18)) {
+      const alphaWeight = alpha / 255;
+      const profileBoost = profile === "portrait" ? 0.46 + centerBias * 0.4 : 0.68 + centerBias * 0.2;
+      const keepChance = Math.min(1, alphaWeight * (0.28 + emphasis * 0.9) * profileBoost * 1.16);
+
+      if (Math.random() > keepChance) {
         continue;
       }
 
@@ -224,7 +251,7 @@ function sampleTargetPoints(
 
   if (points.length > targetCount) {
     const weighted = points.map((point) => {
-      const weight = Math.max(0.0001, point.emphasis * 0.72 + (1 - point.scatter) * 0.28);
+      const weight = Math.max(0.0001, point.emphasis * 0.74 + (1 - point.scatter) * 0.26);
       const key = Math.pow(Math.random(), 1 / weight);
       return { point, key };
     });
@@ -241,29 +268,214 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const rafRef = useRef<number | null>(null);
   const particlesRef = useRef<Particle[]>([]);
-  const logoTargetsRef = useRef<TargetPoint[]>([]);
-  const portraitTargetsRef = useRef<TargetPoint[][]>([]);
+  const sceneSizeRef = useRef({ width: 0, height: 0 });
   const sequenceRef = useRef<SequenceState>({
-    mode: "idle",
-    modeStartedAt: 0,
-    portraitIndex: 0,
+    mode: "idleLogo",
+    portraitIndex: PORTRAIT_INDEX_BY_ID.lenin,
+    targetPortraitIndex: PORTRAIT_INDEX_BY_ID.lenin,
+    transitionStartedAt: 0,
     cooldownUntil: 0,
+    directionX: 1,
+    directionY: 0,
   });
-  const pointerRef = useRef({ x: 0, y: 0, active: false });
-  const pointerGestureRef = useRef({ startX: 0, startY: 0, currentX: 0, currentY: 0 });
-  const interactionRef = useRef(0);
+  const pointerRef = useRef({
+    coarse: false,
+    pressed: false,
+    inside: false,
+    startX: 0,
+    startY: 0,
+    currentX: 0,
+    currentY: 0,
+  });
 
   const [interactive] = useState(() => {
     if (typeof window === "undefined") {
       return false;
     }
 
-    const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    return supportsFinePointer && !prefersReducedMotion;
+    return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   });
   const [ready, setReady] = useState(false);
+
+  const drawScene = (time: number) => {
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext("2d");
+
+    if (!canvas || !ctx) {
+      return;
+    }
+
+    const { width, height } = sceneSizeRef.current;
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const particles = particlesRef.current;
+    const sequence = sequenceRef.current;
+
+    ctx.clearRect(0, 0, width, height);
+
+    const glow = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, Math.max(width, height) * 0.68);
+    glow.addColorStop(0, "rgba(184, 122, 255, 0.16)");
+    glow.addColorStop(0.38, "rgba(108, 166, 255, 0.14)");
+    glow.addColorStop(1, "rgba(0, 0, 0, 0)");
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, 0, width, height);
+
+    let transitionProgress = 0;
+    let explodeProgress = 0;
+    let morphProgress = 0;
+
+    if (sequence.mode === "transition") {
+      transitionProgress = clamp01((time - sequence.transitionStartedAt) / TRANSITION_TOTAL_MS);
+      explodeProgress = clamp01(transitionProgress / EXPLODE_RATIO);
+      morphProgress = clamp01((transitionProgress - EXPLODE_RATIO) / (1 - EXPLODE_RATIO));
+    }
+
+    const denseMode = particles.length > 22000;
+
+    for (let i = 0; i < particles.length; i += 1) {
+      const particle = particles[i];
+      const logo = particle.logo;
+      const portrait = particle.portraits[sequence.targetPortraitIndex] ?? logo;
+
+      let x = logo.x;
+      let y = logo.y;
+      let z = 0;
+      let color = getLogoColor(particle.seed, logo.tone);
+
+      if (sequence.mode === "transition") {
+        if (transitionProgress <= EXPLODE_RATIO) {
+          const t = easeOutCubic(explodeProgress);
+          const angle = particle.seed * Math.PI * 2;
+          const radial = 18 + particle.seed * 110;
+          const sidePush = 42 + portrait.scatter * 84;
+          const lateral = sequence.directionX * sidePush;
+          const vertical = sequence.directionY * sidePush;
+
+          x = logo.x + Math.cos(angle) * radial * t + lateral * t * 0.65;
+          y = logo.y + Math.sin(angle * 1.18) * radial * 0.6 * t + vertical * t * 0.65;
+          z = 10 + t * (20 + particle.seed * 26);
+          color = getAccentColor(particle.seed + t * 0.2, 0.55);
+        } else {
+          const t = easeInOutCubic(morphProgress);
+          const dissolveBySide =
+            sequence.directionX !== 0
+              ? sequence.directionX > 0
+                ? 1 - clamp01((portrait.x + width * 0.5) / width)
+                : clamp01((portrait.x + width * 0.5) / width)
+              : sequence.directionY > 0
+                ? clamp01((portrait.y + height * 0.5) / height)
+                : 1 - clamp01((portrait.y + height * 0.5) / height);
+
+          const dispersing = portrait.scatter < 0.18 + dissolveBySide * 0.14 && portrait.emphasis < 0.58;
+          const spread = dispersing ? 36 * (1 - t) + 10 : 0;
+
+          x = lerp(logo.x, portrait.x + sequence.directionX * spread, t);
+          y = lerp(logo.y, portrait.y + sequence.directionY * spread * 0.75, t);
+          z = (dispersing ? 12 : 4.5) * t;
+
+          const gray = Math.round(58 + portrait.tone * 176);
+          const grayscale = `rgb(${gray} ${gray} ${gray})`;
+          const accent = getAccentColor(particle.seed, 0.28);
+
+          color = dispersing ? accent : grayscale;
+        }
+      } else if (sequence.mode === "portraitLocked") {
+        x = portrait.x;
+        y = portrait.y;
+        z = 4;
+
+        const gray = Math.round(56 + portrait.tone * 180);
+        const grayscale = `rgb(${gray} ${gray} ${gray})`;
+        const accent = getAccentColor(particle.seed, 0.2);
+        const accentEdge = portrait.scatter < 0.08 && portrait.emphasis < 0.52;
+        color = accentEdge ? accent : grayscale;
+      }
+
+      const px = centerX + x;
+      const py = centerY + y;
+      const size = particle.size * (1 + z * 0.015);
+      const highlight = 0.12 + z * 0.01;
+
+      if (!denseMode || particle.seed > 0.44) {
+        ctx.fillStyle = `rgba(0, 0, 0, ${0.05 + z * 0.006})`;
+        ctx.fillRect(px + size * 0.22, py + size * 0.22, size, size);
+      }
+
+      ctx.fillStyle = color;
+      ctx.fillRect(px, py, size, size);
+
+      if (!denseMode || particle.seed > 0.58) {
+        ctx.fillStyle = `rgba(255, 255, 255, ${highlight})`;
+        ctx.fillRect(px, py, Math.max(0.2, size * 0.42), Math.max(0.2, size * 0.28));
+      }
+    }
+
+    const vignette = ctx.createRadialGradient(
+      centerX,
+      centerY,
+      Math.min(width, height) * 0.3,
+      centerX,
+      centerY,
+      Math.max(width, height) * 0.74,
+    );
+    vignette.addColorStop(0, "rgba(0, 0, 0, 0)");
+    vignette.addColorStop(1, "rgba(3, 4, 8, 0.3)");
+    ctx.fillStyle = vignette;
+    ctx.fillRect(0, 0, width, height);
+  };
+
+  const stopLoop = () => {
+    if (rafRef.current) {
+      window.cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+    }
+  };
+
+  const runTransitionLoop = () => {
+    if (rafRef.current) {
+      return;
+    }
+
+    const tick = (time: number) => {
+      drawScene(time);
+
+      const sequence = sequenceRef.current;
+      const progress = clamp01((time - sequence.transitionStartedAt) / TRANSITION_TOTAL_MS);
+
+      if (sequence.mode === "transition" && progress < 1) {
+        rafRef.current = window.requestAnimationFrame(tick);
+        return;
+      }
+
+      sequence.mode = "portraitLocked";
+      sequence.portraitIndex = sequence.targetPortraitIndex;
+      sequence.cooldownUntil = time + 240;
+      stopLoop();
+      drawScene(time);
+    };
+
+    rafRef.current = window.requestAnimationFrame(tick);
+  };
+
+  const triggerGestureTransition = (deltaX: number, deltaY: number) => {
+    const sequence = sequenceRef.current;
+    const now = performance.now();
+
+    if (now < sequence.cooldownUntil || sequence.mode === "transition") {
+      return;
+    }
+
+    const portraitIndex = getPortraitIndexFromGesture(deltaX, deltaY);
+    const direction = normalizeVector(deltaX, deltaY);
+
+    sequence.mode = "transition";
+    sequence.targetPortraitIndex = portraitIndex;
+    sequence.transitionStartedAt = now;
+    sequence.directionX = direction.x;
+    sequence.directionY = direction.y;
+
+    runTransitionLoop();
+  };
 
   useEffect(() => {
     if (!interactive) {
@@ -275,7 +487,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
     const setup = async () => {
       const [logoImage, ...portraitImages] = await Promise.all([
         loadImage(LOGO_SRC),
-        ...PORTRAITS.map((portrait) => loadImage(portrait.src)),
+        ...PORTRAITS.map((item) => loadImage(item.src)),
       ]);
 
       if (!mounted || !wrapRef.current || !canvasRef.current) {
@@ -289,6 +501,9 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
         return;
       }
 
+      const profile = getQualityProfile();
+      pointerRef.current.coarse = window.matchMedia("(pointer: coarse)").matches;
+
       const createScene = () => {
         if (!wrapRef.current || !canvasRef.current) {
           return;
@@ -296,18 +511,20 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
 
         const bounds = wrapRef.current.getBoundingClientRect();
         const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        const width = Math.max(380, Math.floor(bounds.width));
-        const height = Math.max(240, Math.floor(bounds.height));
+        const width = Math.max(360, Math.floor(bounds.width));
+        const height = Math.max(220, Math.floor(bounds.height));
+        const particleCount = getAdaptiveParticleCount(width, height, profile);
+        const sizeRange = getParticleSizeRange(particleCount, profile);
 
         canvas.width = Math.floor(width * dpr);
         canvas.height = Math.floor(height * dpr);
         canvas.style.width = `${width}px`;
         canvas.style.height = `${height}px`;
 
+        sceneSizeRef.current = { width, height };
+
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.scale(dpr, dpr);
-
-        const particleCount = getAdaptiveParticleCount(width, height);
 
         const logoTargets = sampleTargetPoints(
           logoImage,
@@ -320,234 +537,34 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
 
         const portraitTargets = portraitImages.map((portrait) =>
           sampleTargetPoints(
-              portrait,
-              Math.floor(width * 0.74),
-              Math.floor(height * 0.9),
-              particleCount,
-              PORTRAIT_THRESHOLD,
-              "portrait",
-            ),
+            portrait,
+            Math.floor(width * 0.74),
+            Math.floor(height * 0.9),
+            particleCount,
+            PORTRAIT_THRESHOLD,
+            "portrait",
+          ),
         );
 
-        const sizeRange = getParticleSizeRange(particleCount);
-
-        logoTargetsRef.current = logoTargets;
-        portraitTargetsRef.current = portraitTargets;
-
         particlesRef.current = logoTargets.map((point, index) => ({
-          x: point.x,
-          y: point.y,
-          z: 0,
-          vx: 0,
-          vy: 0,
-          vz: 0,
           seed: Math.random(),
-          shimmer: Math.random(),
           size: sizeRange.min + Math.random() * (sizeRange.max - sizeRange.min),
           logo: point,
-          portraits: portraitTargets.map((targetSet) => targetSet[index % targetSet.length] ?? point),
+          portraits: portraitTargets.map((set) => set[index % set.length] ?? point),
         }));
 
-        sequenceRef.current = {
-          mode: "idle",
-          modeStartedAt: performance.now(),
-          portraitIndex: sequenceRef.current.portraitIndex,
-          cooldownUntil: 0,
-        };
+        drawScene(performance.now());
       };
 
       createScene();
       setReady(true);
 
       const onResize = () => {
+        stopLoop();
         createScene();
       };
 
       window.addEventListener("resize", onResize);
-
-      const render = (time: number) => {
-        const bounds = wrapRef.current?.getBoundingClientRect();
-
-        if (!bounds) {
-          return;
-        }
-
-        const width = bounds.width;
-        const height = bounds.height;
-        const centerX = width / 2;
-        const centerY = height / 2;
-        const particles = particlesRef.current;
-
-        const pointerX = pointerRef.current.x - centerX;
-        const pointerY = pointerRef.current.y - centerY;
-        const pointerRadius = Math.min(width, height) * 0.58;
-        const pointerDistance = Math.hypot(pointerX, pointerY);
-        const targetInteraction = pointerRef.current.active
-          ? clamp01(1 - pointerDistance / pointerRadius)
-          : 0;
-
-        interactionRef.current = lerp(interactionRef.current, targetInteraction, 0.1);
-
-        const sequence = sequenceRef.current;
-        const modeElapsed = time - sequence.modeStartedAt;
-        const modeProgress =
-          sequence.mode === "explode"
-            ? clamp01(modeElapsed / EXPLODE_MS)
-            : sequence.mode === "morph"
-              ? clamp01(modeElapsed / MORPH_MS)
-              : sequence.mode === "hold"
-                ? clamp01(modeElapsed / HOLD_MS)
-                : sequence.mode === "return"
-                  ? clamp01(modeElapsed / RETURN_MS)
-                  : 0;
-
-        const gestureDX = pointerGestureRef.current.currentX - pointerGestureRef.current.startX;
-        const gestureDY = pointerGestureRef.current.currentY - pointerGestureRef.current.startY;
-        const gestureDistance = Math.hypot(gestureDX, gestureDY);
-
-        if (
-          sequence.mode === "idle" &&
-          interactionRef.current > 0.34 &&
-          gestureDistance >= GESTURE_MIN_DISTANCE &&
-          time > sequence.cooldownUntil
-        ) {
-          sequence.mode = "explode";
-          sequence.modeStartedAt = time;
-          sequence.portraitIndex = getPortraitIndexFromGesture(gestureDX, gestureDY);
-        } else if (sequence.mode === "explode" && modeElapsed >= EXPLODE_MS) {
-          sequence.mode = "morph";
-          sequence.modeStartedAt = time;
-        } else if (sequence.mode === "morph" && modeElapsed >= MORPH_MS) {
-          sequence.mode = "hold";
-          sequence.modeStartedAt = time;
-        } else if (sequence.mode === "hold" && modeElapsed >= HOLD_MS) {
-          sequence.mode = "return";
-          sequence.modeStartedAt = time;
-        } else if (sequence.mode === "return" && modeElapsed >= RETURN_MS) {
-          sequence.mode = "idle";
-          sequence.modeStartedAt = time;
-          sequence.cooldownUntil = time + 900;
-          pointerGestureRef.current.startX = pointerGestureRef.current.currentX;
-          pointerGestureRef.current.startY = pointerGestureRef.current.currentY;
-        }
-
-        ctx.clearRect(0, 0, width, height);
-
-        const ambientStrength = 0.3 + interactionRef.current * 0.45;
-        const ambientRadius = Math.max(width, height) * 0.66;
-        const ambientX = centerX + pointerX * 0.22;
-        const ambientY = centerY + pointerY * 0.2;
-        const glow = ctx.createRadialGradient(ambientX, ambientY, 0, ambientX, ambientY, ambientRadius);
-        glow.addColorStop(0, `rgba(199, 125, 255, ${0.13 * ambientStrength})`);
-        glow.addColorStop(0.45, `rgba(114, 171, 255, ${0.11 * ambientStrength})`);
-        glow.addColorStop(1, "rgba(6, 9, 14, 0)");
-        ctx.fillStyle = glow;
-        ctx.fillRect(0, 0, width, height);
-
-        for (let i = 0; i < particles.length; i += 1) {
-          const particle = particles[i];
-          let targetX = particle.logo.x;
-          let targetY = particle.logo.y;
-          let targetZ = 0;
-          let color = getPaletteColor(particle.seed, 0.05 + interactionRef.current * 0.2);
-
-          const sway = Math.sin(time * 0.001 + particle.seed * 12) * 1.2;
-          const wobble = Math.sin(time * 0.0016 + particle.shimmer * 22 + particle.y * 0.016) * 0.95;
-          targetX += (pointerX / 88) * (0.44 - particle.seed * 0.28) + sway * interactionRef.current;
-          targetY += (pointerY / 108) * (0.42 - particle.seed * 0.26) + wobble * interactionRef.current;
-
-          if (sequence.mode === "explode") {
-            const t = easeOutCubic(clamp01(modeElapsed / EXPLODE_MS));
-            const burstAngle = particle.seed * Math.PI * 2 + time * 0.0006;
-            const burstRadius = 30 + particle.seed * 260;
-
-            targetX =
-              particle.logo.x + Math.cos(burstAngle) * burstRadius * t + (particle.seed - 0.5) * 14;
-            targetY =
-              particle.logo.y + Math.sin(burstAngle * 1.2) * burstRadius * 0.68 * t + (0.5 - particle.seed) * 9;
-            targetZ = 22 + 128 * t * (0.4 + particle.seed);
-            color = getPaletteColor(particle.seed + t * 0.2, 0.45);
-          } else if (sequence.mode === "morph" || sequence.mode === "hold" || sequence.mode === "return") {
-            const portrait = particle.portraits[sequence.portraitIndex] ?? particle.logo;
-            const morphT =
-              sequence.mode === "morph"
-                ? easeInOutSine(clamp01(modeElapsed / MORPH_MS))
-                : sequence.mode === "return"
-                  ? 1 - easeInOutSine(clamp01(modeElapsed / RETURN_MS))
-                  : 1;
-
-            const dissolveBand = (portrait.x + width * 0.2) / (width * 0.68);
-            const disperseThreshold = 0.2 - clamp01(dissolveBand) * 0.16;
-            const dispersing = portrait.scatter < disperseThreshold && portrait.emphasis < 0.56;
-            const spread = dispersing ? 52 * (1 - morphT) + 18 * morphT : 0;
-            const driftX = dispersing ? (particle.seed - 0.5) * spread * 1.4 : 0;
-            const driftY = dispersing ? (particle.seed - 0.5) * spread * 0.9 : 0;
-            const breathing = sequence.mode === "hold" ? Math.sin(time * 0.002 + particle.seed * 14) * 1.5 : 0;
-
-            targetX = lerp(particle.logo.x, portrait.x + driftX, morphT);
-            targetY = lerp(particle.logo.y, portrait.y + driftY + breathing, morphT);
-            targetZ = (dispersing ? 16 : 7.5) * morphT;
-
-            const grayscale = Math.round(58 + portrait.tone * 170);
-            const grayscaleColor = `rgb(${grayscale} ${grayscale} ${grayscale})`;
-            const accentColor = getPaletteColor(particle.seed, 0.3);
-            const sparkleBand = Math.sin(time * 0.0024 + particle.shimmer * 20) > 0.88;
-            const sparkles = sequence.mode !== "return" && portrait.tone > 0.86 && sparkleBand;
-
-            color = sparkles || dispersing ? accentColor : grayscaleColor;
-          }
-
-          const focusBoost = sequence.mode === "hold" && modeElapsed < 280 ? 1.45 : 1;
-          const spring = 0.078 * focusBoost;
-          const friction = sequence.mode === "hold" ? 0.86 : 0.82;
-
-          particle.vx = (particle.vx + (targetX - particle.x) * spring) * friction;
-          particle.vy = (particle.vy + (targetY - particle.y) * spring) * friction;
-          particle.vz = (particle.vz + (targetZ - particle.z) * spring) * 0.8;
-
-          particle.x += particle.vx;
-          particle.y += particle.vy;
-          particle.z += particle.vz;
-
-          const px = centerX + particle.x;
-          const py = centerY + particle.y;
-          const size = particle.size * (1 + particle.z * 0.01);
-          const highlightPulse = 0.14 + (0.1 + interactionRef.current * 0.16) * (0.5 + 0.5 * Math.sin(time * 0.003 + particle.shimmer * 30));
-          const depthFade = clamp01(1 - Math.hypot(particle.x / (width * 0.75), particle.y / (height * 0.75)) * 0.8);
-          const alphaBoost = 0.45 + depthFade * 0.55;
-          const denseMode = particles.length > 22000;
-
-          if (!denseMode || particle.shimmer > 0.42) {
-            ctx.fillStyle = `rgba(0, 0, 0, ${(0.08 + particle.z * 0.0025) * alphaBoost})`;
-            ctx.fillRect(px + size * 0.25, py + size * 0.25, size, size);
-          }
-
-          ctx.fillStyle = color;
-          ctx.fillRect(px, py, size, size);
-
-          if (!denseMode || particle.shimmer > 0.58) {
-            ctx.fillStyle = `rgba(255, 255, 255, ${(highlightPulse + particle.z * 0.0012) * alphaBoost})`;
-            ctx.fillRect(px, py, Math.max(0.4, size * 0.45), Math.max(0.35, size * 0.3));
-          }
-        }
-
-        const vignette = ctx.createRadialGradient(
-          centerX,
-          centerY,
-          Math.min(width, height) * 0.24,
-          centerX,
-          centerY,
-          Math.max(width, height) * 0.72,
-        );
-        vignette.addColorStop(0, "rgba(0, 0, 0, 0)");
-        vignette.addColorStop(1, `rgba(2, 2, 4, ${0.34 + modeProgress * 0.08})`);
-        ctx.fillStyle = vignette;
-        ctx.fillRect(0, 0, width, height);
-
-        rafRef.current = window.requestAnimationFrame(render);
-      };
-
-      rafRef.current = window.requestAnimationFrame(render);
 
       return () => {
         window.removeEventListener("resize", onResize);
@@ -566,43 +583,98 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
 
     return () => {
       mounted = false;
+      stopLoop();
       if (cleanup) {
         cleanup();
-      }
-      if (rafRef.current) {
-        window.cancelAnimationFrame(rafRef.current);
       }
     };
   }, [interactive]);
 
-  const updatePointer = (event: ReactPointerEvent<HTMLDivElement>) => {
+  const setPointerPoint = (event: ReactPointerEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
+    pointerRef.current.currentX = x;
+    pointerRef.current.currentY = y;
+    return { x, y };
+  };
 
-    pointerRef.current.x = x;
-    pointerRef.current.y = y;
-    pointerRef.current.active = true;
-    pointerGestureRef.current.currentX = x;
-    pointerGestureRef.current.currentY = y;
+  const beginGesture = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const { x, y } = setPointerPoint(event);
+    pointerRef.current.startX = x;
+    pointerRef.current.startY = y;
+  };
+
+  const maybeTriggerDesktopGesture = () => {
+    if (pointerRef.current.coarse) {
+      return;
+    }
+
+    const dx = pointerRef.current.currentX - pointerRef.current.startX;
+    const dy = pointerRef.current.currentY - pointerRef.current.startY;
+    const distance = Math.hypot(dx, dy);
+
+    if (distance < GESTURE_MIN_DISTANCE_DESKTOP) {
+      return;
+    }
+
+    triggerGestureTransition(dx, dy);
+    pointerRef.current.startX = pointerRef.current.currentX;
+    pointerRef.current.startY = pointerRef.current.currentY;
+  };
+
+  const maybeTriggerMobileGesture = () => {
+    if (!pointerRef.current.coarse) {
+      return;
+    }
+
+    const dx = pointerRef.current.currentX - pointerRef.current.startX;
+    const dy = pointerRef.current.currentY - pointerRef.current.startY;
+    const distance = Math.hypot(dx, dy);
+
+    if (distance < GESTURE_MIN_DISTANCE_MOBILE) {
+      return;
+    }
+
+    triggerGestureTransition(dx, dy);
   };
 
   return (
     <div
       ref={wrapRef}
       className={`${styles.stage} ${className || ""}`.trim()}
-      onPointerMove={updatePointer}
       onPointerEnter={(event) => {
-        updatePointer(event);
-        const rect = event.currentTarget.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
+        pointerRef.current.inside = true;
+        if (!pointerRef.current.coarse) {
+          beginGesture(event);
+        }
+      }}
+      onPointerDown={(event) => {
+        pointerRef.current.pressed = true;
+        beginGesture(event);
+      }}
+      onPointerMove={(event) => {
+        setPointerPoint(event);
+        if (!ready || sequenceRef.current.mode === "transition") {
+          return;
+        }
 
-        pointerGestureRef.current.startX = x;
-        pointerGestureRef.current.startY = y;
+        if (pointerRef.current.coarse) {
+          return;
+        }
+
+        maybeTriggerDesktopGesture();
+      }}
+      onPointerUp={(event) => {
+        setPointerPoint(event);
+        if (pointerRef.current.coarse && pointerRef.current.pressed && ready) {
+          maybeTriggerMobileGesture();
+        }
+        pointerRef.current.pressed = false;
       }}
       onPointerLeave={() => {
-        pointerRef.current.active = false;
+        pointerRef.current.pressed = false;
+        pointerRef.current.inside = false;
       }}
       aria-hidden="true"
     >
