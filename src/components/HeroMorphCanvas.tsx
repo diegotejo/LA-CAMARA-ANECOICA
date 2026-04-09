@@ -24,6 +24,7 @@ interface Particle {
   vy: number;
   vz: number;
   seed: number;
+  shimmer: number;
   size: number;
   logo: TargetPoint;
   portraits: TargetPoint[];
@@ -53,6 +54,8 @@ const EXPLODE_MS = 820;
 const MORPH_MS = 1150;
 const HOLD_MS = 1200;
 const RETURN_MS = 1100;
+const MIN_PARTICLES = 1500;
+const MAX_PARTICLES = 2600;
 
 const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
 
@@ -75,6 +78,11 @@ function getPaletteColor(seed: number, glow = 0) {
   const light = 53 + glow * 10;
 
   return `hsl(${hue} ${sat}% ${light}%)`;
+}
+
+function getAdaptiveParticleCount(width: number, height: number) {
+  const estimated = Math.floor((width * height) / 115);
+  return Math.max(MIN_PARTICLES, Math.min(MAX_PARTICLES, estimated || PARTICLE_COUNT));
 }
 
 function fitContain(sourceWidth: number, sourceHeight: number, targetWidth: number, targetHeight: number) {
@@ -240,22 +248,24 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.scale(dpr, dpr);
 
+        const particleCount = getAdaptiveParticleCount(width, height);
+
         const logoTargets = sampleTargetPoints(
           logoImage,
           Math.floor(width * 0.82),
           Math.floor(height * 0.82),
-          PARTICLE_COUNT,
+          particleCount,
           LOGO_THRESHOLD,
         );
 
         const portraitTargets = portraitImages.map((portrait) =>
           sampleTargetPoints(
-            portrait,
-            Math.floor(width * 0.74),
-            Math.floor(height * 0.9),
-            PARTICLE_COUNT,
-            PORTRAIT_THRESHOLD,
-          ),
+              portrait,
+              Math.floor(width * 0.74),
+              Math.floor(height * 0.9),
+              particleCount,
+              PORTRAIT_THRESHOLD,
+            ),
         );
 
         logoTargetsRef.current = logoTargets;
@@ -269,6 +279,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
           vy: 0,
           vz: 0,
           seed: Math.random(),
+          shimmer: Math.random(),
           size: 1.65 + Math.random() * 2.4,
           logo: point,
           portraits: portraitTargets.map((targetSet) => targetSet[index % targetSet.length] ?? point),
@@ -316,6 +327,16 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
 
         const sequence = sequenceRef.current;
         const modeElapsed = time - sequence.modeStartedAt;
+        const modeProgress =
+          sequence.mode === "explode"
+            ? clamp01(modeElapsed / EXPLODE_MS)
+            : sequence.mode === "morph"
+              ? clamp01(modeElapsed / MORPH_MS)
+              : sequence.mode === "hold"
+                ? clamp01(modeElapsed / HOLD_MS)
+                : sequence.mode === "return"
+                  ? clamp01(modeElapsed / RETURN_MS)
+                  : 0;
 
         if (sequence.mode === "idle" && interactionRef.current > 0.62 && time > sequence.cooldownUntil) {
           sequence.mode = "explode";
@@ -338,6 +359,17 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
 
         ctx.clearRect(0, 0, width, height);
 
+        const ambientStrength = 0.3 + interactionRef.current * 0.45;
+        const ambientRadius = Math.max(width, height) * 0.66;
+        const ambientX = centerX + pointerX * 0.22;
+        const ambientY = centerY + pointerY * 0.2;
+        const glow = ctx.createRadialGradient(ambientX, ambientY, 0, ambientX, ambientY, ambientRadius);
+        glow.addColorStop(0, `rgba(199, 125, 255, ${0.13 * ambientStrength})`);
+        glow.addColorStop(0.45, `rgba(114, 171, 255, ${0.11 * ambientStrength})`);
+        glow.addColorStop(1, "rgba(6, 9, 14, 0)");
+        ctx.fillStyle = glow;
+        ctx.fillRect(0, 0, width, height);
+
         for (let i = 0; i < particles.length; i += 1) {
           const particle = particles[i];
           let targetX = particle.logo.x;
@@ -346,8 +378,9 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
           let color = getPaletteColor(particle.seed, 0.05 + interactionRef.current * 0.2);
 
           const sway = Math.sin(time * 0.001 + particle.seed * 12) * 2.2;
+          const wobble = Math.sin(time * 0.0016 + particle.shimmer * 22 + particle.y * 0.016) * 1.8;
           targetX += (pointerX / 60) * (0.6 - particle.seed * 0.4) + sway * interactionRef.current;
-          targetY += (pointerY / 80) * (0.55 - particle.seed * 0.35);
+          targetY += (pointerY / 80) * (0.55 - particle.seed * 0.35) + wobble * interactionRef.current;
 
           if (sequence.mode === "explode") {
             const t = easeOutCubic(clamp01(modeElapsed / EXPLODE_MS));
@@ -375,16 +408,19 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
             const spread = dispersing ? 68 * (1 - morphT) + 36 * morphT : 0;
             const driftX = dispersing ? (particle.seed - 0.5) * spread * 1.4 : 0;
             const driftY = dispersing ? (particle.seed - 0.5) * spread * 0.9 : 0;
+            const breathing = sequence.mode === "hold" ? Math.sin(time * 0.002 + particle.seed * 14) * 1.5 : 0;
 
             targetX = lerp(particle.logo.x, portrait.x + driftX, morphT);
-            targetY = lerp(particle.logo.y, portrait.y + driftY, morphT);
+            targetY = lerp(particle.logo.y, portrait.y + driftY + breathing, morphT);
             targetZ = (dispersing ? 18 : 6) * morphT;
 
             const grayscale = Math.round(58 + portrait.tone * 170);
             const grayscaleColor = `rgb(${grayscale} ${grayscale} ${grayscale})`;
             const accentColor = getPaletteColor(particle.seed, 0.3);
+            const sparkleBand = Math.sin(time * 0.0024 + particle.shimmer * 20) > 0.88;
+            const sparkles = sequence.mode !== "return" && portrait.tone > 0.82 && sparkleBand;
 
-            color = dispersing || portrait.tone > 0.78 ? accentColor : grayscaleColor;
+            color = sparkles || dispersing || portrait.tone > 0.78 ? accentColor : grayscaleColor;
           }
 
           const spring = 0.074;
@@ -401,16 +437,32 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
           const px = centerX + particle.x;
           const py = centerY + particle.y;
           const size = particle.size * (1 + particle.z * 0.01);
+          const highlightPulse = 0.14 + (0.1 + interactionRef.current * 0.16) * (0.5 + 0.5 * Math.sin(time * 0.003 + particle.shimmer * 30));
+          const depthFade = clamp01(1 - Math.hypot(particle.x / (width * 0.75), particle.y / (height * 0.75)) * 0.8);
+          const alphaBoost = 0.45 + depthFade * 0.55;
 
-          ctx.fillStyle = `rgba(0, 0, 0, ${0.08 + particle.z * 0.0025})`;
+          ctx.fillStyle = `rgba(0, 0, 0, ${(0.08 + particle.z * 0.0025) * alphaBoost})`;
           ctx.fillRect(px + size * 0.25, py + size * 0.25, size, size);
 
           ctx.fillStyle = color;
           ctx.fillRect(px, py, size, size);
 
-          ctx.fillStyle = `rgba(255, 255, 255, ${0.18 + particle.z * 0.0012})`;
+          ctx.fillStyle = `rgba(255, 255, 255, ${(highlightPulse + particle.z * 0.0012) * alphaBoost})`;
           ctx.fillRect(px, py, Math.max(1, size * 0.45), Math.max(1, size * 0.3));
         }
+
+        const vignette = ctx.createRadialGradient(
+          centerX,
+          centerY,
+          Math.min(width, height) * 0.24,
+          centerX,
+          centerY,
+          Math.max(width, height) * 0.72,
+        );
+        vignette.addColorStop(0, "rgba(0, 0, 0, 0)");
+        vignette.addColorStop(1, `rgba(2, 2, 4, ${0.34 + modeProgress * 0.08})`);
+        ctx.fillStyle = vignette;
+        ctx.fillRect(0, 0, width, height);
 
         rafRef.current = window.requestAnimationFrame(render);
       };
@@ -475,6 +527,8 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
       ) : null}
 
       <canvas ref={canvasRef} className={`${styles.canvas} ${ready && interactive ? styles.ready : ""}`} />
+      <div className={styles.grain} />
+      <div className={styles.vignetteOverlay} />
     </div>
   );
 }

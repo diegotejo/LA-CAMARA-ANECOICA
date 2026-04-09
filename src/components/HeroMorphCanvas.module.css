@@ -18,6 +18,25 @@
   z-index: 0;
 }
 
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.14;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.4) 0.5px, transparent 0.5px);
+  background-size: 3px 3px;
+  mix-blend-mode: soft-light;
+}
+
+.vignetteOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(6, 10, 18, 0) 42%, rgba(4, 6, 10, 0.5) 100%);
+}
+
 .fallbackLogo {
   object-fit: contain;
   padding: 1.8rem;
@@ -50,5 +69,9 @@
 
   .fallbackLogo {
     padding: 1.15rem;
+  }
+
+  .grain {
+    opacity: 0.08;
   }
 }
