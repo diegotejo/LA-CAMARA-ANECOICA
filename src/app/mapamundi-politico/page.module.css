@@ -226,12 +226,43 @@
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.02);
   padding: 0.8rem 1rem;
+  display: grid;
+  gap: 0.8rem;
 }
 
 .disclaimer {
   font-size: 0.8rem;
   color: var(--color-text-muted);
   line-height: 1.55;
+}
+
+.sourcesBlock {
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 0.75rem;
+}
+
+.sourcesTitle {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.45rem;
+}
+
+.sourcesList {
+  list-style: none;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.sourcesList li {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--color-text-secondary);
+}
+
+.sourcesList strong {
+  color: var(--color-text);
 }
 
 .mapCanvas :global(.leaflet-container) {

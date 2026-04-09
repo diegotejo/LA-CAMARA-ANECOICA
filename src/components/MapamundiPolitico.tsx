@@ -461,6 +461,27 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
           La representación cartográfica sigue criterios técnicos de Natural Earth y disponibilidad de datos.
           No implica posicionamiento normativo del proyecto ante disputas territoriales.
         </p>
+
+        <section className={styles.sourcesBlock} aria-label="Fuentes y créditos del mapamundi">
+          <p className={styles.sourcesTitle}>Fuentes y créditos</p>
+          <ul className={styles.sourcesList}>
+            <li>
+              <strong>Natural Earth:</strong> base cartográfica de países y territorios.
+            </li>
+            <li>
+              <strong>REST Countries:</strong> bandera, nombre, capital, población y metadatos generales.
+            </li>
+            <li>
+              <strong>Banco Mundial:</strong> PIB y PIB per cápita.
+            </li>
+            <li>
+              <strong>Wikidata:</strong> forma de gobierno, jefe de Estado y jefe de Gobierno.
+            </li>
+            <li>
+              <strong>Leaflet</strong> 🇺🇦: render e interacción del mapa (zoom, capas y selección).
+            </li>
+          </ul>
+        </section>
       </div>
     </section>
   );
