@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import styles from "./page.module.css";
 import SpotlightCard from "@/components/SpotlightCard";
 import { articles, getArticleBySlug } from "@/lib/articles";
+import { siteConfig } from "@/lib/site-config";
+import { sanitizeExternalUrl } from "@/lib/url-safety";
 
 export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
@@ -34,6 +36,13 @@ export default async function ArticleDetailPage({
 }) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
+  const relatedVideoUrl = article
+    ? sanitizeExternalUrl(article.relatedVideoUrl, {
+        fallback: siteConfig.youtubeChannelUrl,
+        allowedHosts: ["youtube.com", "youtu.be"],
+        requireHttpsInProd: true,
+      })
+    : siteConfig.youtubeChannelUrl;
 
   if (!article) notFound();
 
@@ -53,7 +62,7 @@ export default async function ArticleDetailPage({
             <p className={styles.articleExcerpt}>{article.excerpt}</p>
             <div className={styles.metaBlock}>
               <span>Procedencia audiovisual</span>
-              <a href={article.relatedVideoUrl} target="_blank" rel="noopener noreferrer">
+              <a href={relatedVideoUrl} target="_blank" rel="noopener noreferrer">
                 {article.relatedVideoTitle} ↗
               </a>
             </div>

@@ -31,6 +31,17 @@
   border: 0;
 }
 
+.embedFallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+}
+
 /* Content area */
 .content {
   padding: var(--space-lg);

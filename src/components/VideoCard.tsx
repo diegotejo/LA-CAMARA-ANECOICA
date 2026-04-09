@@ -1,5 +1,6 @@
 import styles from "./VideoCard.module.css";
 import SpotlightCard from "./SpotlightCard";
+import { getSafeYouTubeEmbedUrl } from "@/lib/url-safety";
 
 export interface VideoData {
   id: string;
@@ -20,17 +21,25 @@ export interface BibliographyEntry {
 }
 
 export default function VideoCard({ video }: { video: VideoData }) {
+  const embedUrl = getSafeYouTubeEmbedUrl(video.youtubeEmbedId);
+
   return (
     <SpotlightCard className={`${styles.card}`}>
       <div className={styles.videoWrapper}>
-        <iframe
-          src={`https://www.youtube.com/embed/${video.youtubeEmbedId}`}
-          title={video.title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className={styles.iframe}
-          loading="lazy"
-        />
+        {embedUrl ? (
+          <iframe
+            src={embedUrl}
+            title={video.title}
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+            sandbox="allow-scripts allow-same-origin allow-presentation"
+            referrerPolicy="origin"
+            allowFullScreen
+            className={styles.iframe}
+            loading="lazy"
+          />
+        ) : (
+          <div className={styles.embedFallback}>No se pudo cargar el reproductor de este vídeo.</div>
+        )}
       </div>
 
       <div className={styles.content}>
