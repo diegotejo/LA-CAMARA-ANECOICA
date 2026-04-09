@@ -42,10 +42,10 @@ interface SequenceState {
 
 const LOGO_SRC = "/brand/logo-anecoica.png";
 const PORTRAITS = [
-  "/brand/portraits/lenin.png",
-  "/brand/portraits/isabel.png",
-  "/brand/portraits/aristoteles.png",
-  "/brand/portraits/confucio.png",
+  { id: "lenin", src: "/brand/portraits/lenin.png" },
+  { id: "isabel", src: "/brand/portraits/isabel.png" },
+  { id: "aristoteles", src: "/brand/portraits/aristoteles.png" },
+  { id: "confucio", src: "/brand/portraits/confucio.png" },
 ] as const;
 
 const PARTICLE_COUNT = 1900;
@@ -57,6 +57,18 @@ const HOLD_MS = 1200;
 const RETURN_MS = 1100;
 const MIN_PARTICLES = 2600;
 const MAX_PARTICLES = 5200;
+const DENSITY_MULTIPLIER = 10;
+const GESTURE_MIN_DISTANCE = 42;
+
+const DENSE_MIN_PARTICLES = MIN_PARTICLES * DENSITY_MULTIPLIER;
+const DENSE_MAX_PARTICLES = MAX_PARTICLES * DENSITY_MULTIPLIER;
+
+const PORTRAIT_INDEX_BY_ID = {
+  lenin: 0,
+  isabel: 1,
+  aristoteles: 2,
+  confucio: 3,
+} as const;
 
 const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
 
@@ -82,17 +94,27 @@ function getPaletteColor(seed: number, glow = 0) {
 }
 
 function getAdaptiveParticleCount(width: number, height: number) {
-  const estimated = Math.floor((width * height) / 70);
-  return Math.max(MIN_PARTICLES, Math.min(MAX_PARTICLES, estimated || PARTICLE_COUNT));
+  const estimated = Math.floor((width * height) / 7);
+  return Math.max(DENSE_MIN_PARTICLES, Math.min(DENSE_MAX_PARTICLES, estimated || PARTICLE_COUNT));
 }
 
 function getParticleSizeRange(particleCount: number) {
-  const densityT = clamp01((particleCount - MIN_PARTICLES) / (MAX_PARTICLES - MIN_PARTICLES));
+  const densityT = clamp01(
+    (particleCount - DENSE_MIN_PARTICLES) / (DENSE_MAX_PARTICLES - DENSE_MIN_PARTICLES),
+  );
 
   return {
-    min: lerp(1.2, 0.72, densityT),
-    max: lerp(2.6, 1.34, densityT),
+    min: lerp(0.86, 0.26, densityT),
+    max: lerp(1.68, 0.74, densityT),
   };
+}
+
+function getPortraitIndexFromGesture(deltaX: number, deltaY: number) {
+  if (Math.abs(deltaX) >= Math.abs(deltaY)) {
+    return deltaX >= 0 ? PORTRAIT_INDEX_BY_ID.lenin : PORTRAIT_INDEX_BY_ID.confucio;
+  }
+
+  return deltaY >= 0 ? PORTRAIT_INDEX_BY_ID.aristoteles : PORTRAIT_INDEX_BY_ID.isabel;
 }
 
 function fitContain(sourceWidth: number, sourceHeight: number, targetWidth: number, targetHeight: number) {
@@ -228,6 +250,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
     cooldownUntil: 0,
   });
   const pointerRef = useRef({ x: 0, y: 0, active: false });
+  const pointerGestureRef = useRef({ startX: 0, startY: 0, currentX: 0, currentY: 0 });
   const interactionRef = useRef(0);
 
   const [interactive] = useState(() => {
@@ -252,7 +275,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
     const setup = async () => {
       const [logoImage, ...portraitImages] = await Promise.all([
         loadImage(LOGO_SRC),
-        ...PORTRAITS.map((src) => loadImage(src)),
+        ...PORTRAITS.map((portrait) => loadImage(portrait.src)),
       ]);
 
       if (!mounted || !wrapRef.current || !canvasRef.current) {
@@ -378,10 +401,19 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
                   ? clamp01(modeElapsed / RETURN_MS)
                   : 0;
 
-        if (sequence.mode === "idle" && interactionRef.current > 0.62 && time > sequence.cooldownUntil) {
+        const gestureDX = pointerGestureRef.current.currentX - pointerGestureRef.current.startX;
+        const gestureDY = pointerGestureRef.current.currentY - pointerGestureRef.current.startY;
+        const gestureDistance = Math.hypot(gestureDX, gestureDY);
+
+        if (
+          sequence.mode === "idle" &&
+          interactionRef.current > 0.34 &&
+          gestureDistance >= GESTURE_MIN_DISTANCE &&
+          time > sequence.cooldownUntil
+        ) {
           sequence.mode = "explode";
           sequence.modeStartedAt = time;
-          sequence.portraitIndex = (sequence.portraitIndex + 1) % PORTRAITS.length;
+          sequence.portraitIndex = getPortraitIndexFromGesture(gestureDX, gestureDY);
         } else if (sequence.mode === "explode" && modeElapsed >= EXPLODE_MS) {
           sequence.mode = "morph";
           sequence.modeStartedAt = time;
@@ -395,6 +427,8 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
           sequence.mode = "idle";
           sequence.modeStartedAt = time;
           sequence.cooldownUntil = time + 900;
+          pointerGestureRef.current.startX = pointerGestureRef.current.currentX;
+          pointerGestureRef.current.startY = pointerGestureRef.current.currentY;
         }
 
         ctx.clearRect(0, 0, width, height);
@@ -481,15 +515,20 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
           const highlightPulse = 0.14 + (0.1 + interactionRef.current * 0.16) * (0.5 + 0.5 * Math.sin(time * 0.003 + particle.shimmer * 30));
           const depthFade = clamp01(1 - Math.hypot(particle.x / (width * 0.75), particle.y / (height * 0.75)) * 0.8);
           const alphaBoost = 0.45 + depthFade * 0.55;
+          const denseMode = particles.length > 22000;
 
-          ctx.fillStyle = `rgba(0, 0, 0, ${(0.08 + particle.z * 0.0025) * alphaBoost})`;
-          ctx.fillRect(px + size * 0.25, py + size * 0.25, size, size);
+          if (!denseMode || particle.shimmer > 0.42) {
+            ctx.fillStyle = `rgba(0, 0, 0, ${(0.08 + particle.z * 0.0025) * alphaBoost})`;
+            ctx.fillRect(px + size * 0.25, py + size * 0.25, size, size);
+          }
 
           ctx.fillStyle = color;
           ctx.fillRect(px, py, size, size);
 
-          ctx.fillStyle = `rgba(255, 255, 255, ${(highlightPulse + particle.z * 0.0012) * alphaBoost})`;
-          ctx.fillRect(px, py, Math.max(1, size * 0.45), Math.max(1, size * 0.3));
+          if (!denseMode || particle.shimmer > 0.58) {
+            ctx.fillStyle = `rgba(255, 255, 255, ${(highlightPulse + particle.z * 0.0012) * alphaBoost})`;
+            ctx.fillRect(px, py, Math.max(0.4, size * 0.45), Math.max(0.35, size * 0.3));
+          }
         }
 
         const vignette = ctx.createRadialGradient(
@@ -538,9 +577,14 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
 
   const updatePointer = (event: ReactPointerEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
-    pointerRef.current.x = event.clientX - rect.left;
-    pointerRef.current.y = event.clientY - rect.top;
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    pointerRef.current.x = x;
+    pointerRef.current.y = y;
     pointerRef.current.active = true;
+    pointerGestureRef.current.currentX = x;
+    pointerGestureRef.current.currentY = y;
   };
 
   return (
@@ -548,7 +592,15 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
       ref={wrapRef}
       className={`${styles.stage} ${className || ""}`.trim()}
       onPointerMove={updatePointer}
-      onPointerEnter={updatePointer}
+      onPointerEnter={(event) => {
+        updatePointer(event);
+        const rect = event.currentTarget.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        pointerGestureRef.current.startX = x;
+        pointerGestureRef.current.startY = y;
+      }}
       onPointerLeave={() => {
         pointerRef.current.active = false;
       }}

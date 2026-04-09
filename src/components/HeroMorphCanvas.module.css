@@ -4,7 +4,9 @@
   aspect-ratio: 16 / 9;
   isolation: isolate;
   overflow: hidden;
-  border-radius: 22px;
+  border-radius: 0;
+  -webkit-mask-image: radial-gradient(ellipse 92% 84% at 50% 50%, #000 72%, rgba(0, 0, 0, 0.55) 84%, transparent 100%);
+  mask-image: radial-gradient(ellipse 92% 84% at 50% 50%, #000 72%, rgba(0, 0, 0, 0.55) 84%, transparent 100%);
 }
 
 .ambientGlow {
@@ -34,7 +36,7 @@
   inset: 0;
   z-index: 3;
   pointer-events: none;
-  background: radial-gradient(circle at center, rgba(6, 10, 18, 0) 42%, rgba(4, 6, 10, 0.5) 100%);
+  background: radial-gradient(circle at center, rgba(6, 10, 18, 0) 54%, rgba(4, 6, 10, 0.32) 100%);
 }
 
 .fallbackLogo {
