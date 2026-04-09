@@ -6,10 +6,13 @@
     "dev": "node scripts/clear-dev-log.mjs && next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "map:update": "node scripts/mapamundi/update-dataset.mjs"
   },
   "dependencies": {
+    "@types/leaflet": "^1.9.21",
     "framer-motion": "^12.38.0",
+    "leaflet": "^1.9.4",
     "lucide-react": "^1.7.0",
     "next": "16.2.2",
     "react": "19.2.4",

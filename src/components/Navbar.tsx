@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
+  { href: "/mapamundi-politico", label: "Mapamundi político" },
   { href: "/videos", label: "Vídeos" },
   { href: "/cuestionarios", label: "Cuestionarios" },
   { href: "/articulos", label: "Artículos" },

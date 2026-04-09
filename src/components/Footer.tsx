@@ -21,6 +21,7 @@ export default function Footer() {
             <div className={styles.linkColumn}>
               <h4 className={styles.columnTitle}>Archivo</h4>
               <Link href="/videos" className={styles.link}>Vídeos</Link>
+              <Link href="/mapamundi-politico" className={styles.link}>Mapamundi político</Link>
               <Link href="/cuestionarios" className={styles.link}>Cuestionarios</Link>
               <Link href="/articulos" className={styles.link}>Artículos</Link>
             </div>
