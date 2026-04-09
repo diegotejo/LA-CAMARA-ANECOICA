@@ -219,6 +219,25 @@
   border-bottom-color: var(--color-border-subtle);
 }
 
+.countryLabel {
+  background: rgba(4, 4, 5, 0.44);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ead7c8;
+  box-shadow: none;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  padding: 0.12rem 0.26rem;
+  pointer-events: none;
+}
+
+.countryLabel::before {
+  display: none;
+}
+
 @media (max-width: 1140px) {
   .controls {
     grid-template-columns: 1fr 1fr;

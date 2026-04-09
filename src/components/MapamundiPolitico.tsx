@@ -145,6 +145,20 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
         }
 
         const pathLayer = mapLayer as L.Path;
+        const label =
+          typeof iso3 === "string"
+            ? countriesByIso.get(iso3)?.countryName || feature.properties?.countryName || iso3
+            : feature.properties?.countryName || "";
+
+        if (label) {
+          pathLayer.bindTooltip(label, {
+            permanent: true,
+            direction: "center",
+            opacity: 0.82,
+            className: styles.countryLabel,
+            interactive: false,
+          });
+        }
 
         pathLayer.on({
           mouseover: () => {
@@ -155,14 +169,11 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
             });
           },
           mouseout: () => {
-            const isSelected = iso3 === selectedIso3;
-            const isVisible = typeof iso3 === "string" ? filteredIsoSet.has(iso3) : false;
-
             pathLayer.setStyle({
-              color: isSelected ? "#ffe3c5" : "rgba(255,255,255,0.5)",
-              weight: isSelected ? 2.25 : 1,
-              fillColor: isVisible ? "rgba(184, 134, 91, 0.22)" : "rgba(110, 110, 110, 0.15)",
-              fillOpacity: isVisible ? 0.55 : 0.25,
+              color: "rgba(255,255,255,0.5)",
+              weight: 1,
+              fillColor: "rgba(184, 134, 91, 0.22)",
+              fillOpacity: 0.55,
             });
           },
           click: () => {
@@ -192,7 +203,7 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
       map.remove();
       mapRef.current = null;
     };
-  }, [countriesByIso, filteredIsoSet, geometry, selectedIso3]);
+  }, [countriesByIso, geometry]);
 
   useEffect(() => {
     if (!geoJsonRef.current || !mapRef.current) {
@@ -207,6 +218,8 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
           };
         };
         setStyle?: (style: L.PathOptions) => void;
+        openTooltip?: () => void;
+        closeTooltip?: () => void;
       };
 
       if (!currentLayer.setStyle) {
@@ -223,6 +236,14 @@ export default function MapamundiPolitico({ countries, geometry }: MapamundiPoli
         fillColor: isVisible ? "rgba(184, 134, 91, 0.22)" : "rgba(110, 110, 110, 0.15)",
         fillOpacity: isVisible ? 0.62 : 0.24,
       });
+
+      if (isVisible && currentLayer.openTooltip) {
+        currentLayer.openTooltip();
+      }
+
+      if (!isVisible && currentLayer.closeTooltip) {
+        currentLayer.closeTooltip();
+      }
     });
 
     if (!selectedIso3) {

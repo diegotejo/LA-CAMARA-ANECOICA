@@ -8,13 +8,20 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: mapamundi-monthly-update
+  cancel-in-progress: false
+
 jobs:
   update-mapamundi:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -36,4 +43,5 @@ jobs:
             exit 0
           fi
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "chore(data): monthly mapamundi refresh"
+          git pull --rebase origin main
           git push

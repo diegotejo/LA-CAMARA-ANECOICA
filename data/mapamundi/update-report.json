@@ -2,7 +2,7 @@
   "generatedAt": "2026-04-09",
   "totals": {
     "countries": 176,
-    "countriesWithIssues": 176,
+    "countriesWithIssues": 44,
     "discardedNaturalEarthFeatures": 1
   },
   "sourceStatus": [
@@ -20,1436 +20,18 @@
     },
     {
       "source": "Banco Mundial GDP",
-      "status": "partial",
-      "message": "176 países con error de consulta individual"
+      "status": "ok"
     },
     {
       "source": "Banco Mundial GDP per cápita",
-      "status": "partial",
-      "message": "176 países con error de consulta individual"
+      "status": "ok"
     }
   ],
-  "worldBankErrors": {
-    "gdp": [
-      {
-        "iso3": "UZB",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD UZB respondió 502"
-      },
-      {
-        "iso3": "SAH",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SAH respondió 502"
-      },
-      {
-        "iso3": "FJI",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD FJI respondió 502"
-      },
-      {
-        "iso3": "TZA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD TZA respondió 502"
-      },
-      {
-        "iso3": "USA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD USA respondió 502"
-      },
-      {
-        "iso3": "CAN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD CAN respondió 502"
-      },
-      {
-        "iso3": "KAZ",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD KAZ respondió 502"
-      },
-      {
-        "iso3": "PNG",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD PNG respondió 502"
-      },
-      {
-        "iso3": "CHL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD CHL respondió 502"
-      },
-      {
-        "iso3": "ARG",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ARG respondió 502"
-      },
-      {
-        "iso3": "SOM",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SOM respondió 502"
-      },
-      {
-        "iso3": "KEN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD KEN respondió 502"
-      },
-      {
-        "iso3": "TCD",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD TCD respondió 502"
-      },
-      {
-        "iso3": "COD",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD COD respondió 502"
-      },
-      {
-        "iso3": "SDN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SDN respondió 502"
-      },
-      {
-        "iso3": "DOM",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD DOM respondió 502"
-      },
-      {
-        "iso3": "RUS",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD RUS respondió 502"
-      },
-      {
-        "iso3": "BHS",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BHS respondió 502"
-      },
-      {
-        "iso3": "HTI",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD HTI respondió 502"
-      },
-      {
-        "iso3": "GRL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD GRL respondió 502"
-      },
-      {
-        "iso3": "NOR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD NOR respondió 502"
-      },
-      {
-        "iso3": "ATF",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ATF respondió 502"
-      },
-      {
-        "iso3": "FLK",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD FLK respondió 502"
-      },
-      {
-        "iso3": "TLS",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD TLS respondió 502"
-      },
-      {
-        "iso3": "ZAF",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ZAF respondió 502"
-      },
-      {
-        "iso3": "IDN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD IDN respondió 502"
-      },
-      {
-        "iso3": "LSO",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD LSO respondió 502"
-      },
-      {
-        "iso3": "MEX",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MEX respondió 502"
-      },
-      {
-        "iso3": "URY",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD URY respondió 502"
-      },
-      {
-        "iso3": "BRA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BRA respondió 502"
-      },
-      {
-        "iso3": "BOL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BOL respondió 502"
-      },
-      {
-        "iso3": "PER",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD PER respondió 502"
-      },
-      {
-        "iso3": "PAN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD PAN respondió 502"
-      },
-      {
-        "iso3": "COL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD COL respondió 502"
-      },
-      {
-        "iso3": "NIC",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD NIC respondió 502"
-      },
-      {
-        "iso3": "CRI",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD CRI respondió 502"
-      },
-      {
-        "iso3": "SLV",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SLV respondió 502"
-      },
-      {
-        "iso3": "GTM",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD GTM respondió 502"
-      },
-      {
-        "iso3": "BLZ",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BLZ respondió 502"
-      },
-      {
-        "iso3": "HND",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD HND respondió 502"
-      },
-      {
-        "iso3": "GUY",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD GUY respondió 502"
-      },
-      {
-        "iso3": "SUR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SUR respondió 502"
-      },
-      {
-        "iso3": "FRA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD FRA respondió 502"
-      },
-      {
-        "iso3": "VEN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD VEN respondió 502"
-      },
-      {
-        "iso3": "ECU",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ECU respondió 502"
-      },
-      {
-        "iso3": "PRI",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD PRI respondió 502"
-      },
-      {
-        "iso3": "JAM",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD JAM respondió 502"
-      },
-      {
-        "iso3": "BWA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BWA respondió 502"
-      },
-      {
-        "iso3": "NAM",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD NAM respondió 502"
-      },
-      {
-        "iso3": "ZWE",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ZWE respondió 502"
-      },
-      {
-        "iso3": "SEN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SEN respondió 502"
-      },
-      {
-        "iso3": "MRT",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MRT respondió 502"
-      },
-      {
-        "iso3": "MLI",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MLI respondió 502"
-      },
-      {
-        "iso3": "BEN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BEN respondió 502"
-      },
-      {
-        "iso3": "NGA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD NGA respondió 502"
-      },
-      {
-        "iso3": "NER",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD NER respondió 502"
-      },
-      {
-        "iso3": "CMR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD CMR respondió 502"
-      },
-      {
-        "iso3": "TGO",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD TGO respondió 502"
-      },
-      {
-        "iso3": "GHA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD GHA respondió 502"
-      },
-      {
-        "iso3": "CIV",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD CIV respondió 502"
-      },
-      {
-        "iso3": "CUB",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD CUB respondió 502"
-      },
-      {
-        "iso3": "LBR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD LBR respondió 502"
-      },
-      {
-        "iso3": "GNB",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD GNB respondió 502"
-      },
-      {
-        "iso3": "SLE",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SLE respondió 502"
-      },
-      {
-        "iso3": "GIN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD GIN respondió 502"
-      },
-      {
-        "iso3": "GAB",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD GAB respondió 502"
-      },
-      {
-        "iso3": "COG",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD COG respondió 502"
-      },
-      {
-        "iso3": "BFA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BFA respondió 502"
-      },
-      {
-        "iso3": "CAF",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD CAF respondió 502"
-      },
-      {
-        "iso3": "GNQ",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD GNQ respondió 502"
-      },
-      {
-        "iso3": "ZMB",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ZMB respondió 502"
-      },
-      {
-        "iso3": "MWI",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MWI respondió 502"
-      },
-      {
-        "iso3": "SWZ",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SWZ respondió 502"
-      },
-      {
-        "iso3": "BDI",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BDI respondió 502"
-      },
-      {
-        "iso3": "MOZ",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MOZ respondió 502"
-      },
-      {
-        "iso3": "AGO",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD AGO respondió 502"
-      },
-      {
-        "iso3": "MDG",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MDG respondió 502"
-      },
-      {
-        "iso3": "ISR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ISR respondió 502"
-      },
-      {
-        "iso3": "PSX",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD PSX respondió 502"
-      },
-      {
-        "iso3": "GMB",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD GMB respondió 502"
-      },
-      {
-        "iso3": "LBN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD LBN respondió 502"
-      },
-      {
-        "iso3": "TUN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD TUN respondió 502"
-      },
-      {
-        "iso3": "DZA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD DZA respondió 502"
-      },
-      {
-        "iso3": "JOR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD JOR respondió 502"
-      },
-      {
-        "iso3": "ARE",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ARE respondió 502"
-      },
-      {
-        "iso3": "QAT",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD QAT respondió 502"
-      },
-      {
-        "iso3": "KWT",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD KWT respondió 502"
-      },
-      {
-        "iso3": "IRQ",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD IRQ respondió 502"
-      },
-      {
-        "iso3": "KHM",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD KHM respondió 502"
-      },
-      {
-        "iso3": "OMN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD OMN respondió 502"
-      },
-      {
-        "iso3": "THA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD THA respondió 502"
-      },
-      {
-        "iso3": "MMR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MMR respondió 502"
-      },
-      {
-        "iso3": "VUT",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD VUT respondió 502"
-      },
-      {
-        "iso3": "PRK",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD PRK respondió 502"
-      },
-      {
-        "iso3": "VNM",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD VNM respondió 502"
-      },
-      {
-        "iso3": "LAO",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD LAO respondió 502"
-      },
-      {
-        "iso3": "KOR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD KOR respondió 502"
-      },
-      {
-        "iso3": "MNG",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MNG respondió 502"
-      },
-      {
-        "iso3": "IND",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD IND respondió 502"
-      },
-      {
-        "iso3": "BTN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BTN respondió 502"
-      },
-      {
-        "iso3": "BGD",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BGD respondió 502"
-      },
-      {
-        "iso3": "NPL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD NPL respondió 502"
-      },
-      {
-        "iso3": "AFG",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD AFG respondió 502"
-      },
-      {
-        "iso3": "PAK",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD PAK respondió 502"
-      },
-      {
-        "iso3": "KGZ",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD KGZ respondió 502"
-      },
-      {
-        "iso3": "TJK",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD TJK respondió 502"
-      },
-      {
-        "iso3": "TKM",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD TKM respondió 502"
-      },
-      {
-        "iso3": "IRN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD IRN respondió 502"
-      },
-      {
-        "iso3": "SYR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SYR respondió 502"
-      },
-      {
-        "iso3": "ARM",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ARM respondió 502"
-      },
-      {
-        "iso3": "SWE",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SWE respondió 502"
-      },
-      {
-        "iso3": "BLR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BLR respondió 502"
-      },
-      {
-        "iso3": "POL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD POL respondió 502"
-      },
-      {
-        "iso3": "HUN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD HUN respondió 502"
-      },
-      {
-        "iso3": "UKR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD UKR respondió 502"
-      },
-      {
-        "iso3": "AUT",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD AUT respondió 502"
-      },
-      {
-        "iso3": "MDA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MDA respondió 502"
-      },
-      {
-        "iso3": "ROU",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ROU respondió 502"
-      },
-      {
-        "iso3": "LTU",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD LTU respondió 502"
-      },
-      {
-        "iso3": "LVA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD LVA respondió 502"
-      },
-      {
-        "iso3": "GRC",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD GRC respondió 502"
-      },
-      {
-        "iso3": "BGR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BGR respondió 502"
-      },
-      {
-        "iso3": "EST",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD EST respondió 502"
-      },
-      {
-        "iso3": "DEU",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD DEU respondió 502"
-      },
-      {
-        "iso3": "TUR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD TUR respondió 502"
-      },
-      {
-        "iso3": "ALB",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ALB respondió 502"
-      },
-      {
-        "iso3": "HRV",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD HRV respondió 502"
-      },
-      {
-        "iso3": "CHE",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD CHE respondió 502"
-      },
-      {
-        "iso3": "LUX",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD LUX respondió 502"
-      },
-      {
-        "iso3": "PRT",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD PRT respondió 502"
-      },
-      {
-        "iso3": "BEL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BEL respondió 502"
-      },
-      {
-        "iso3": "NLD",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD NLD respondió 502"
-      },
-      {
-        "iso3": "ESP",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ESP respondió 502"
-      },
-      {
-        "iso3": "NCL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD NCL respondió 502"
-      },
-      {
-        "iso3": "SLB",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SLB respondió 502"
-      },
-      {
-        "iso3": "IRL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD IRL respondió 502"
-      },
-      {
-        "iso3": "NZL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD NZL respondió 502"
-      },
-      {
-        "iso3": "LKA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD LKA respondió 502"
-      },
-      {
-        "iso3": "AUS",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD AUS respondió 502"
-      },
-      {
-        "iso3": "CHN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD CHN respondió 502"
-      },
-      {
-        "iso3": "TWN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD TWN respondió 502"
-      },
-      {
-        "iso3": "ITA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ITA respondió 502"
-      },
-      {
-        "iso3": "DNK",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD DNK respondió 502"
-      },
-      {
-        "iso3": "GBR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD GBR respondió 502"
-      },
-      {
-        "iso3": "AZE",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD AZE respondió 502"
-      },
-      {
-        "iso3": "ISL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ISL respondió 502"
-      },
-      {
-        "iso3": "GEO",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD GEO respondió 502"
-      },
-      {
-        "iso3": "PHL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD PHL respondió 502"
-      },
-      {
-        "iso3": "BRN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BRN respondió 502"
-      },
-      {
-        "iso3": "MYS",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MYS respondió 502"
-      },
-      {
-        "iso3": "SVN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SVN respondió 502"
-      },
-      {
-        "iso3": "SVK",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SVK respondió 502"
-      },
-      {
-        "iso3": "FIN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD FIN respondió 502"
-      },
-      {
-        "iso3": "CZE",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD CZE respondió 502"
-      },
-      {
-        "iso3": "JPN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD JPN respondió 502"
-      },
-      {
-        "iso3": "ERI",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ERI respondió 502"
-      },
-      {
-        "iso3": "PRY",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD PRY respondió 502"
-      },
-      {
-        "iso3": "YEM",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD YEM respondió 502"
-      },
-      {
-        "iso3": "CYP",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD CYP respondió 502"
-      },
-      {
-        "iso3": "CYN",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD CYN respondió 502"
-      },
-      {
-        "iso3": "SAU",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SAU respondió 502"
-      },
-      {
-        "iso3": "MAR",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MAR respondió 502"
-      },
-      {
-        "iso3": "EGY",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD EGY respondió 502"
-      },
-      {
-        "iso3": "LBY",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD LBY respondió 502"
-      },
-      {
-        "iso3": "ETH",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD ETH respondió 502"
-      },
-      {
-        "iso3": "DJI",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD DJI respondió 502"
-      },
-      {
-        "iso3": "RWA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD RWA respondió 502"
-      },
-      {
-        "iso3": "UGA",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD UGA respondió 502"
-      },
-      {
-        "iso3": "SOL",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SOL respondió 502"
-      },
-      {
-        "iso3": "BIH",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD BIH respondió 502"
-      },
-      {
-        "iso3": "SRB",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SRB respondió 502"
-      },
-      {
-        "iso3": "MKD",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MKD respondió 502"
-      },
-      {
-        "iso3": "KOS",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD KOS respondió 502"
-      },
-      {
-        "iso3": "MNE",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD MNE respondió 502"
-      },
-      {
-        "iso3": "SDS",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD SDS respondió 502"
-      },
-      {
-        "iso3": "TTO",
-        "error": "Error: Banco Mundial NY.GDP.MKTP.CD TTO respondió 502"
-      }
-    ],
-    "gdpPerCapita": [
-      {
-        "iso3": "SAH",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SAH respondió 502"
-      },
-      {
-        "iso3": "TZA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD TZA respondió 502"
-      },
-      {
-        "iso3": "UZB",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD UZB respondió 502"
-      },
-      {
-        "iso3": "PNG",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD PNG respondió 502"
-      },
-      {
-        "iso3": "CAN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD CAN respondió 502"
-      },
-      {
-        "iso3": "USA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD USA respondió 502"
-      },
-      {
-        "iso3": "FJI",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD FJI respondió 502"
-      },
-      {
-        "iso3": "KAZ",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD KAZ respondió 502"
-      },
-      {
-        "iso3": "IDN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD IDN respondió 502"
-      },
-      {
-        "iso3": "ARG",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ARG respondió 502"
-      },
-      {
-        "iso3": "CHL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD CHL respondió 502"
-      },
-      {
-        "iso3": "COD",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD COD respondió 502"
-      },
-      {
-        "iso3": "KEN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD KEN respondió 502"
-      },
-      {
-        "iso3": "SDN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SDN respondió 502"
-      },
-      {
-        "iso3": "SOM",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SOM respondió 502"
-      },
-      {
-        "iso3": "TCD",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD TCD respondió 502"
-      },
-      {
-        "iso3": "BHS",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BHS respondió 502"
-      },
-      {
-        "iso3": "RUS",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD RUS respondió 502"
-      },
-      {
-        "iso3": "HTI",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD HTI respondió 502"
-      },
-      {
-        "iso3": "DOM",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD DOM respondió 502"
-      },
-      {
-        "iso3": "GRL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD GRL respondió 502"
-      },
-      {
-        "iso3": "FLK",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD FLK respondió 502"
-      },
-      {
-        "iso3": "NOR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD NOR respondió 502"
-      },
-      {
-        "iso3": "ATF",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ATF respondió 502"
-      },
-      {
-        "iso3": "LSO",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD LSO respondió 502"
-      },
-      {
-        "iso3": "ZAF",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ZAF respondió 502"
-      },
-      {
-        "iso3": "TLS",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD TLS respondió 502"
-      },
-      {
-        "iso3": "BOL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BOL respondió 502"
-      },
-      {
-        "iso3": "MEX",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MEX respondió 502"
-      },
-      {
-        "iso3": "BRA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BRA respondió 502"
-      },
-      {
-        "iso3": "URY",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD URY respondió 502"
-      },
-      {
-        "iso3": "PER",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD PER respondió 502"
-      },
-      {
-        "iso3": "COL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD COL respondió 502"
-      },
-      {
-        "iso3": "NIC",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD NIC respondió 502"
-      },
-      {
-        "iso3": "PAN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD PAN respondió 502"
-      },
-      {
-        "iso3": "CRI",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD CRI respondió 502"
-      },
-      {
-        "iso3": "GTM",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD GTM respondió 502"
-      },
-      {
-        "iso3": "HND",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD HND respondió 502"
-      },
-      {
-        "iso3": "SLV",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SLV respondió 502"
-      },
-      {
-        "iso3": "VEN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD VEN respondió 502"
-      },
-      {
-        "iso3": "BLZ",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BLZ respondió 502"
-      },
-      {
-        "iso3": "FRA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD FRA respondió 502"
-      },
-      {
-        "iso3": "SUR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SUR respondió 502"
-      },
-      {
-        "iso3": "GUY",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD GUY respondió 502"
-      },
-      {
-        "iso3": "ECU",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ECU respondió 502"
-      },
-      {
-        "iso3": "PRI",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD PRI respondió 502"
-      },
-      {
-        "iso3": "JAM",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD JAM respondió 502"
-      },
-      {
-        "iso3": "CUB",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD CUB respondió 502"
-      },
-      {
-        "iso3": "ZWE",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ZWE respondió 502"
-      },
-      {
-        "iso3": "BWA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BWA respondió 502"
-      },
-      {
-        "iso3": "NAM",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD NAM respondió 502"
-      },
-      {
-        "iso3": "SEN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SEN respondió 502"
-      },
-      {
-        "iso3": "MRT",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MRT respondió 502"
-      },
-      {
-        "iso3": "MLI",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MLI respondió 502"
-      },
-      {
-        "iso3": "BEN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BEN respondió 502"
-      },
-      {
-        "iso3": "NGA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD NGA respondió 502"
-      },
-      {
-        "iso3": "TGO",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD TGO respondió 502"
-      },
-      {
-        "iso3": "NER",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD NER respondió 502"
-      },
-      {
-        "iso3": "CMR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD CMR respondió 502"
-      },
-      {
-        "iso3": "CIV",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD CIV respondió 502"
-      },
-      {
-        "iso3": "GHA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD GHA respondió 502"
-      },
-      {
-        "iso3": "GNB",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD GNB respondió 502"
-      },
-      {
-        "iso3": "GIN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD GIN respondió 502"
-      },
-      {
-        "iso3": "LBR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD LBR respondió 502"
-      },
-      {
-        "iso3": "SLE",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SLE respondió 502"
-      },
-      {
-        "iso3": "BFA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BFA respondió 502"
-      },
-      {
-        "iso3": "CAF",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD CAF respondió 502"
-      },
-      {
-        "iso3": "COG",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD COG respondió 502"
-      },
-      {
-        "iso3": "ZMB",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ZMB respondió 502"
-      },
-      {
-        "iso3": "GNQ",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD GNQ respondió 502"
-      },
-      {
-        "iso3": "GAB",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD GAB respondió 502"
-      },
-      {
-        "iso3": "MWI",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MWI respondió 502"
-      },
-      {
-        "iso3": "MOZ",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MOZ respondió 502"
-      },
-      {
-        "iso3": "SWZ",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SWZ respondió 502"
-      },
-      {
-        "iso3": "AGO",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD AGO respondió 502"
-      },
-      {
-        "iso3": "BDI",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BDI respondió 502"
-      },
-      {
-        "iso3": "ISR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ISR respondió 502"
-      },
-      {
-        "iso3": "MDG",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MDG respondió 502"
-      },
-      {
-        "iso3": "LBN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD LBN respondió 502"
-      },
-      {
-        "iso3": "PSX",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD PSX respondió 502"
-      },
-      {
-        "iso3": "GMB",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD GMB respondió 502"
-      },
-      {
-        "iso3": "DZA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD DZA respondió 502"
-      },
-      {
-        "iso3": "TUN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD TUN respondió 502"
-      },
-      {
-        "iso3": "ARE",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ARE respondió 502"
-      },
-      {
-        "iso3": "QAT",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD QAT respondió 502"
-      },
-      {
-        "iso3": "KWT",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD KWT respondió 502"
-      },
-      {
-        "iso3": "IRQ",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD IRQ respondió 502"
-      },
-      {
-        "iso3": "VUT",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD VUT respondió 502"
-      },
-      {
-        "iso3": "OMN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD OMN respondió 502"
-      },
-      {
-        "iso3": "THA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD THA respondió 502"
-      },
-      {
-        "iso3": "KHM",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD KHM respondió 502"
-      },
-      {
-        "iso3": "LAO",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD LAO respondió 502"
-      },
-      {
-        "iso3": "VNM",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD VNM respondió 502"
-      },
-      {
-        "iso3": "MMR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MMR respondió 502"
-      },
-      {
-        "iso3": "KOR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD KOR respondió 502"
-      },
-      {
-        "iso3": "PRK",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD PRK respondió 502"
-      },
-      {
-        "iso3": "IND",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD IND respondió 502"
-      },
-      {
-        "iso3": "JOR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD JOR respondió 502"
-      },
-      {
-        "iso3": "BGD",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BGD respondió 502"
-      },
-      {
-        "iso3": "MNG",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MNG respondió 502"
-      },
-      {
-        "iso3": "BTN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BTN respondió 502"
-      },
-      {
-        "iso3": "NPL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD NPL respondió 502"
-      },
-      {
-        "iso3": "PAK",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD PAK respondió 502"
-      },
-      {
-        "iso3": "AFG",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD AFG respondió 502"
-      },
-      {
-        "iso3": "TJK",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD TJK respondió 502"
-      },
-      {
-        "iso3": "KGZ",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD KGZ respondió 502"
-      },
-      {
-        "iso3": "SYR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SYR respondió 502"
-      },
-      {
-        "iso3": "IRN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD IRN respondió 502"
-      },
-      {
-        "iso3": "ARM",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ARM respondió 502"
-      },
-      {
-        "iso3": "TKM",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD TKM respondió 502"
-      },
-      {
-        "iso3": "BLR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BLR respondió 502"
-      },
-      {
-        "iso3": "SWE",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SWE respondió 502"
-      },
-      {
-        "iso3": "UKR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD UKR respondió 502"
-      },
-      {
-        "iso3": "AUT",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD AUT respondió 502"
-      },
-      {
-        "iso3": "HUN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD HUN respondió 502"
-      },
-      {
-        "iso3": "ROU",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ROU respondió 502"
-      },
-      {
-        "iso3": "MDA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MDA respondió 502"
-      },
-      {
-        "iso3": "POL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD POL respondió 502"
-      },
-      {
-        "iso3": "LVA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD LVA respondió 502"
-      },
-      {
-        "iso3": "EST",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD EST respondió 502"
-      },
-      {
-        "iso3": "DEU",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD DEU respondió 502"
-      },
-      {
-        "iso3": "GRC",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD GRC respondió 502"
-      },
-      {
-        "iso3": "LTU",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD LTU respondió 502"
-      },
-      {
-        "iso3": "BGR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BGR respondió 502"
-      },
-      {
-        "iso3": "TUR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD TUR respondió 502"
-      },
-      {
-        "iso3": "HRV",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD HRV respondió 502"
-      },
-      {
-        "iso3": "CHE",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD CHE respondió 502"
-      },
-      {
-        "iso3": "ALB",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ALB respondió 502"
-      },
-      {
-        "iso3": "LUX",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD LUX respondió 502"
-      },
-      {
-        "iso3": "BEL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BEL respondió 502"
-      },
-      {
-        "iso3": "NLD",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD NLD respondió 502"
-      },
-      {
-        "iso3": "PRT",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD PRT respondió 502"
-      },
-      {
-        "iso3": "ESP",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ESP respondió 502"
-      },
-      {
-        "iso3": "IRL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD IRL respondió 502"
-      },
-      {
-        "iso3": "NCL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD NCL respondió 502"
-      },
-      {
-        "iso3": "NZL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD NZL respondió 502"
-      },
-      {
-        "iso3": "SLB",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SLB respondió 502"
-      },
-      {
-        "iso3": "AUS",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD AUS respondió 502"
-      },
-      {
-        "iso3": "CHN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD CHN respondió 502"
-      },
-      {
-        "iso3": "LKA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD LKA respondió 502"
-      },
-      {
-        "iso3": "ITA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ITA respondió 502"
-      },
-      {
-        "iso3": "TWN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD TWN respondió 502"
-      },
-      {
-        "iso3": "DNK",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD DNK respondió 502"
-      },
-      {
-        "iso3": "GBR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD GBR respondió 502"
-      },
-      {
-        "iso3": "ISL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ISL respondió 502"
-      },
-      {
-        "iso3": "AZE",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD AZE respondió 502"
-      },
-      {
-        "iso3": "GEO",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD GEO respondió 502"
-      },
-      {
-        "iso3": "PHL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD PHL respondió 502"
-      },
-      {
-        "iso3": "MYS",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MYS respondió 502"
-      },
-      {
-        "iso3": "BRN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BRN respondió 502"
-      },
-      {
-        "iso3": "SVN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SVN respondió 502"
-      },
-      {
-        "iso3": "SVK",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SVK respondió 502"
-      },
-      {
-        "iso3": "CZE",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD CZE respondió 502"
-      },
-      {
-        "iso3": "ERI",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ERI respondió 502"
-      },
-      {
-        "iso3": "FIN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD FIN respondió 502"
-      },
-      {
-        "iso3": "JPN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD JPN respondió 502"
-      },
-      {
-        "iso3": "PRY",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD PRY respondió 502"
-      },
-      {
-        "iso3": "YEM",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD YEM respondió 502"
-      },
-      {
-        "iso3": "SAU",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SAU respondió 502"
-      },
-      {
-        "iso3": "CYN",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD CYN respondió 502"
-      },
-      {
-        "iso3": "MAR",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MAR respondió 502"
-      },
-      {
-        "iso3": "CYP",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD CYP respondió 502"
-      },
-      {
-        "iso3": "EGY",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD EGY respondió 502"
-      },
-      {
-        "iso3": "LBY",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD LBY respondió 502"
-      },
-      {
-        "iso3": "ETH",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD ETH respondió 502"
-      },
-      {
-        "iso3": "DJI",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD DJI respondió 502"
-      },
-      {
-        "iso3": "SOL",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SOL respondió 502"
-      },
-      {
-        "iso3": "UGA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD UGA respondió 502"
-      },
-      {
-        "iso3": "BIH",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD BIH respondió 502"
-      },
-      {
-        "iso3": "RWA",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD RWA respondió 502"
-      },
-      {
-        "iso3": "MKD",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MKD respondió 502"
-      },
-      {
-        "iso3": "SRB",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SRB respondió 502"
-      },
-      {
-        "iso3": "MNE",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD MNE respondió 502"
-      },
-      {
-        "iso3": "KOS",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD KOS respondió 502"
-      },
-      {
-        "iso3": "TTO",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD TTO respondió 502"
-      },
-      {
-        "iso3": "SDS",
-        "error": "Error: Banco Mundial NY.GDP.PCAP.CD SDS respondió 502"
-      }
-    ]
-  },
   "countriesWithIssues": [
     {
       "iso3": "FJI",
       "countryName": "Fiji",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
       ]
     },
@@ -1457,8 +39,6 @@
       "iso3": "TZA",
       "countryName": "Tanzania",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
       ]
     },
@@ -1477,109 +57,23 @@
       ]
     },
     {
-      "iso3": "CAN",
-      "countryName": "Canada",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "USA",
-      "countryName": "United States",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "KAZ",
-      "countryName": "Kazakhstan",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "UZB",
-      "countryName": "Uzbekistan",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
       "iso3": "PNG",
       "countryName": "Papua New Guinea",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "IDN",
-      "countryName": "Indonesia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "ARG",
-      "countryName": "Argentina",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "CHL",
-      "countryName": "Chile",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "COD",
-      "countryName": "DR Congo",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "SOM",
-      "countryName": "Somalia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "KEN",
       "countryName": "Kenya",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "SDN",
-      "countryName": "Sudan",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "TCD",
       "countryName": "Chad",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
       ]
     },
@@ -1587,8 +81,6 @@
       "iso3": "HTI",
       "countryName": "Haiti",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
       ]
     },
@@ -1596,25 +88,7 @@
       "iso3": "DOM",
       "countryName": "Dominican Republic",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "RUS",
-      "countryName": "Russia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BHS",
-      "countryName": "Bahamas",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
@@ -1629,22 +103,6 @@
       ]
     },
     {
-      "iso3": "NOR",
-      "countryName": "Norway",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "GRL",
-      "countryName": "Greenland",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
       "iso3": "ATF",
       "countryName": "French Southern and Antarctic Lands",
       "issues": [
@@ -1656,181 +114,23 @@
       ]
     },
     {
-      "iso3": "TLS",
-      "countryName": "Timor-Leste",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "ZAF",
-      "countryName": "South Africa",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "LSO",
-      "countryName": "Lesotho",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "MEX",
-      "countryName": "Mexico",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "URY",
-      "countryName": "Uruguay",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BRA",
-      "countryName": "Brazil",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BOL",
-      "countryName": "Bolivia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "PER",
-      "countryName": "Peru",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "COL",
-      "countryName": "Colombia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "PAN",
-      "countryName": "Panama",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
       "iso3": "CRI",
       "countryName": "Costa Rica",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "NIC",
-      "countryName": "Nicaragua",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "HND",
-      "countryName": "Honduras",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "SLV",
-      "countryName": "El Salvador",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "GTM",
-      "countryName": "Guatemala",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BLZ",
-      "countryName": "Belize",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "VEN",
       "countryName": "Venezuela",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Jefe de Gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "GUY",
-      "countryName": "Guyana",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "SUR",
-      "countryName": "Suriname",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "FRA",
-      "countryName": "France",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "ECU",
-      "countryName": "Ecuador",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "PRI",
       "countryName": "Puerto Rico",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
@@ -1840,25 +140,13 @@
       "iso3": "JAM",
       "countryName": "Jamaica",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "CUB",
-      "countryName": "Cuba",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "ZWE",
       "countryName": "Zimbabwe",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
       ]
     },
@@ -1866,8 +154,6 @@
       "iso3": "BWA",
       "countryName": "Botswana",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Jefe de Gobierno no disponible en Wikidata"
       ]
     },
@@ -1875,25 +161,13 @@
       "iso3": "NAM",
       "countryName": "Namibia",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "SEN",
-      "countryName": "Senegal",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "MLI",
       "countryName": "Mali",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
       ]
     },
@@ -1901,83 +175,27 @@
       "iso3": "MRT",
       "countryName": "Mauritania",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "BEN",
-      "countryName": "Benin",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "NER",
       "countryName": "Niger",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "NGA",
-      "countryName": "Nigeria",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "CMR",
-      "countryName": "Cameroon",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "TGO",
       "countryName": "Togo",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "GHA",
-      "countryName": "Ghana",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "CIV",
-      "countryName": "Ivory Coast",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "GIN",
-      "countryName": "Guinea",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "GNB",
       "countryName": "Guinea-Bissau",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
       ]
     },
@@ -1985,75 +203,27 @@
       "iso3": "LBR",
       "countryName": "Liberia",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "SLE",
-      "countryName": "Sierra Leone",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BFA",
-      "countryName": "Burkina Faso",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "CAF",
       "countryName": "Central African Republic",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "COG",
-      "countryName": "Republic of the Congo",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "GAB",
-      "countryName": "Gabon",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "GNQ",
       "countryName": "Equatorial Guinea",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "ZMB",
-      "countryName": "Zambia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "MWI",
       "countryName": "Malawi",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
       ]
     },
@@ -2061,57 +231,7 @@
       "iso3": "MOZ",
       "countryName": "Mozambique",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "SWZ",
-      "countryName": "Eswatini",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "AGO",
-      "countryName": "Angola",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BDI",
-      "countryName": "Burundi",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "ISR",
-      "countryName": "Israel",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "LBN",
-      "countryName": "Lebanon",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "MDG",
-      "countryName": "Madagascar",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
@@ -2129,125 +249,17 @@
       ]
     },
     {
-      "iso3": "GMB",
-      "countryName": "Gambia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "TUN",
-      "countryName": "Tunisia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "DZA",
-      "countryName": "Algeria",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
       "iso3": "JOR",
       "countryName": "Jordan",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "ARE",
-      "countryName": "United Arab Emirates",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "QAT",
-      "countryName": "Qatar",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "KWT",
-      "countryName": "Kuwait",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "IRQ",
-      "countryName": "Iraq",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "OMN",
-      "countryName": "Oman",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "VUT",
       "countryName": "Vanuatu",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "KHM",
-      "countryName": "Cambodia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "THA",
-      "countryName": "Thailand",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "LAO",
-      "countryName": "Laos",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "MMR",
-      "countryName": "Myanmar",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "VNM",
-      "countryName": "Vietnam",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
@@ -2259,317 +271,17 @@
       ]
     },
     {
-      "iso3": "KOR",
-      "countryName": "South Korea",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "MNG",
-      "countryName": "Mongolia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "IND",
-      "countryName": "India",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BGD",
-      "countryName": "Bangladesh",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BTN",
-      "countryName": "Bhutan",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "NPL",
-      "countryName": "Nepal",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "PAK",
-      "countryName": "Pakistan",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "AFG",
-      "countryName": "Afghanistan",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "TJK",
-      "countryName": "Tajikistan",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "KGZ",
-      "countryName": "Kyrgyzstan",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "TKM",
-      "countryName": "Turkmenistan",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "IRN",
-      "countryName": "Iran",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
       "iso3": "SYR",
       "countryName": "Syria",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "ARM",
-      "countryName": "Armenia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "SWE",
-      "countryName": "Sweden",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BLR",
-      "countryName": "Belarus",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "UKR",
-      "countryName": "Ukraine",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "POL",
-      "countryName": "Poland",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "AUT",
-      "countryName": "Austria",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "HUN",
-      "countryName": "Hungary",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "MDA",
-      "countryName": "Moldova",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "ROU",
-      "countryName": "Romania",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "LTU",
-      "countryName": "Lithuania",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "LVA",
-      "countryName": "Latvia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "EST",
-      "countryName": "Estonia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "DEU",
-      "countryName": "Germany",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BGR",
-      "countryName": "Bulgaria",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "GRC",
-      "countryName": "Greece",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "TUR",
-      "countryName": "Turkey",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "ALB",
-      "countryName": "Albania",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "HRV",
-      "countryName": "Croatia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "CHE",
-      "countryName": "Switzerland",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "LUX",
-      "countryName": "Luxembourg",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BEL",
-      "countryName": "Belgium",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "NLD",
-      "countryName": "Netherlands",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "PRT",
-      "countryName": "Portugal",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "ESP",
-      "countryName": "Spain",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "IRL",
-      "countryName": "Ireland",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "NCL",
       "countryName": "New Caledonia",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
@@ -2579,151 +291,19 @@
       "iso3": "SLB",
       "countryName": "Solomon Islands",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "NZL",
-      "countryName": "New Zealand",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "AUS",
-      "countryName": "Australia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "LKA",
       "countryName": "Sri Lanka",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "CHN",
-      "countryName": "China",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
       "iso3": "TWN",
       "countryName": "Taiwan",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "ITA",
-      "countryName": "Italy",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "DNK",
-      "countryName": "Denmark",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "GBR",
-      "countryName": "United Kingdom",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "ISL",
-      "countryName": "Iceland",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "AZE",
-      "countryName": "Azerbaijan",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "GEO",
-      "countryName": "Georgia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "PHL",
-      "countryName": "Philippines",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "MYS",
-      "countryName": "Malaysia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BRN",
-      "countryName": "Brunei",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "SVN",
-      "countryName": "Slovenia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "FIN",
-      "countryName": "Finland",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "SVK",
-      "countryName": "Slovakia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "CZE",
-      "countryName": "Czechia",
       "issues": [
         "PIB no disponible en Banco Mundial",
         "PIB per cápita no disponible en Banco Mundial"
@@ -2739,36 +319,10 @@
       ]
     },
     {
-      "iso3": "JPN",
-      "countryName": "Japan",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
       "iso3": "PRY",
       "countryName": "Paraguay",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "YEM",
-      "countryName": "Yemen",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "SAU",
-      "countryName": "Saudi Arabia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
@@ -2786,51 +340,9 @@
       ]
     },
     {
-      "iso3": "CYP",
-      "countryName": "Cyprus",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "MAR",
-      "countryName": "Morocco",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "EGY",
-      "countryName": "Egypt",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "LBY",
-      "countryName": "Libya",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "ETH",
-      "countryName": "Ethiopia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
       "iso3": "DJI",
       "countryName": "Djibouti",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
       ]
     },
@@ -2849,52 +361,10 @@
       ]
     },
     {
-      "iso3": "UGA",
-      "countryName": "Uganda",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "RWA",
-      "countryName": "Rwanda",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "BIH",
-      "countryName": "Bosnia and Herzegovina",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
-      "iso3": "MKD",
-      "countryName": "North Macedonia",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
-      ]
-    },
-    {
       "iso3": "SRB",
       "countryName": "Serbia",
       "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial",
         "Forma de gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "MNE",
-      "countryName": "Montenegro",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
@@ -2909,14 +379,6 @@
         "Forma de gobierno no disponible en Wikidata",
         "Jefe de Estado no disponible en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
-      ]
-    },
-    {
-      "iso3": "TTO",
-      "countryName": "Trinidad and Tobago",
-      "issues": [
-        "PIB no disponible en Banco Mundial",
-        "PIB per cápita no disponible en Banco Mundial"
       ]
     },
     {
@@ -2937,8 +399,8 @@
   "naturalEarthIsoCoverage": {
     "totalIso3": 176,
     "withRestCountries": 170,
-    "withWorldBankGdp": 0,
-    "withWorldBankGdpPerCapita": 0,
+    "withWorldBankGdp": 165,
+    "withWorldBankGdpPerCapita": 165,
     "withWikidataGovernmentForm": 137
   }
 }

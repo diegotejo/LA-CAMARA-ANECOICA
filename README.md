@@ -158,7 +158,8 @@ Salida del pipeline:
 Automatizacion:
 
 - Workflow mensual en `.github/workflows/mapamundi-monthly-update.yml`.
-- Se ejecuta el dia 1 de cada mes y comitea cambios de `data/mapamundi`.
+- Se ejecuta el dia 1 de cada mes, comitea cambios de `data/mapamundi` y hace `push` a `main`.
+- Si el proyecto esta conectado a Vercel con despliegue por push en `main`, el redeploy queda automatico tras cada actualizacion mensual.
 
 Por defecto el servidor local queda en `http://localhost:3000`, pero puedes cambiarlo definiendo `PORT` en `.env.local`.
 

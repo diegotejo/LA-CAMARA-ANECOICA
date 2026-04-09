@@ -124,6 +124,20 @@ export default function Home() {
                 </Link>
               </SpotlightCard>
             </motion.div>
+
+            <motion.div variants={FADE_UP}>
+              <SpotlightCard className={styles.card}>
+                <Link href="/mapamundi-politico" className={styles.cardInner}>
+                  <span className={styles.cardNumber}>04</span>
+                  <h3 className={styles.cardTitle}>Mapamundi político</h3>
+                  <p className={styles.cardDesc}>
+                    Recurso interactivo permanente para explorar países por continente y sistema político,
+                    con ficha comparativa de datos institucionales y económicos.
+                  </p>
+                  <span className={styles.cardArrow}>→</span>
+                </Link>
+              </SpotlightCard>
+            </motion.div>
           </div>
         </motion.section>
 

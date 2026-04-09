@@ -7,6 +7,7 @@ const REST_COUNTRIES_URL =
   "https://restcountries.com/v3.1/all?fields=cca3,name,capital,population,flags,region";
 const WORLD_BANK_GDP_INDICATOR = "NY.GDP.MKTP.CD";
 const WORLD_BANK_GDP_PC_INDICATOR = "NY.GDP.PCAP.CD";
+const WORLD_BANK_BASE_URL = "https://api.worldbank.org/v2/country/all/indicator";
 
 const WIKIDATA_QUERY = `
 SELECT ?iso3 ?governmentFormLabel ?headOfStateLabel ?headOfGovernmentLabel WHERE {
@@ -115,26 +116,44 @@ function classifyPoliticalSystem(governmentForm) {
 }
 
 async function fetchJson(url, label) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 300_000);
+  const maxAttempts = 4;
 
-  try {
-    const response = await fetch(url, {
-      signal: controller.signal,
-      headers: {
-        "User-Agent": "la-camara-anecoica-mapamundi-updater/1.0",
-        Accept: "application/json",
-      },
-    });
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 180_000);
 
-    if (!response.ok) {
-      throw new Error(`${label} respondió ${response.status}`);
+    try {
+      const response = await fetch(url, {
+        signal: controller.signal,
+        headers: {
+          "User-Agent": "la-camara-anecoica-mapamundi-updater/1.0",
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`${label} respondió ${response.status}`);
+      }
+
+      const raw = await response.text();
+
+      try {
+        return JSON.parse(raw);
+      } catch {
+        throw new Error(`${label} devolvió contenido no JSON`);
+      }
+    } catch (error) {
+      if (attempt === maxAttempts) {
+        throw error;
+      }
+
+      await new Promise((resolve) => setTimeout(resolve, attempt * 1500));
+    } finally {
+      clearTimeout(timeout);
     }
-
-    return await response.json();
-  } finally {
-    clearTimeout(timeout);
   }
+
+  throw new Error(`${label} no pudo recuperarse`);
 }
 
 function buildRestCountriesMap(restCountriesData) {
@@ -160,60 +179,45 @@ function buildRestCountriesMap(restCountriesData) {
   return map;
 }
 
-async function fetchWorldBankValue(iso3, indicator) {
-  const url = `https://api.worldbank.org/v2/country/${iso3}/indicator/${indicator}?format=json&mrnev=1`;
-
-  const data = await fetchJson(url, `Banco Mundial ${indicator} ${iso3}`);
-  const rows = Array.isArray(data) ? data[1] : [];
-
-  if (!Array.isArray(rows) || rows.length === 0) {
-    return null;
+function parseWorldBankRows(dataset) {
+  const rows = Array.isArray(dataset) ? dataset[1] : null;
+  if (!Array.isArray(rows)) {
+    return [];
   }
 
-  const row = rows.find((item) => typeof item?.value === "number");
-  if (!row || typeof row.value !== "number") {
-    return null;
-  }
-
-  return {
-    value: row.value,
-    date: row?.date || null,
-  };
+  return rows;
 }
 
-async function fetchWorldBankIndicatorMap(iso3List, indicator, concurrency = 8) {
-  const resultMap = new Map();
-  const errors = [];
+function buildWorldBankIndicatorMap(rows, allowedIsoSet) {
+  const map = new Map();
 
-  let pointer = 0;
+  for (const row of rows) {
+    const iso3 = normalizeIso3(row?.countryiso3code);
+    const value = row?.value;
 
-  async function worker() {
-    while (pointer < iso3List.length) {
-      const currentIndex = pointer;
-      pointer += 1;
+    if (!iso3 || !allowedIsoSet.has(iso3) || typeof value !== "number") {
+      continue;
+    }
 
-      const iso3 = iso3List[currentIndex];
+    const year = Number.parseInt(String(row?.date ?? "0"), 10);
+    const current = map.get(iso3);
 
-      try {
-        const value = await fetchWorldBankValue(iso3, indicator);
-        if (value) {
-          resultMap.set(iso3, value);
-        }
-      } catch (error) {
-        errors.push({
-          iso3,
-          error: String(error),
-        });
-      }
+    if (!current || (Number.isFinite(year) && year > current.year)) {
+      map.set(iso3, {
+        value,
+        date: row?.date || null,
+        year: Number.isFinite(year) ? year : 0,
+      });
     }
   }
 
-  await Promise.all(Array.from({ length: concurrency }, () => worker()));
+  return map;
+}
 
-  return {
-    map: resultMap,
-    errors,
-  };
+async function fetchWorldBankIndicatorRows(indicator) {
+  const url = `${WORLD_BANK_BASE_URL}/${indicator}?format=json&per_page=25000&mrv=8`;
+  const data = await fetchJson(url, `Banco Mundial ${indicator}`);
+  return parseWorldBankRows(data);
 }
 
 function buildWikidataMap(wikidataData) {
@@ -385,8 +389,8 @@ async function main() {
 
   let naturalEarthData;
   let restCountriesData;
-  let worldBankGdpErrors = [];
-  let worldBankGdpPcErrors = [];
+  let worldBankGdpRows = [];
+  let worldBankGdpPcRows = [];
   let wikidataData;
 
   try {
@@ -414,40 +418,24 @@ async function main() {
   }
 
   const { geometry, naturalEarthIso3, discardedFeatures } = buildGeometry(naturalEarthData);
-  const worldBankIsoList = Array.from(naturalEarthIso3);
 
-  const worldBankGdpResult = await fetchWorldBankIndicatorMap(
-    worldBankIsoList,
-    WORLD_BANK_GDP_INDICATOR,
-  );
-  const worldBankGdpPcResult = await fetchWorldBankIndicatorMap(
-    worldBankIsoList,
-    WORLD_BANK_GDP_PC_INDICATOR,
-  );
+  try {
+    worldBankGdpRows = await fetchWorldBankIndicatorRows(WORLD_BANK_GDP_INDICATOR);
+    sourceStatus.push({ source: "Banco Mundial GDP", status: "ok" });
+  } catch (error) {
+    sourceStatus.push({ source: "Banco Mundial GDP", status: "error", message: String(error) });
+  }
 
-  worldBankGdpErrors = worldBankGdpResult.errors;
-  worldBankGdpPcErrors = worldBankGdpPcResult.errors;
-
-  sourceStatus.push({
-    source: "Banco Mundial GDP",
-    status: worldBankGdpErrors.length > 0 ? "partial" : "ok",
-    message:
-      worldBankGdpErrors.length > 0
-        ? `${worldBankGdpErrors.length} países con error de consulta individual`
-        : undefined,
-  });
-  sourceStatus.push({
-    source: "Banco Mundial GDP per cápita",
-    status: worldBankGdpPcErrors.length > 0 ? "partial" : "ok",
-    message:
-      worldBankGdpPcErrors.length > 0
-        ? `${worldBankGdpPcErrors.length} países con error de consulta individual`
-        : undefined,
-  });
+  try {
+    worldBankGdpPcRows = await fetchWorldBankIndicatorRows(WORLD_BANK_GDP_PC_INDICATOR);
+    sourceStatus.push({ source: "Banco Mundial GDP per cápita", status: "ok" });
+  } catch (error) {
+    sourceStatus.push({ source: "Banco Mundial GDP per cápita", status: "error", message: String(error) });
+  }
 
   const restMap = buildRestCountriesMap(restCountriesData);
-  const worldBankGdpMap = worldBankGdpResult.map;
-  const worldBankGdpPcMap = worldBankGdpPcResult.map;
+  const worldBankGdpMap = buildWorldBankIndicatorMap(worldBankGdpRows, naturalEarthIso3);
+  const worldBankGdpPcMap = buildWorldBankIndicatorMap(worldBankGdpPcRows, naturalEarthIso3);
   const wikidataMap = buildWikidataMap(wikidataData);
 
   const countries = [];
@@ -488,10 +476,6 @@ async function main() {
       discardedNaturalEarthFeatures: discardedFeatures.length,
     },
     sourceStatus,
-    worldBankErrors: {
-      gdp: worldBankGdpErrors,
-      gdpPerCapita: worldBankGdpPcErrors,
-    },
     countriesWithIssues,
     naturalEarthIsoCoverage: {
       totalIso3: naturalEarthIso3.size,
