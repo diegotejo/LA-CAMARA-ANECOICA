@@ -62,6 +62,7 @@
   /* Anchuras de layout */
   --max-width: 1100px;
   --max-width-narrow: 760px;
+  --header-h: 80px;
 }
 
 /* Base global */
@@ -85,6 +86,12 @@ html {
   }
 }
 
+@media (max-width: 640px) {
+  :root {
+    --header-h: 84px;
+  }
+}
+
 body {
   font-family: var(--font-sans);
   background-color: transparent; /* No oculta la malla de RelativityGrid */
@@ -92,6 +99,57 @@ body {
   line-height: 1.6;
   position: relative;
   overflow-x: hidden;
+}
+
+.page-transition {
+  min-height: calc(100dvh - var(--header-h));
+}
+
+.fade-in {
+  animation: fadeIn 420ms var(--ease-out) both;
+}
+
+.slide-up {
+  animation: slideUp 520ms var(--ease-out) both;
+}
+
+.editorial-separator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+}
+
+.editorial-separator::before,
+.editorial-separator::after {
+  content: "";
+  height: 1px;
+  background: var(--color-border-subtle);
+  flex: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ============================================================
@@ -166,6 +224,11 @@ summary:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .slide-up {
+    animation: none !important;
+  }
+
   :where(h1, h2, h3, h4, h5, h6, p, a, li, strong, em, small, label, blockquote, figcaption, dt, dd, time) {
     animation: none !important;
     background-position: 50% 50%;

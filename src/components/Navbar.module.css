@@ -11,7 +11,7 @@
 }
 
 .inner {
-  height: 80px;
+  height: var(--header-h);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -167,10 +167,10 @@
 
   .nav {
     position: fixed;
-    top: 80px;
+    top: var(--header-h);
     right: 0;
     width: 100%;
-    height: calc(100dvh - 80px);
+    height: calc(100dvh - var(--header-h));
     background-color: var(--color-bg);
     flex-direction: column;
     justify-content: flex-start;
@@ -205,29 +205,31 @@
 
 @media (max-width: 640px) {
   .header {
-    min-height: 84px;
+    min-height: var(--header-h);
   }
 
   .inner {
-    height: 84px;
+    height: var(--header-h);
   }
 
   .logoText {
     display: inline-flex;
     flex-direction: column;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.05;
-    max-width: 12.5rem;
+    max-width: 11rem;
     white-space: normal;
   }
 
   .nav {
-    top: 72px;
-    height: calc(100dvh - 72px);
+    top: var(--header-h);
+    height: calc(100dvh - var(--header-h));
     padding-top: 1rem;
+    padding-top: calc(1rem + env(safe-area-inset-top));
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
   }
 
   .logoMark {
-    width: 4.4rem;
+    width: 3.4rem;
   }
 }

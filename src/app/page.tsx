@@ -26,7 +26,7 @@ const STAGGER: Variants = {
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className="container mixToneCopy">
+      <div className="container mixToneCopy">
         {/* --- HERO SECTION --- */}
         <motion.section
           className={styles.hero}
@@ -143,7 +143,7 @@ export default function Home() {
             <SeriesPreviewStrip />
           </motion.div>
         </motion.section>
-      </main>
+      </div>
     </div>
   );
 }

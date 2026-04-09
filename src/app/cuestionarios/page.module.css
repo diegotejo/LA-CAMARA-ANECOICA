@@ -132,6 +132,14 @@
   padding: var(--space-2xl);
 }
 
+.quizSectionSpotlight {
+  overflow: hidden;
+}
+
+.quizBody {
+  min-width: 0;
+}
+
 .quizTitle {
   font-size: 1.8rem;
   line-height: 1.2;
