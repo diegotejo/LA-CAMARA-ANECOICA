@@ -58,10 +58,11 @@ const PORTRAIT_INDEX_BY_ID = {
 
 const LOGO_THRESHOLD = 14;
 const PORTRAIT_THRESHOLD = 26;
-const TRANSITION_TOTAL_MS = 760;
-const EXPLODE_RATIO = 0.3;
-const GESTURE_MIN_DISTANCE_DESKTOP = 54;
-const GESTURE_MIN_DISTANCE_MOBILE = 40;
+const TRANSITION_TOTAL_MS = 1120;
+const EXPLODE_RATIO = 0.26;
+const GESTURE_MIN_DISTANCE_DESKTOP = 94;
+const GESTURE_MIN_DISTANCE_MOBILE = 70;
+const DIRECTION_DOMINANCE_RATIO = 1.24;
 
 const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
 
@@ -73,8 +74,8 @@ function easeOutCubic(t: number) {
   return 1 - Math.pow(1 - t, 3);
 }
 
-function easeInOutCubic(t: number) {
-  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+function easeInOutSine(t: number) {
+  return -(Math.cos(Math.PI * t) - 1) / 2;
 }
 
 function normalizeVector(x: number, y: number) {
@@ -132,6 +133,53 @@ function getLogoColor(seed: number, tone: number) {
   const sat = 64 + tone * 14;
   const light = 30 + tone * 42;
   return `hsl(${hue} ${sat}% ${light}%)`;
+}
+
+const BRAND_STOPS = [
+  [255, 168, 106],
+  [255, 102, 188],
+  [204, 96, 255],
+  [124, 106, 255],
+  [76, 145, 255],
+  [64, 194, 255],
+] as const;
+
+function lerpRgb(a: readonly number[], b: readonly number[], t: number) {
+  return [
+    Math.round(lerp(a[0], b[0], t)),
+    Math.round(lerp(a[1], b[1], t)),
+    Math.round(lerp(a[2], b[2], t)),
+  ] as const;
+}
+
+function getBrandGradientRgb(normalizedX: number, tone = 0.6) {
+  const x = clamp01(normalizedX);
+  const scaled = x * (BRAND_STOPS.length - 1);
+  const index = Math.floor(scaled);
+  const localT = scaled - index;
+  const a = BRAND_STOPS[index] ?? BRAND_STOPS[BRAND_STOPS.length - 1];
+  const b = BRAND_STOPS[index + 1] ?? a;
+  const [r, g, b2] = lerpRgb(a, b, localT);
+  const lightBoost = 0.84 + tone * 0.4;
+
+  return [
+    Math.round(Math.min(255, r * lightBoost)),
+    Math.round(Math.min(255, g * lightBoost)),
+    Math.round(Math.min(255, b2 * lightBoost)),
+  ] as const;
+}
+
+function mixRgb(base: readonly number[], overlay: readonly number[], ratio: number) {
+  const t = clamp01(ratio);
+  return [
+    Math.round(lerp(base[0], overlay[0], t)),
+    Math.round(lerp(base[1], overlay[1], t)),
+    Math.round(lerp(base[2], overlay[2], t)),
+  ] as const;
+}
+
+function rgbToCss(rgb: readonly number[]) {
+  return `rgb(${rgb[0]} ${rgb[1]} ${rgb[2]})`;
 }
 
 function getAccentColor(seed: number, intensity = 0.4) {
@@ -341,6 +389,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
       let y = logo.y;
       let z = 0;
       let color = getLogoColor(particle.seed, logo.tone);
+      const logoGradientColor = getBrandGradientRgb(clamp01((logo.x + width * 0.5) / width), logo.tone);
 
       if (sequence.mode === "transition") {
         if (transitionProgress <= EXPLODE_RATIO) {
@@ -354,9 +403,10 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
           x = logo.x + Math.cos(angle) * radial * t + lateral * t * 0.65;
           y = logo.y + Math.sin(angle * 1.18) * radial * 0.6 * t + vertical * t * 0.65;
           z = 10 + t * (20 + particle.seed * 26);
-          color = getAccentColor(particle.seed + t * 0.2, 0.55);
+          const transitionColor = getBrandGradientRgb(clamp01((x + width * 0.5) / width), logo.tone);
+          color = rgbToCss(mixRgb(transitionColor, [255, 255, 255], 0.06 + t * 0.12));
         } else {
-          const t = easeInOutCubic(morphProgress);
+          const t = easeInOutSine(morphProgress);
           const dissolveBySide =
             sequence.directionX !== 0
               ? sequence.directionX > 0
@@ -366,7 +416,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
                 ? clamp01((portrait.y + height * 0.5) / height)
                 : 1 - clamp01((portrait.y + height * 0.5) / height);
 
-          const dispersing = portrait.scatter < 0.18 + dissolveBySide * 0.14 && portrait.emphasis < 0.58;
+          const dispersing = portrait.scatter < 0.16 + dissolveBySide * 0.13 && portrait.emphasis < 0.58;
           const spread = dispersing ? 36 * (1 - t) + 10 : 0;
 
           x = lerp(logo.x, portrait.x + sequence.directionX * spread, t);
@@ -374,10 +424,13 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
           z = (dispersing ? 12 : 4.5) * t;
 
           const gray = Math.round(58 + portrait.tone * 176);
-          const grayscale = `rgb(${gray} ${gray} ${gray})`;
-          const accent = getAccentColor(particle.seed, 0.28);
+          const grayscale = [gray, gray, gray] as const;
+          const gradientColor = getBrandGradientRgb(clamp01((portrait.x + width * 0.5) / width), portrait.tone);
+          const colorBlend = 0.22 + (1 - portrait.emphasis) * 0.34;
+          const blendedFace = mixRgb(grayscale, gradientColor, colorBlend);
+          const accent = getAccentColor(particle.seed, 0.32);
 
-          color = dispersing ? accent : grayscale;
+          color = dispersing ? accent : rgbToCss(blendedFace);
         }
       } else if (sequence.mode === "portraitLocked") {
         x = portrait.x;
@@ -385,18 +438,23 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
         z = 4;
 
         const gray = Math.round(56 + portrait.tone * 180);
-        const grayscale = `rgb(${gray} ${gray} ${gray})`;
-        const accent = getAccentColor(particle.seed, 0.2);
+        const grayscale = [gray, gray, gray] as const;
+        const gradientColor = getBrandGradientRgb(clamp01((portrait.x + width * 0.5) / width), portrait.tone);
+        const accent = getAccentColor(particle.seed, 0.22);
         const accentEdge = portrait.scatter < 0.08 && portrait.emphasis < 0.52;
-        color = accentEdge ? accent : grayscale;
+        const blendRatio = 0.28 + (1 - portrait.emphasis) * 0.24;
+        color = accentEdge ? accent : rgbToCss(mixRgb(grayscale, gradientColor, blendRatio));
+      } else {
+        color = rgbToCss(mixRgb([34, 34, 38], logoGradientColor, 0.84));
       }
 
       const px = centerX + x;
       const py = centerY + y;
       const size = particle.size * (1 + z * 0.015);
       const highlight = 0.12 + z * 0.01;
+      const transitionLite = sequence.mode === "transition" && particle.seed < 0.46;
 
-      if (!denseMode || particle.seed > 0.44) {
+      if (!transitionLite && (!denseMode || particle.seed > 0.44)) {
         ctx.fillStyle = `rgba(0, 0, 0, ${0.05 + z * 0.006})`;
         ctx.fillRect(px + size * 0.22, py + size * 0.22, size, size);
       }
@@ -404,7 +462,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
       ctx.fillStyle = color;
       ctx.fillRect(px, py, size, size);
 
-      if (!denseMode || particle.seed > 0.58) {
+      if (!transitionLite && (!denseMode || particle.seed > 0.58)) {
         ctx.fillStyle = `rgba(255, 255, 255, ${highlight})`;
         ctx.fillRect(px, py, Math.max(0.2, size * 0.42), Math.max(0.2, size * 0.28));
       }
@@ -449,7 +507,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
 
       sequence.mode = "portraitLocked";
       sequence.portraitIndex = sequence.targetPortraitIndex;
-      sequence.cooldownUntil = time + 240;
+      sequence.cooldownUntil = time + 460;
       stopLoop();
       drawScene(time);
     };
@@ -613,8 +671,10 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
     const dx = pointerRef.current.currentX - pointerRef.current.startX;
     const dy = pointerRef.current.currentY - pointerRef.current.startY;
     const distance = Math.hypot(dx, dy);
+    const dominant = Math.max(Math.abs(dx), Math.abs(dy));
+    const secondary = Math.min(Math.abs(dx), Math.abs(dy));
 
-    if (distance < GESTURE_MIN_DISTANCE_DESKTOP) {
+    if (distance < GESTURE_MIN_DISTANCE_DESKTOP || dominant < secondary * DIRECTION_DOMINANCE_RATIO) {
       return;
     }
 
@@ -631,8 +691,10 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
     const dx = pointerRef.current.currentX - pointerRef.current.startX;
     const dy = pointerRef.current.currentY - pointerRef.current.startY;
     const distance = Math.hypot(dx, dy);
+    const dominant = Math.max(Math.abs(dx), Math.abs(dy));
+    const secondary = Math.min(Math.abs(dx), Math.abs(dy));
 
-    if (distance < GESTURE_MIN_DISTANCE_MOBILE) {
+    if (distance < GESTURE_MIN_DISTANCE_MOBILE || dominant < secondary * DIRECTION_DOMINANCE_RATIO) {
       return;
     }
 
