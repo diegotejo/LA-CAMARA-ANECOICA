@@ -395,14 +395,14 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
         if (transitionProgress <= EXPLODE_RATIO) {
           const t = easeOutCubic(explodeProgress);
           const angle = particle.seed * Math.PI * 2;
-          const radial = 18 + particle.seed * 110;
-          const sidePush = 42 + portrait.scatter * 84;
+          const radial = 16 + particle.seed * 96;
+          const sidePush = 36 + portrait.scatter * 74;
           const lateral = sequence.directionX * sidePush;
           const vertical = sequence.directionY * sidePush;
 
-          x = logo.x + Math.cos(angle) * radial * t + lateral * t * 0.65;
-          y = logo.y + Math.sin(angle * 1.18) * radial * 0.6 * t + vertical * t * 0.65;
-          z = 10 + t * (20 + particle.seed * 26);
+          x = logo.x + Math.cos(angle) * radial * t + lateral * t * 0.58;
+          y = logo.y + Math.sin(angle * 1.18) * radial * 0.56 * t + vertical * t * 0.58;
+          z = 8 + t * (18 + particle.seed * 22);
           const transitionColor = getBrandGradientRgb(clamp01((x + width * 0.5) / width), logo.tone);
           color = rgbToCss(mixRgb(transitionColor, [255, 255, 255], 0.06 + t * 0.12));
         } else {
@@ -417,7 +417,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
                 : 1 - clamp01((portrait.y + height * 0.5) / height);
 
           const dispersing = portrait.scatter < 0.16 + dissolveBySide * 0.13 && portrait.emphasis < 0.58;
-          const spread = dispersing ? 36 * (1 - t) + 10 : 0;
+          const spread = dispersing ? 32 * (1 - t) + 8 : 0;
 
           x = lerp(logo.x, portrait.x + sequence.directionX * spread, t);
           y = lerp(logo.y, portrait.y + sequence.directionY * spread * 0.75, t);
@@ -442,7 +442,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
         const gradientColor = getBrandGradientRgb(clamp01((portrait.x + width * 0.5) / width), portrait.tone);
         const accent = getAccentColor(particle.seed, 0.22);
         const accentEdge = portrait.scatter < 0.08 && portrait.emphasis < 0.52;
-        const blendRatio = 0.28 + (1 - portrait.emphasis) * 0.24;
+        const blendRatio = 0.36 + (1 - portrait.emphasis) * 0.28;
         color = accentEdge ? accent : rgbToCss(mixRgb(grayscale, gradientColor, blendRatio));
       } else {
         color = rgbToCss(mixRgb([34, 34, 38], logoGradientColor, 0.84));
