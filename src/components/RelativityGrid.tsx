@@ -5,35 +5,76 @@ import { useEffect, useState } from "react";
 
 export default function RelativityGrid() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isTouch, setIsTouch] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(hover: none), (pointer: coarse)").matches,
-  );
+  const [isTouch, setIsTouch] = useState(true);
+  const [preferStatic, setPreferStatic] = useState(true);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
+    const pointerQuery = window.matchMedia("(hover: none), (pointer: coarse)");
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const connection = (navigator as Navigator & { connection?: { saveData?: boolean } })
+      .connection;
 
-    const handleMediaChange = (event: MediaQueryListEvent) => {
-      setIsTouch(event.matches);
+    const syncCapability = () => {
+      const isPointerCoarse = pointerQuery.matches;
+      const isReducedMotion = reducedMotionQuery.matches;
+      const saveDataEnabled = connection?.saveData === true;
+
+      setIsTouch(isPointerCoarse);
+      setPreferStatic(isPointerCoarse || isReducedMotion || saveDataEnabled);
     };
 
-    mediaQuery.addEventListener("change", handleMediaChange);
+    syncCapability();
 
     const handleMouseMove = (e: MouseEvent) => {
-      // Normalizar coordenadas entre -1 y 1
       const x = (e.clientX / window.innerWidth) * 2 - 1;
       const y = (e.clientY / window.innerHeight) * 2 - 1;
       setMousePosition({ x, y });
     };
 
-    if (!mediaQuery.matches) {
+    pointerQuery.addEventListener("change", syncCapability);
+    reducedMotionQuery.addEventListener("change", syncCapability);
+
+    if (!preferStatic) {
       window.addEventListener("mousemove", handleMouseMove);
     }
 
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaChange);
+      pointerQuery.removeEventListener("change", syncCapability);
+      reducedMotionQuery.removeEventListener("change", syncCapability);
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [preferStatic]);
+
+  if (preferStatic) {
+    return (
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: -1,
+          pointerEvents: "none",
+          overflow: "hidden",
+          width: "100vw",
+          height: "100vh",
+          background:
+            "radial-gradient(circle at 50% 35%, rgba(255,255,255,0.04), rgba(255,255,255,0) 52%), var(--color-bg)",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: "-25%",
+            backgroundImage:
+              "linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)",
+            backgroundSize: "96px 96px",
+            maskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%)",
+          }}
+        />
+      </div>
+    );
+  }
 
   return (
     <div
@@ -66,18 +107,15 @@ export default function RelativityGrid() {
           position: "absolute",
           top: "-50%",
           left: "-50%",
-          // Genera la cuadrícula con contraste suave
           backgroundImage: `
             linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px)
           `,
           backgroundSize: "80px 80px",
-          // Máscara radial más amplia
           maskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%)",
           WebkitMaskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%)",
         }}
       />
-      {/* Glow de acento central (Agujero negro luminoso) */}
       <motion.div
         animate={{
           x: mousePosition.x * 30,
