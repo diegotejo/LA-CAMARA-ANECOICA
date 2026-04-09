@@ -8,6 +8,7 @@ Sitio editorial en Next.js para el canal [La Camara Anecoica](https://www.youtub
 - Navegacion persistente con branding integrado en cabecera y footer.
 - Pagina de `videos` con galeria de ensayos y una franja visual para las tres series del canal.
 - Paginas para `cuestionarios`, `articulos` y `sobre` alineadas con la identidad del proyecto.
+- Pagina `mapamundi-politico` con mapa politico interactivo, ficha por pais y filtros editoriales.
 
 ## Stack
 
@@ -66,6 +67,7 @@ public/
 src/
   app/
     page.tsx
+    mapamundi-politico/page.tsx
     videos/page.tsx
     cuestionarios/page.tsx
     articulos/page.tsx
@@ -73,6 +75,7 @@ src/
     layout.tsx
     globals.css
   components/
+    MapamundiPolitico.tsx
     BrandLogo.tsx
     Navbar.tsx
     Footer.tsx
@@ -80,6 +83,10 @@ src/
     VideoGallery.tsx
     VideoCard.tsx
 data/
+  mapamundi/
+    countries.normalized.json
+    geometry.geo.json
+    update-report.json
   videos.json
   quizzes.json
 ```
@@ -126,6 +133,32 @@ Edita `data/quizzes.json` siguiendo la estructura ya presente en el archivo.
 npm install
 npm run dev
 ```
+
+## Mapamundi politico: datos y actualizacion
+
+La herramienta usa solo fuentes estructuradas permitidas:
+
+- Natural Earth: geometria y criterio cartografico de paises/territorios.
+- REST Countries: nombre, bandera, capital, poblacion y metadatos base.
+- Banco Mundial: PIB y PIB per capita.
+- Wikidata: forma de gobierno, jefe de Estado y jefe de Gobierno.
+
+Pipeline manual local:
+
+```bash
+npm run map:update
+```
+
+Salida del pipeline:
+
+- `data/mapamundi/countries.normalized.json`: dataset unificado por ISO3.
+- `data/mapamundi/geometry.geo.json`: geometria optimizada para Leaflet.
+- `data/mapamundi/update-report.json`: incidencias por pais/fuente.
+
+Automatizacion:
+
+- Workflow mensual en `.github/workflows/mapamundi-monthly-update.yml`.
+- Se ejecuta el dia 1 de cada mes y comitea cambios de `data/mapamundi`.
 
 Por defecto el servidor local queda en `http://localhost:3000`, pero puedes cambiarlo definiendo `PORT` en `.env.local`.
 
