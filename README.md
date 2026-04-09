@@ -26,12 +26,14 @@ PORT=3000
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 NEXT_PUBLIC_YOUTUBE_CHANNEL_URL=https://www.youtube.com/@CamaraAnecoica
 NEXT_PUBLIC_INSTAGRAM_URL=https://www.instagram.com/anecoicacamara/
+NEXT_PUBLIC_ENABLE_HEADER_LOGO_MOTION=false
 ```
 
 - `PORT`: puerto de `next dev` y `next start`.
 - `NEXT_PUBLIC_SITE_URL`: URL base usada para metadata y referencias canonicas.
 - `NEXT_PUBLIC_YOUTUBE_CHANNEL_URL`: URL centralizada del canal para CTAs y enlaces globales.
 - `NEXT_PUBLIC_INSTAGRAM_URL`: URL centralizada del perfil de Instagram.
+- `NEXT_PUBLIC_ENABLE_HEADER_LOGO_MOTION`: activa la capa experimental de animacion del logo del header (por defecto desactivada).
 
 La configuracion publica se centraliza en `src/lib/site-config.ts`.
 
