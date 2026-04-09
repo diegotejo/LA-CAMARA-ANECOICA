@@ -14,6 +14,7 @@ interface TargetPoint {
   y: number;
   tone: number;
   scatter: number;
+  emphasis: number;
 }
 
 interface Particle {
@@ -54,8 +55,8 @@ const EXPLODE_MS = 820;
 const MORPH_MS = 1150;
 const HOLD_MS = 1200;
 const RETURN_MS = 1100;
-const MIN_PARTICLES = 1500;
-const MAX_PARTICLES = 2600;
+const MIN_PARTICLES = 2600;
+const MAX_PARTICLES = 5200;
 
 const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
 
@@ -81,8 +82,17 @@ function getPaletteColor(seed: number, glow = 0) {
 }
 
 function getAdaptiveParticleCount(width: number, height: number) {
-  const estimated = Math.floor((width * height) / 115);
+  const estimated = Math.floor((width * height) / 70);
   return Math.max(MIN_PARTICLES, Math.min(MAX_PARTICLES, estimated || PARTICLE_COUNT));
+}
+
+function getParticleSizeRange(particleCount: number) {
+  const densityT = clamp01((particleCount - MIN_PARTICLES) / (MAX_PARTICLES - MIN_PARTICLES));
+
+  return {
+    min: lerp(1.2, 0.72, densityT),
+    max: lerp(2.6, 1.34, densityT),
+  };
 }
 
 function fitContain(sourceWidth: number, sourceHeight: number, targetWidth: number, targetHeight: number) {
@@ -115,6 +125,7 @@ function sampleTargetPoints(
   height: number,
   targetCount: number,
   alphaThreshold: number,
+  profile: "logo" | "portrait",
 ) {
   const offscreen = document.createElement("canvas");
   offscreen.width = width;
@@ -130,7 +141,9 @@ function sampleTargetPoints(
   ctx.drawImage(image, fit.x, fit.y, fit.width, fit.height);
 
   const data = ctx.getImageData(0, 0, width, height).data;
-  const step = Math.max(2, Math.floor(Math.sqrt((width * height) / targetCount)));
+  const baseStep = Math.sqrt((width * height) / targetCount);
+  const samplingFactor = profile === "portrait" ? 0.7 : 0.82;
+  const step = Math.max(1, Math.floor(baseStep * samplingFactor));
   const points: TargetPoint[] = [];
 
   for (let y = 0; y < height; y += step) {
@@ -146,12 +159,35 @@ function sampleTargetPoints(
       const g = data[idx + 1];
       const b = data[idx + 2];
       const tone = (r * 0.2126 + g * 0.7152 + b * 0.0722) / 255;
+      const xNext = Math.min(width - 1, x + step);
+      const yNext = Math.min(height - 1, y + step);
+      const idxRight = (y * width + xNext) * 4;
+      const idxDown = (yNext * width + x) * 4;
+      const toneRight =
+        (data[idxRight] * 0.2126 + data[idxRight + 1] * 0.7152 + data[idxRight + 2] * 0.0722) / 255;
+      const toneDown =
+        (data[idxDown] * 0.2126 + data[idxDown + 1] * 0.7152 + data[idxDown + 2] * 0.0722) / 255;
+      const edgeStrength = clamp01(Math.abs(tone - toneRight) * 1.8 + Math.abs(tone - toneDown) * 1.8);
+
+      const normalizedX = (x - width / 2) / (width / 2);
+      const normalizedY = (y - height * 0.45) / (height / 2);
+      const centerBias = Math.exp(-(normalizedX * normalizedX * 0.9 + normalizedY * normalizedY * 0.8));
+      const profileBoost = profile === "portrait" ? 0.42 + centerBias * 0.38 : 0.7 + centerBias * 0.15;
+      const tonalDetail = 1 - Math.abs(tone - 0.52);
+      const emphasis = clamp01(edgeStrength * 0.58 + tonalDetail * 0.26 + centerBias * 0.16);
+      const alphaWeight = alpha / 255;
+      const weight = alphaWeight * (0.25 + emphasis * 0.95) * profileBoost;
+
+      if (Math.random() > Math.min(1, weight * 1.18)) {
+        continue;
+      }
 
       points.push({
         x: x - width / 2,
         y: y - height / 2,
         tone,
         scatter: Math.random(),
+        emphasis,
       });
     }
   }
@@ -165,14 +201,14 @@ function sampleTargetPoints(
   }
 
   if (points.length > targetCount) {
-    for (let i = points.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const swap = points[i];
-      points[i] = points[j];
-      points[j] = swap;
-    }
+    const weighted = points.map((point) => {
+      const weight = Math.max(0.0001, point.emphasis * 0.72 + (1 - point.scatter) * 0.28);
+      const key = Math.pow(Math.random(), 1 / weight);
+      return { point, key };
+    });
 
-    points.length = targetCount;
+    weighted.sort((a, b) => b.key - a.key);
+    return weighted.slice(0, targetCount).map((entry) => entry.point);
   }
 
   return points;
@@ -256,6 +292,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
           Math.floor(height * 0.82),
           particleCount,
           LOGO_THRESHOLD,
+          "logo",
         );
 
         const portraitTargets = portraitImages.map((portrait) =>
@@ -265,8 +302,11 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
               Math.floor(height * 0.9),
               particleCount,
               PORTRAIT_THRESHOLD,
+              "portrait",
             ),
         );
+
+        const sizeRange = getParticleSizeRange(particleCount);
 
         logoTargetsRef.current = logoTargets;
         portraitTargetsRef.current = portraitTargets;
@@ -280,7 +320,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
           vz: 0,
           seed: Math.random(),
           shimmer: Math.random(),
-          size: 1.65 + Math.random() * 2.4,
+          size: sizeRange.min + Math.random() * (sizeRange.max - sizeRange.min),
           logo: point,
           portraits: portraitTargets.map((targetSet) => targetSet[index % targetSet.length] ?? point),
         }));
@@ -377,10 +417,10 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
           let targetZ = 0;
           let color = getPaletteColor(particle.seed, 0.05 + interactionRef.current * 0.2);
 
-          const sway = Math.sin(time * 0.001 + particle.seed * 12) * 2.2;
-          const wobble = Math.sin(time * 0.0016 + particle.shimmer * 22 + particle.y * 0.016) * 1.8;
-          targetX += (pointerX / 60) * (0.6 - particle.seed * 0.4) + sway * interactionRef.current;
-          targetY += (pointerY / 80) * (0.55 - particle.seed * 0.35) + wobble * interactionRef.current;
+          const sway = Math.sin(time * 0.001 + particle.seed * 12) * 1.2;
+          const wobble = Math.sin(time * 0.0016 + particle.shimmer * 22 + particle.y * 0.016) * 0.95;
+          targetX += (pointerX / 88) * (0.44 - particle.seed * 0.28) + sway * interactionRef.current;
+          targetY += (pointerY / 108) * (0.42 - particle.seed * 0.26) + wobble * interactionRef.current;
 
           if (sequence.mode === "explode") {
             const t = easeOutCubic(clamp01(modeElapsed / EXPLODE_MS));
@@ -403,28 +443,29 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
                   : 1;
 
             const dissolveBand = (portrait.x + width * 0.2) / (width * 0.68);
-            const disperseThreshold = 0.42 - clamp01(dissolveBand) * 0.3;
-            const dispersing = portrait.scatter < disperseThreshold;
-            const spread = dispersing ? 68 * (1 - morphT) + 36 * morphT : 0;
+            const disperseThreshold = 0.2 - clamp01(dissolveBand) * 0.16;
+            const dispersing = portrait.scatter < disperseThreshold && portrait.emphasis < 0.56;
+            const spread = dispersing ? 52 * (1 - morphT) + 18 * morphT : 0;
             const driftX = dispersing ? (particle.seed - 0.5) * spread * 1.4 : 0;
             const driftY = dispersing ? (particle.seed - 0.5) * spread * 0.9 : 0;
             const breathing = sequence.mode === "hold" ? Math.sin(time * 0.002 + particle.seed * 14) * 1.5 : 0;
 
             targetX = lerp(particle.logo.x, portrait.x + driftX, morphT);
             targetY = lerp(particle.logo.y, portrait.y + driftY + breathing, morphT);
-            targetZ = (dispersing ? 18 : 6) * morphT;
+            targetZ = (dispersing ? 16 : 7.5) * morphT;
 
             const grayscale = Math.round(58 + portrait.tone * 170);
             const grayscaleColor = `rgb(${grayscale} ${grayscale} ${grayscale})`;
             const accentColor = getPaletteColor(particle.seed, 0.3);
             const sparkleBand = Math.sin(time * 0.0024 + particle.shimmer * 20) > 0.88;
-            const sparkles = sequence.mode !== "return" && portrait.tone > 0.82 && sparkleBand;
+            const sparkles = sequence.mode !== "return" && portrait.tone > 0.86 && sparkleBand;
 
-            color = sparkles || dispersing || portrait.tone > 0.78 ? accentColor : grayscaleColor;
+            color = sparkles || dispersing ? accentColor : grayscaleColor;
           }
 
-          const spring = 0.074;
-          const friction = 0.82;
+          const focusBoost = sequence.mode === "hold" && modeElapsed < 280 ? 1.45 : 1;
+          const spring = 0.078 * focusBoost;
+          const friction = sequence.mode === "hold" ? 0.86 : 0.82;
 
           particle.vx = (particle.vx + (targetX - particle.x) * spring) * friction;
           particle.vy = (particle.vy + (targetY - particle.y) * spring) * friction;
