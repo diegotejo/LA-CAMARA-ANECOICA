@@ -138,6 +138,20 @@ export default function Home() {
                 </Link>
               </SpotlightCard>
             </motion.div>
+
+            <motion.div variants={FADE_UP}>
+              <SpotlightCard className={styles.card}>
+                <Link href="/glosario" className={styles.cardInner}>
+                  <span className={styles.cardNumber}>05</span>
+                  <h3 className={styles.cardTitle}>Glosario analítico</h3>
+                  <p className={styles.cardDesc}>
+                    Directorio interactivo de conceptos clave abordados en los
+                    ensayos audiovisuales. Encuentra conexiones entre vídeos.
+                  </p>
+                  <span className={styles.cardArrow}>→</span>
+                </Link>
+              </SpotlightCard>
+            </motion.div>
           </div>
         </motion.section>
 

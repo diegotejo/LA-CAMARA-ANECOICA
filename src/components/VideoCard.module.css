@@ -175,8 +175,15 @@
 .biblioTitle {
   font-family: var(--font-serif);
   font-size: 0.92rem;
-  font-style: italic;
   color: var(--color-text);
+}
+
+.biblioAuthor {
+  font-weight: 500;
+}
+
+.biblioWork {
+  font-style: italic;
 }
 
 .biblioNote {

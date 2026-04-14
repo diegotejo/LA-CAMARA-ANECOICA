@@ -1,0 +1,100 @@
+.page {
+  padding-top: calc(var(--header-height) + var(--space-xl));
+  padding-bottom: var(--space-4xl);
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: var(--space-2xl);
+  max-width: 800px;
+}
+
+.label {
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.intro {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.glossaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+
+.conceptCard {
+  height: 100%;
+}
+
+.conceptCardInner {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.conceptTitle {
+  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.videosList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: auto;
+}
+
+.videoLink {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  group-hover: opacity-80;
+  transition: opacity var(--duration-fast);
+}
+
+.videoLink:hover {
+  opacity: 0.8;
+}
+
+.videoSeries {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.videoTitle {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.emptyState {
+  margin-top: var(--space-xl);
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+}

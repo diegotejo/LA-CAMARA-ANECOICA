@@ -14,6 +14,7 @@ const navLinks = [
   { href: "/videos", label: "Vídeos" },
   { href: "/cuestionarios", label: "Cuestionarios" },
   { href: "/articulos", label: "Artículos" },
+  { href: "/glosario", label: "Glosario" },
   { href: "/sobre", label: "Sobre el proyecto" },
 ];
 

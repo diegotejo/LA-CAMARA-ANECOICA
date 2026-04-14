@@ -69,12 +69,21 @@ export default function VideoCard({ video }: { video: VideoData }) {
               Bibliografía comentada
             </summary>
             <ul className={styles.biblioList}>
-              {video.bibliography.map((item) => (
-                <li key={item.title} className={styles.biblioItem}>
-                  <span className={styles.biblioTitle}>{item.title}</span>
-                  <span className={styles.biblioNote}>{item.note}</span>
-                </li>
-              ))}
+              {video.bibliography.map((item) => {
+                const parts = item.title.split(" — ");
+                const author = parts.length > 1 ? parts[0] : null;
+                const work = parts.length > 1 ? parts[1] : item.title;
+
+                return (
+                  <li key={item.title} className={styles.biblioItem}>
+                    <span className={styles.biblioTitle}>
+                      {author && <span className={styles.biblioAuthor}>{author} — </span>}
+                      <span className={styles.biblioWork}>{work}</span>
+                    </span>
+                    <span className={styles.biblioNote}>{item.note}</span>
+                  </li>
+                );
+              })}
             </ul>
           </details>
         )}
