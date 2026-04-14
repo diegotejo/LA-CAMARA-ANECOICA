@@ -92,7 +92,7 @@ function getPortraitIndexFromGesture(deltaX: number, deltaY: number) {
 
 function getQualityProfile() {
   if (typeof window === "undefined") {
-    return { minParticles: 12000, maxParticles: 22000 } satisfies QualityProfile;
+    return { minParticles: 7000, maxParticles: 12000 } satisfies QualityProfile;
   }
 
   const coarse = window.matchMedia("(pointer: coarse)").matches;
@@ -103,14 +103,14 @@ function getQualityProfile() {
   const saveData = nav.connection?.saveData === true;
 
   if (reducedMotion || saveData || memory <= 2 || cores <= 4) {
-    return { minParticles: 6500, maxParticles: 11000 } satisfies QualityProfile;
+    return { minParticles: 3500, maxParticles: 6000 } satisfies QualityProfile;
   }
 
   if (coarse || memory <= 4 || cores <= 6) {
-    return { minParticles: 10000, maxParticles: 18000 } satisfies QualityProfile;
+    return { minParticles: 6000, maxParticles: 10000 } satisfies QualityProfile;
   }
 
-  return { minParticles: 26000, maxParticles: 52000 } satisfies QualityProfile;
+  return { minParticles: 12000, maxParticles: 22000 } satisfies QualityProfile;
 }
 
 function getAdaptiveParticleCount(width: number, height: number, profile: QualityProfile) {
@@ -121,8 +121,8 @@ function getAdaptiveParticleCount(width: number, height: number, profile: Qualit
 function getParticleSizeRange(particleCount: number, profile: QualityProfile) {
   const t = clamp01((particleCount - profile.minParticles) / Math.max(1, profile.maxParticles - profile.minParticles));
   return {
-    min: lerp(1.05, 0.3, t),
-    max: lerp(1.9, 0.95, t),
+    min: lerp(1.7, 0.9, t),
+    max: lerp(3.2, 1.8, t),
   };
 }
 
@@ -360,13 +360,6 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
 
     ctx.clearRect(0, 0, width, height);
 
-    const glow = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, Math.max(width, height) * 0.68);
-    glow.addColorStop(0, "rgba(184, 122, 255, 0.16)");
-    glow.addColorStop(0.38, "rgba(108, 166, 255, 0.14)");
-    glow.addColorStop(1, "rgba(0, 0, 0, 0)");
-    ctx.fillStyle = glow;
-    ctx.fillRect(0, 0, width, height);
-
     let transitionProgress = 0;
     let morphProgress = 0;
 
@@ -404,11 +397,18 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
         const dispersing = portrait.scatter < 0.16 + dissolveBySide * 0.13 && portrait.emphasis < 0.58;
         const spread = dispersing ? 42 * (1 - t) : 0;
 
-        x = lerp(logo.x, portrait.x + sequence.directionX * spread, t);
-        y = lerp(logo.y, portrait.y + sequence.directionY * spread * 0.75, t);
-        
         const zBump = Math.sin(Math.PI * t);
-        z = 4 + (dispersing ? 16 : 4.5) * zBump;
+        
+        // Efecto expansivo (burst)
+        const burstIntensity = (0.2 + particle.scatter * 0.8) * width * 0.45 * zBump;
+        const burstAngle = particle.seed * Math.PI * 2;
+        const burstX = Math.cos(burstAngle) * burstIntensity;
+        const burstY = Math.sin(burstAngle) * burstIntensity * 0.6;
+
+        x = lerp(logo.x, portrait.x + sequence.directionX * spread, t) + burstX;
+        y = lerp(logo.y, portrait.y + sequence.directionY * spread * 0.75, t) + burstY;
+        
+        z = 4 + (dispersing ? 32 : 12) * zBump;
 
         const gray = Math.round(56 + portrait.tone * 180);
         const grayscale = [gray, gray, gray] as const;
@@ -442,13 +442,13 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
 
       const px = centerX + x;
       const py = centerY + y;
-      const size = particle.size * (1 + z * 0.015);
-      const highlight = 0.12 + z * 0.01;
+      const size = particle.size * (1 + z * 0.045);
+      const highlight = 0.15 + z * 0.015;
       const transitionLite = sequence.mode === "transition" && particle.seed < 0.46;
 
       if (!transitionLite && (!denseMode || particle.seed > 0.44)) {
-        ctx.fillStyle = `rgba(0, 0, 0, ${0.05 + z * 0.006})`;
-        ctx.fillRect(px + size * 0.22, py + size * 0.22, size, size);
+        ctx.fillStyle = `rgba(0, 0, 0, ${0.12 + z * 0.01})`;
+        ctx.fillRect(px + size * (0.2 + z * 0.02), py + size * (0.2 + z * 0.02), size, size);
       }
 
       ctx.fillStyle = color;
@@ -459,19 +459,6 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
         ctx.fillRect(px, py, Math.max(0.2, size * 0.42), Math.max(0.2, size * 0.28));
       }
     }
-
-    const vignette = ctx.createRadialGradient(
-      centerX,
-      centerY,
-      Math.min(width, height) * 0.3,
-      centerX,
-      centerY,
-      Math.max(width, height) * 0.74,
-    );
-    vignette.addColorStop(0, "rgba(0, 0, 0, 0)");
-    vignette.addColorStop(1, "rgba(3, 4, 8, 0.3)");
-    ctx.fillStyle = vignette;
-    ctx.fillRect(0, 0, width, height);
   };
 
   const stopLoop = () => {

@@ -3,40 +3,12 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   isolation: isolate;
-  overflow: hidden;
-  border-radius: 0;
-  -webkit-mask-image: radial-gradient(ellipse 92% 84% at 50% 50%, #000 72%, rgba(0, 0, 0, 0.55) 84%, transparent 100%);
-  mask-image: radial-gradient(ellipse 92% 84% at 50% 50%, #000 72%, rgba(0, 0, 0, 0.55) 84%, transparent 100%);
 }
 
-.ambientGlow {
-  position: absolute;
-  inset: -16% -8%;
-  background:
-    radial-gradient(circle at 50% 54%, rgba(186, 115, 255, 0.2), transparent 52%),
-    radial-gradient(circle at 35% 42%, rgba(255, 124, 183, 0.24), transparent 54%),
-    radial-gradient(circle at 64% 38%, rgba(107, 165, 255, 0.22), transparent 56%);
-  filter: blur(26px);
-  z-index: 0;
-}
-
-.grain {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  opacity: 0.14;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.4) 0.5px, transparent 0.5px);
-  background-size: 3px 3px;
-  mix-blend-mode: soft-light;
-}
-
+.ambientGlow,
+.grain,
 .vignetteOverlay {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  background: radial-gradient(circle at center, rgba(6, 10, 18, 0) 54%, rgba(4, 6, 10, 0.32) 100%);
+  display: none;
 }
 
 .fallbackLogo {
