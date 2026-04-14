@@ -58,8 +58,7 @@ const PORTRAIT_INDEX_BY_ID = {
 
 const LOGO_THRESHOLD = 14;
 const PORTRAIT_THRESHOLD = 26;
-const TRANSITION_TOTAL_MS = 1120;
-const EXPLODE_RATIO = 0.26;
+const TRANSITION_TOTAL_MS = 900;
 const GESTURE_MIN_DISTANCE_DESKTOP = 94;
 const GESTURE_MIN_DISTANCE_MOBILE = 70;
 const DIRECTION_DOMINANCE_RATIO = 1.24;
@@ -369,13 +368,11 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
     ctx.fillRect(0, 0, width, height);
 
     let transitionProgress = 0;
-    let explodeProgress = 0;
     let morphProgress = 0;
 
     if (sequence.mode === "transition") {
       transitionProgress = clamp01((time - sequence.transitionStartedAt) / TRANSITION_TOTAL_MS);
-      explodeProgress = clamp01(transitionProgress / EXPLODE_RATIO);
-      morphProgress = clamp01((transitionProgress - EXPLODE_RATIO) / (1 - EXPLODE_RATIO));
+      morphProgress = transitionProgress;
     }
 
     const denseMode = particles.length > 22000;
@@ -392,46 +389,41 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
       const logoGradientColor = getBrandGradientRgb(clamp01((logo.x + width * 0.5) / width), logo.tone);
 
       if (sequence.mode === "transition") {
-        if (transitionProgress <= EXPLODE_RATIO) {
-          const t = easeOutCubic(explodeProgress);
-          const angle = particle.seed * Math.PI * 2;
-          const radial = 16 + particle.seed * 96;
-          const sidePush = 36 + portrait.scatter * 74;
-          const lateral = sequence.directionX * sidePush;
-          const vertical = sequence.directionY * sidePush;
+        const organicT = clamp01(morphProgress + (particle.seed - 0.5) * 0.16 * Math.sin(morphProgress * Math.PI));
+        const t = easeInOutSine(organicT);
+        
+        const dissolveBySide =
+          sequence.directionX !== 0
+            ? sequence.directionX > 0
+              ? 1 - clamp01((portrait.x + width * 0.5) / width)
+              : clamp01((portrait.x + width * 0.5) / width)
+            : sequence.directionY > 0
+              ? clamp01((portrait.y + height * 0.5) / height)
+              : 1 - clamp01((portrait.y + height * 0.5) / height);
 
-          x = logo.x + Math.cos(angle) * radial * t + lateral * t * 0.58;
-          y = logo.y + Math.sin(angle * 1.18) * radial * 0.56 * t + vertical * t * 0.58;
-          z = 8 + t * (18 + particle.seed * 22);
-          const transitionColor = getBrandGradientRgb(clamp01((x + width * 0.5) / width), logo.tone);
-          color = rgbToCss(mixRgb(transitionColor, [255, 255, 255], 0.06 + t * 0.12));
-        } else {
-          const t = easeInOutSine(morphProgress);
-          const dissolveBySide =
-            sequence.directionX !== 0
-              ? sequence.directionX > 0
-                ? 1 - clamp01((portrait.x + width * 0.5) / width)
-                : clamp01((portrait.x + width * 0.5) / width)
-              : sequence.directionY > 0
-                ? clamp01((portrait.y + height * 0.5) / height)
-                : 1 - clamp01((portrait.y + height * 0.5) / height);
+        const dispersing = portrait.scatter < 0.16 + dissolveBySide * 0.13 && portrait.emphasis < 0.58;
+        const spread = dispersing ? 42 * (1 - t) : 0;
 
-          const dispersing = portrait.scatter < 0.16 + dissolveBySide * 0.13 && portrait.emphasis < 0.58;
-          const spread = dispersing ? 32 * (1 - t) + 8 : 0;
+        x = lerp(logo.x, portrait.x + sequence.directionX * spread, t);
+        y = lerp(logo.y, portrait.y + sequence.directionY * spread * 0.75, t);
+        
+        const zBump = Math.sin(Math.PI * t);
+        z = 4 + (dispersing ? 16 : 4.5) * zBump;
 
-          x = lerp(logo.x, portrait.x + sequence.directionX * spread, t);
-          y = lerp(logo.y, portrait.y + sequence.directionY * spread * 0.75, t);
-          z = (dispersing ? 12 : 4.5) * t;
+        const gray = Math.round(56 + portrait.tone * 180);
+        const grayscale = [gray, gray, gray] as const;
+        const gradientColor = getBrandGradientRgb(clamp01((portrait.x + width * 0.5) / width), portrait.tone);
+        const blendRatio = 0.36 + (1 - portrait.emphasis) * 0.28;
+        const targetColor = mixRgb(grayscale, gradientColor, blendRatio);
+        
+        const sourceColor = mixRgb([34, 34, 38], logoGradientColor, 0.84);
+        const currentColor = mixRgb(sourceColor, targetColor, t);
+        
+        const accent = getAccentColor(particle.seed, 0.22);
+        const accentEdge = portrait.scatter < 0.08 && portrait.emphasis < 0.52;
 
-          const gray = Math.round(58 + portrait.tone * 176);
-          const grayscale = [gray, gray, gray] as const;
-          const gradientColor = getBrandGradientRgb(clamp01((portrait.x + width * 0.5) / width), portrait.tone);
-          const colorBlend = 0.22 + (1 - portrait.emphasis) * 0.34;
-          const blendedFace = mixRgb(grayscale, gradientColor, colorBlend);
-          const accent = getAccentColor(particle.seed, 0.32);
-
-          color = dispersing ? accent : rgbToCss(blendedFace);
-        }
+        const useAccent = accentEdge && (t > 0.5 || (dispersing && t > 0.3));
+        color = useAccent ? accent : rgbToCss(currentColor);
       } else if (sequence.mode === "portraitLocked") {
         x = portrait.x;
         y = portrait.y;
