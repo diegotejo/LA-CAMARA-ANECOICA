@@ -69,10 +69,6 @@ function lerp(a: number, b: number, t: number) {
   return a + (b - a) * t;
 }
 
-function easeOutCubic(t: number) {
-  return 1 - Math.pow(1 - t, 3);
-}
-
 function easeInOutSine(t: number) {
   return -(Math.cos(Math.PI * t) - 1) / 2;
 }
@@ -400,7 +396,7 @@ export default function HeroMorphCanvas({ className, priority = false }: HeroMor
         const zBump = Math.sin(Math.PI * t);
         
         // Efecto expansivo (burst)
-        const burstIntensity = (0.2 + particle.scatter * 0.8) * width * 0.45 * zBump;
+        const burstIntensity = (0.2 + portrait.scatter * 0.8) * width * 0.45 * zBump;
         const burstAngle = particle.seed * Math.PI * 2;
         const burstX = Math.cos(burstAngle) * burstIntensity;
         const burstY = Math.sin(burstAngle) * burstIntensity * 0.6;
