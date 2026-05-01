@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-04-09",
+  "generatedAt": "2026-05-01",
   "totals": {
     "countries": 176,
-    "countriesWithIssues": 45,
+    "countriesWithIssues": 43,
     "discardedNaturalEarthFeatures": 1
   },
   "sourceStatus": [
@@ -20,13 +20,11 @@
     },
     {
       "source": "Banco Mundial GDP",
-      "status": "error",
-      "message": "Error: Banco Mundial NY.GDP.MKTP.CD respondió 502"
+      "status": "ok"
     },
     {
       "source": "Banco Mundial GDP per cápita",
-      "status": "error",
-      "message": "Error: Banco Mundial NY.GDP.PCAP.CD respondió 502"
+      "status": "ok"
     }
   ],
   "countriesWithIssues": [
@@ -209,13 +207,6 @@
       ]
     },
     {
-      "iso3": "LBR",
-      "countryName": "Liberia",
-      "issues": [
-        "Características del sistema político no disponibles en Wikidata"
-      ]
-    },
-    {
       "iso3": "CAF",
       "countryName": "Central African Republic",
       "issues": [
@@ -283,7 +274,7 @@
       "iso3": "SYR",
       "countryName": "Syria",
       "issues": [
-        "Jefe de Estado no disponible en Wikidata",
+        "Características del sistema político no disponibles en Wikidata",
         "Jefe de Gobierno no disponible en Wikidata"
       ]
     },
@@ -299,13 +290,6 @@
     {
       "iso3": "SLB",
       "countryName": "Solomon Islands",
-      "issues": [
-        "Características del sistema político no disponibles en Wikidata"
-      ]
-    },
-    {
-      "iso3": "LKA",
-      "countryName": "Sri Lanka",
       "issues": [
         "Características del sistema político no disponibles en Wikidata"
       ]
@@ -410,12 +394,12 @@
     "withRestCountries": 170,
     "withWorldBankGdp": 165,
     "withWorldBankGdpPerCapita": 165,
-    "withWikidataGovernmentForm": 76,
-    "withWikidataOrganizationModel": 37,
-    "withWikidataGovernmentStructure": 112
+    "withWikidataGovernmentForm": 75,
+    "withWikidataOrganizationModel": 36,
+    "withWikidataGovernmentStructure": 116
   },
   "fallbackCoverage": {
-    "worldBankGdpFromCache": 165,
-    "worldBankGdpPerCapitaFromCache": 165
+    "worldBankGdpFromCache": 0,
+    "worldBankGdpPerCapitaFromCache": 0
   }
 }
